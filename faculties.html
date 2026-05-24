@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Faculties</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#0E0F12;color:#E6E6E6;text-align:center;}
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+border-bottom:1px solid #222;
+}
+a{color:#E6E6E6;text-decoration:none;margin-left:15px;opacity:.7;}
+a:hover{opacity:1;}
+.lang{cursor:pointer;margin-left:10px;opacity:.7;}
+.lang:hover{opacity:1;}
+.section{padding:80px 20px;max-width:1000px;margin:auto;}
+.card{
+border:1px solid #333;
+padding:18px;
+margin:10px;
+display:inline-block;
+background:#12141a;
+border-radius:10px;
+}
+h1{font-size:48px;margin-bottom:40px;}
+</style>
+</head>
+
+<body>
+
+<header>
+<div><b>MU SYSTEM</b></div>
+
+<nav>
+<a href="index.html">Gibraltar</a>
+<a href="ceuta.html">Campus de Ceuta</a>
+<a href="faculties.html">Faculties</a>
+
+<span class="lang" onclick="setLang('en')">EN</span>
+<span class="lang" onclick="setLang('es')">ES</span>
+</nav>
+</header>
+
+<section class="section">
+
+<h1 id="title">Faculties</h1>
+
+<div class="card" id="f1">Memory Systems</div>
+<div class="card" id="f2">Narrative Studies</div>
+<div class="card" id="f3">Field Observation</div>
+<div class="card" id="f4">Historical Simulation</div>
+<div class="card" id="f5">Cognitive Structures</div>
+
+</section>
+
+<script>
+function setLang(lang){
+
+if(lang==="es"){
+document.getElementById("title").innerText="Facultades";
+document.getElementById("f1").innerText="Sistemas de memoria";
+document.getElementById("f2").innerText="Estudios narrativos";
+document.getElementById("f3").innerText="Observación de campo";
+document.getElementById("f4").innerText="Simulación histórica";
+document.getElementById("f5").innerText="Estructuras cognitivas";
+}
+
+if(lang==="en"){
+document.getElementById("title").innerText="Faculties";
+document.getElementById("f1").innerText="Memory Systems";
+document.getElementById("f2").innerText="Narrative Studies";
+document.getElementById("f3").innerText="Field Observation";
+document.getElementById("f4").innerText="Historical Simulation";
+document.getElementById("f5").innerText="Cognitive Structures";
+}
+}
+</script>
+
+</body>
+  </html>
