@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Campus de Ceuta</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#0E0F12;color:#E6E6E6;text-align:center;}
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+border-bottom:1px solid #222;
+}
+a{color:#E6E6E6;text-decoration:none;margin-left:15px;opacity:.7;}
+a:hover{opacity:1;}
+.lang{cursor:pointer;margin-left:10px;opacity:.7;}
+.lang:hover{opacity:1;}
+.hero{padding:120px 20px;max-width:900px;margin:auto;}
+h1{font-size:50px;}
+p{opacity:.8;font-size:18px;line-height:1.6;}
+</style>
+</head>
+
+<body>
+
+<header>
+<div><b>MU SYSTEM</b></div>
+
+<nav>
+<a href="index.html">Gibraltar</a>
+<a href="ceuta.html">Campus de Ceuta</a>
+<a href="faculties.html">Faculties</a>
+
+<span class="lang" onclick="setLang('en')">EN</span>
+<span class="lang" onclick="setLang('es')">ES</span>
+</nav>
+</header>
+
+<section class="hero">
+<h1 id="title">Campus de Ceuta</h1>
+<p id="text">
+Field research campus focused on observation,
+border studies and Mediterranean transition systems.
+</p>
+</section>
+
+<script>
+function setLang(lang){
+
+if(lang==="es"){
+document.getElementById("title").innerText="Campus de Ceuta";
+document.getElementById("text").innerText="Campus de investigación de campo enfocado en observación, estudios fronterizos y sistemas de transición mediterránea.";
+}
+
+if(lang==="en"){
+document.getElementById("title").innerText="Campus de Ceuta";
+document.getElementById("text").innerText="Field research campus focused on observation, border studies and Mediterranean transition systems.";
+}
+}
+</script>
+
+</body>
+</html>
