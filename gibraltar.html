@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monkeys University of Gibraltar</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#0E0F12;color:#E6E6E6;}
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+background:#0E0F12;
+}
+nav a{
+color:#E6E6E6;
+text-decoration:none;
+margin-left:15px;
+opacity:.7;
+}
+nav a:hover{opacity:1;}
+.lang{margin-left:10px;cursor:pointer;opacity:.7;}
+.lang:hover{opacity:1;}
+.hero{
+text-align:center;
+padding:120px 20px 80px;
+max-width:900px;
+margin:auto;
+}
+h1{font-size:52px;margin-bottom:15px;}
+p{opacity:.8;font-size:18px;}
+.section{
+padding:70px 20px;
+border-top:1px solid #222;
+text-align:center;
+}
+.card{
+display:inline-block;
+border:1px solid #333;
+padding:18px 22px;
+margin:10px;
+border-radius:10px;
+background:#12141a;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div><b>MU SYSTEM</b></div>
+
+<nav>
+<a href="index.html">Gibraltar</a>
+<a href="ceuta.html">Campus de Ceuta</a>
+<a href="faculties.html">Faculties</a>
+
+<span class="lang" onclick="setLang('en')">EN</span>
+<span class="lang" onclick="setLang('es')">ES</span>
+</nav>
+</header>
+
+<section class="hero">
+<h1 id="title">Monkeys University of Gibraltar</h1>
+<p id="hook">Memory defines identity.</p>
+</section>
+
+<section class="section">
+<h2 id="campusTitle">Campus Network</h2>
+
+<div class="card">Gibraltar</div>
+<div class="card">Campus de Ceuta</div>
+</section>
+
+<script>
+function setLang(lang){
+
+if(lang==="es"){
+document.getElementById("title").innerText="Universidad de Gibraltar";
+document.getElementById("hook").innerText="La memoria define la identidad.";
+document.getElementById("campusTitle").innerText="Red de campus";
+}
+
+if(lang==="en"){
+document.getElementById("title").innerText="Monkeys University of Gibraltar";
+document.getElementById("hook").innerText="Memory defines identity.";
+document.getElementById("campusTitle").innerText="Campus Network";
+}
+}
+</script>
+
+</body>
+                                   </html>
