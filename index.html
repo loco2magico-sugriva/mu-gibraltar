@@ -7,24 +7,23 @@
 *{box-sizing:border-box;}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0d1016;color:#f4f4f4;}
 header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid #232834;background:#11151d;position:sticky;top:0;}
-.logo{font-size:20px;font-weight:700;letter-spacing:.5px;}
-nav a{color:#f4f4f4;text-decoration:none;margin-left:18px;opacity:.85;}
+.logo{font-size:18px;font-weight:700;}
+nav a{color:#f4f4f4;text-decoration:none;margin-left:16px;opacity:.8;}
 nav a:hover{opacity:1;}
-.hero{padding:70px 28px 40px;max-width:1000px;margin:auto;}
-h1{font-size:42px;margin:0 0 14px;}
-p.lead{font-size:18px;line-height:1.6;max-width:760px;color:#d7d7d7;}
-.lang-switch{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;}
-button{background:#1d2330;color:white;border:1px solid #343d52;padding:10px 14px;border-radius:8px;cursor:pointer;}
-button:hover{background:#2b3344;}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:10px 28px 60px;max-width:1000px;margin:auto;}
-.card{background:#151a23;border:1px solid #252c39;border-radius:14px;padding:22px;}
+.hero{padding:70px 28px 30px;max-width:1000px;margin:auto;}
+h1{font-size:40px;margin:0 0 12px;}
+p{line-height:1.6;color:#d7d7d7;}
+.lang-switch{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;}
+.lang-switch button{background:#1d2330;color:#fff;border:1px solid #2c3446;padding:10px 14px;border-radius:8px;cursor:pointer;}
+.lang-switch button:hover{background:#2a3244;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:20px 28px 60px;max-width:1000px;margin:auto;}
+.card{background:#151a23;border:1px solid #252c39;border-radius:14px;padding:18px;}
 .card h3{margin-top:0;}
-footer{padding:28px;text-align:center;color:#b9b9b9;border-top:1px solid #232834;}
+footer{padding:24px;text-align:center;color:#b9b9b9;border-top:1px solid #232834;}
 </style>
 </head>
-<body>
-<header>
-<div class="logo">Monkeys University of Gibraltar</div>
+<body><header>
+<div class="logo">MU Gibraltar</div>
 <nav>
 <a href="index.html">Gibraltar</a>
 <a href="ceuta.html">Ceuta</a>
@@ -32,74 +31,59 @@ footer{padding:28px;text-align:center;color:#b9b9b9;border-top:1px solid #232834
 </nav>
 </header><section class="hero">
 <h1 id="title">Monkeys University of Gibraltar</h1>
-<p class="lead" id="lead">A multilingual academic gateway to the MU world system — Gibraltar as the central campus, Ceuta as the Spanish-language branch, and the faculties as the institutional framework.</p><div class="lang-switch">
+<p id="lead">Multilingual academic system: Gibraltar as core campus, Ceuta as Spanish branch, Faculties as institutional structure.</p><div class="lang-switch">
 <button onclick="setLang('en')">EN</button>
-<button onclick="setLang('es')">ES</button>
 <button onclick="setLang('pl')">PL</button>
 <button onclick="setLang('fr')">FR</button>
 </div>
 </section><section class="cards">
 <div class="card">
 <h3 id="c1t">Central Campus</h3>
-<p id="c1p">The academic and narrative core of the MU system located in Gibraltar.</p>
+<p id="c1p">Academic and narrative core of MU located in Gibraltar.</p>
 </div>
 <div class="card">
 <h3 id="c2t">Campus de Ceuta</h3>
-<p id="c2p">A Spanish-speaking branch designed for international academic exchange and regional identity.</p>
+<p id="c2p">Spanish-language branch focused on regional and international exchange.</p>
 </div>
 <div class="card">
 <h3 id="c3t">Faculties</h3>
-<p id="c3p">Explore the institutional departments, research directions and structural framework of MU.</p>
+<p id="c3p">Institutional structure of research and academic systems.</p>
 </div>
-</section><footer>MU System / Gibraltar / Ceuta / Faculties</footer><script>
+</section><footer>MU System — Gibraltar / Ceuta / Faculties</footer><script>
 function setLang(lang){
-const data={
-en:{
-title:'Monkeys University of Gibraltar',
-lead:'A multilingual academic gateway to the MU world system — Gibraltar as the central campus, Ceuta as the Spanish-language branch, and the faculties as the institutional framework.',
-c1t:'Central Campus',
-c1p:'The academic and narrative core of the MU system located in Gibraltar.',
-c2t:'Campus de Ceuta',
-c2p:'A Spanish-speaking branch designed for international academic exchange and regional identity.',
-c3t:'Faculties',
-c3p:'Explore the institutional departments, research directions and structural framework of MU.'},
-es:{
-title:'Universidad de Monos de Gibraltar',
-lead:'Una puerta académica multilingüe al sistema MU: Gibraltar como campus central, Ceuta como rama hispanohablante y las facultades como estructura institucional.',
-c1t:'Campus Central',
-c1p:'El núcleo académico y narrativo del sistema MU ubicado en Gibraltar.',
-c2t:'Campus de Ceuta',
-c2p:'Una sede hispanohablante diseñada para intercambio académico internacional e identidad regional.',
-c3t:'Facultades',
-c3p:'Explora las áreas institucionales, líneas de investigación y estructura de MU.'},
-pl:{
-title:'Małpi Uniwersytet Gibraltaru',
-lead:'Wielojęzyczna brama do świata MU — Gibraltar jako kampus główny, Ceuta jako hiszpańskojęzyczna filia, a wydziały jako struktura instytucjonalna.',
-c1t:'Kampus Główny',
-c1p:'Akademickie i narracyjne centrum systemu MU zlokalizowane na Gibraltarze.',
-c2t:'Campus de Ceuta',
-c2p:'Hiszpańskojęzyczna filia stworzona dla wymiany międzynarodowej i regionalnej tożsamości.',
-c3t:'Wydziały',
-c3p:'Poznaj strukturę instytucjonalną, kierunki badań i organizację MU.'},
-fr:{
-title:'Université des Singes de Gibraltar',
-lead:'Une porte académique multilingue vers le système MU — Gibraltar comme campus central, Ceuta comme branche hispanophone et les facultés comme structure institutionnelle.',
-c1t:'Campus Central',
-c1p:'Le noyau académique et narratif du système MU situé à Gibraltar.',
-c2t:'Campus de Ceuta',
-c2p:'Une branche hispanophone conçue pour les échanges académiques internationaux et l’identité régionale.',
-c3t:'Facultés',
-c3p:'Explorez les départements institutionnels, les axes de recherche et la structure de MU.'}
+const t={
+ en:{
+ title:'Monkeys University of Gibraltar',
+ lead:'Multilingual academic system: Gibraltar as core campus, Ceuta as Spanish branch, Faculties as institutional structure.',
+ c1t:'Central Campus',c1p:'Academic and narrative core of MU located in Gibraltar.',
+ c2t:'Campus de Ceuta',c2p:'Spanish-language branch focused on regional and international exchange.',
+ c3t:'Faculties',c3p:'Institutional structure of research and academic systems.'
+ },
+ pl:{
+ title:'Małpi Uniwersytet Gibraltaru',
+ lead:'Wielojęzyczny system akademicki: Gibraltar jako centrum, Ceuta jako filia hiszpańska, Wydziały jako struktura.',
+ c1t:'Kampus Główny',c1p:'Akademiczne i narracyjne centrum MU na Gibraltarze.',
+ c2t:'Campus de Ceuta',c2p:'Hiszpańskojęzyczna filia systemu MU.',
+ c3t:'Wydziały',c3p:'Struktura badawcza i akademicka MU.'
+ },
+ fr:{
+ title:'Université des Singes de Gibraltar',
+ lead:'Système académique multilingue: Gibraltar centre, Ceuta branche espagnole, Facultés structure institutionnelle.',
+ c1t:'Campus Central',c1p:'Noyau académique et narratif de MU à Gibraltar.',
+ c2t:'Campus de Ceuta',c2p:'Branche hispanophone du système MU.',
+ c3t:'Facultés',c3p:'Structure institutionnelle de recherche et d’enseignement.'
+ }
 };
-const t=data[lang];
-document.getElementById('title').innerText=t.title;
-document.getElementById('lead').innerText=t.lead;
-document.getElementById('c1t').innerText=t.c1t;
-document.getElementById('c1p').innerText=t.c1p;
-document.getElementById('c2t').innerText=t.c2t;
-document.getElementById('c2p').innerText=t.c2p;
-document.getElementById('c3t').innerText=t.c3t;
-document.getElementById('c3p').innerText=t.c3p;
+
+const d=t[lang];
+document.getElementById('title').innerText=d.title;
+document.getElementById('lead').innerText=d.lead;
+document.getElementById('c1t').innerText=d.c1t;
+document.getElementById('c1p').innerText=d.c1p;
+document.getElementById('c2t').innerText=d.c2t;
+document.getElementById('c2p').innerText=d.c2p;
+document.getElementById('c3t').innerText=d.c3t;
+document.getElementById('c3p').innerText=d.c3p;
 }
 </script></body>
-  </html>
+</html>
