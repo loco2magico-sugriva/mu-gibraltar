@@ -1,65 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE html><html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Campus de Ceuta</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Campus de Ceuta - MU</title>
 <style>
-body{margin:0;font-family:Arial;background:#0E0F12;color:#E6E6E6;text-align:center;}
-header{
-display:flex;
-justify-content:space-between;
-padding:20px 40px;
-border-bottom:1px solid #222;
-}
-a{color:#E6E6E6;text-decoration:none;margin-left:15px;opacity:.7;}
-a:hover{opacity:1;}
-.lang{cursor:pointer;margin-left:10px;opacity:.7;}
-.lang:hover{opacity:1;}
-.hero{padding:120px 20px;max-width:900px;margin:auto;}
-h1{font-size:50px;}
-p{opacity:.8;font-size:18px;line-height:1.6;}
+body{margin:0;font-family:Arial,sans-serif;background:#0d1016;color:#f4f4f4;}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:#11151d;border-bottom:1px solid #232834;}
+.logo{font-weight:700;}
+nav a{color:#f4f4f4;margin-left:14px;text-decoration:none;opacity:.8;}
+nav a:hover{opacity:1;}
+.container{max-width:900px;margin:auto;padding:40px 24px;}
+h1{font-size:36px;margin-bottom:10px;}
+p{line-height:1.6;color:#d7d7d7;}
+.lang button{margin-right:8px;padding:8px 12px;border-radius:6px;border:1px solid #333;background:#1d2330;color:#fff;cursor:pointer;}
+.lang button:hover{background:#2a3244;}
+.card{margin-top:20px;padding:18px;border:1px solid #2a3244;border-radius:12px;background:#151a23;}
 </style>
 </head>
-
-<body>
-
-<header>
-<div><b>MU SYSTEM</b></div>
-
+<body><header>
+<div class="logo">MU / Campus de Ceuta</div>
 <nav>
 <a href="index.html">Gibraltar</a>
-<a href="ceuta.html">Campus de Ceuta</a>
+<a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
-
-<span class="lang" onclick="setLang('en')">EN</span>
-<span class="lang" onclick="setLang('es')">ES</span>
 </nav>
-</header>
-
-<section class="hero">
-<h1 id="title">Campus de Ceuta</h1>
-<p id="text">
-Field research campus focused on observation,
-border studies and Mediterranean transition systems.
-</p>
-</section>
-
-<script>
+</header><div class="container"><h1 id="title">Campus de Ceuta</h1>
+<p id="desc">Campus hispanohablante del sistema MU, enfocado en intercambio académico y contexto regional del Estrecho.</p><div class="lang">
+<button onclick="setLang('es')">ES</button>
+<button onclick="setLang('en')">EN</button>
+</div><div class="card">
+<h3 id="c1">Investigación regional</h3>
+<p id="p1">Estudios sobre dinámicas culturales y territoriales del área del Estrecho.</p>
+</div><div class="card">
+<h3 id="c2">Intercambio académico</h3>
+<p id="p2">Programas de colaboración entre Gibraltar, Ceuta y redes internacionales.</p>
+</div></div><script>
 function setLang(lang){
-
-if(lang==="es"){
-document.getElementById("title").innerText="Campus de Ceuta";
-document.getElementById("text").innerText="Campus de investigación de campo enfocado en observación, estudios fronterizos y sistemas de transición mediterránea.";
+if(lang==='en'){
+ document.documentElement.lang='en';
+ document.getElementById('title').innerText='Ceuta Campus';
+ document.getElementById('desc').innerText='Spanish-speaking branch of the MU system focused on academic exchange and regional studies of the Strait area.';
+ document.getElementById('c1').innerText='Regional research';
+ document.getElementById('p1').innerText='Studies on cultural and territorial dynamics of the Strait region.';
+ document.getElementById('c2').innerText='Academic exchange';
+ document.getElementById('p2').innerText='Collaboration programs between Gibraltar, Ceuta and international networks.';
+}else{
+ document.documentElement.lang='es';
+ document.getElementById('title').innerText='Campus de Ceuta';
+ document.getElementById('desc').innerText='Campus hispanohablante del sistema MU, enfocado en intercambio académico y contexto regional del Estrecho.';
+ document.getElementById('c1').innerText='Investigación regional';
+ document.getElementById('p1').innerText='Estudios sobre dinámicas culturales y territoriales del área del Estrecho.';
+ document.getElementById('c2').innerText='Intercambio académico';
+ document.getElementById('p2').innerText='Programas de colaboración entre Gibraltar, Ceuta y redes internacionales.';
 }
-
-if(lang==="en"){
-document.getElementById("title").innerText="Campus de Ceuta";
-document.getElementById("text").innerText="Field research campus focused on observation, border studies and Mediterranean transition systems.";
 }
-}
-</script>
-
-</body>
+</script></body>
 </html>
