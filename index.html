@@ -1,101 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Monkeys University of Gibraltar</title>
-
 <style>
-body{margin:0;font-family:Arial;background:#0E0F12;color:#E6E6E6;}
-header{
-display:flex;
-justify-content:space-between;
-padding:20px 40px;
-border-bottom:1px solid #222;
-position:sticky;
-top:0;
-background:#0E0F12;
-}
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0d1016;color:#f4f4f4;}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid #232834;background:#11151d;position:sticky;top:0;}
+.logo{font-size:20px;font-weight:700;letter-spacing:.5px;}
+nav a{color:#f4f4f4;text-decoration:none;margin-left:18px;opacity:.85;}
+nav a:hover{opacity:1;}
+.hero{padding:70px 28px 40px;max-width:1000px;margin:auto;}
+h1{font-size:42px;margin:0 0 14px;}
+p.lead{font-size:18px;line-height:1.6;max-width:760px;color:#d7d7d7;}
+.lang-switch{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;}
+button{background:#1d2330;color:white;border:1px solid #343d52;padding:10px 14px;border-radius:8px;cursor:pointer;}
+button:hover{background:#2b3344;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:10px 28px 60px;max-width:1000px;margin:auto;}
+.card{background:#151a23;border:1px solid #252c39;border-radius:14px;padding:22px;}
+.card h3{margin-top:0;}
+footer{padding:28px;text-align:center;color:#b9b9b9;border-top:1px solid #232834;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Monkeys University of Gibraltar</div>
 <nav>
 <a href="index.html">Gibraltar</a>
 <a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
 </nav>
-color:#E6E6E6;
-text-decoration:none;
-margin-left:15px;
-opacity:.7;
-}
-nav a:hover{opacity:1;}
-.lang{margin-left:10px;cursor:pointer;opacity:.7;}
-.lang:hover{opacity:1;}
-.hero{
-text-align:center;
-padding:120px 20px 80px;
-max-width:900px;
-margin:auto;
-}
-h1{font-size:52px;margin-bottom:15px;}
-p{opacity:.8;font-size:18px;}
-.section{
-padding:70px 20px;
-border-top:1px solid #222;
-text-align:center;
-}
-.card{
-display:inline-block;
-border:1px solid #333;
-padding:18px 22px;
-margin:10px;
-border-radius:10px;
-background:#12141a;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div><b>MU SYSTEM</b></div>
-
-<nav>
-<a href="index.html">Gibraltar</a>
-<a href="ceuta.html">Campus de Ceuta</a>
-<a href="faculties.html">Faculties</a>
-
-<span class="lang" onclick="setLang('en')">EN</span>
-<span class="lang" onclick="setLang('es')">ES</span>
-</nav>
-</header>
-
-<section class="hero">
+</header><section class="hero">
 <h1 id="title">Monkeys University of Gibraltar</h1>
-<p id="hook">Memory defines identity.</p>
-</section>
-
-<section class="section">
-<h2 id="campusTitle">Campus Network</h2>
-
-<div class="card">Gibraltar</div>
-<div class="card">Campus de Ceuta</div>
-</section>
-
-<script>
+<p class="lead" id="lead">A multilingual academic gateway to the MU world system — Gibraltar as the central campus, Ceuta as the Spanish-language branch, and the faculties as the institutional framework.</p><div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+<button onclick="setLang('pl')">PL</button>
+<button onclick="setLang('fr')">FR</button>
+</div>
+</section><section class="cards">
+<div class="card">
+<h3 id="c1t">Central Campus</h3>
+<p id="c1p">The academic and narrative core of the MU system located in Gibraltar.</p>
+</div>
+<div class="card">
+<h3 id="c2t">Campus de Ceuta</h3>
+<p id="c2p">A Spanish-speaking branch designed for international academic exchange and regional identity.</p>
+</div>
+<div class="card">
+<h3 id="c3t">Faculties</h3>
+<p id="c3p">Explore the institutional departments, research directions and structural framework of MU.</p>
+</div>
+</section><footer>MU System / Gibraltar / Ceuta / Faculties</footer><script>
 function setLang(lang){
-
-if(lang==="es"){
-document.getElementById("title").innerText="Universidad de Gibraltar";
-document.getElementById("hook").innerText="La memoria define la identidad.";
-document.getElementById("campusTitle").innerText="Red de campus";
+const data={
+en:{
+title:'Monkeys University of Gibraltar',
+lead:'A multilingual academic gateway to the MU world system — Gibraltar as the central campus, Ceuta as the Spanish-language branch, and the faculties as the institutional framework.',
+c1t:'Central Campus',
+c1p:'The academic and narrative core of the MU system located in Gibraltar.',
+c2t:'Campus de Ceuta',
+c2p:'A Spanish-speaking branch designed for international academic exchange and regional identity.',
+c3t:'Faculties',
+c3p:'Explore the institutional departments, research directions and structural framework of MU.'},
+es:{
+title:'Universidad de Monos de Gibraltar',
+lead:'Una puerta académica multilingüe al sistema MU: Gibraltar como campus central, Ceuta como rama hispanohablante y las facultades como estructura institucional.',
+c1t:'Campus Central',
+c1p:'El núcleo académico y narrativo del sistema MU ubicado en Gibraltar.',
+c2t:'Campus de Ceuta',
+c2p:'Una sede hispanohablante diseñada para intercambio académico internacional e identidad regional.',
+c3t:'Facultades',
+c3p:'Explora las áreas institucionales, líneas de investigación y estructura de MU.'},
+pl:{
+title:'Małpi Uniwersytet Gibraltaru',
+lead:'Wielojęzyczna brama do świata MU — Gibraltar jako kampus główny, Ceuta jako hiszpańskojęzyczna filia, a wydziały jako struktura instytucjonalna.',
+c1t:'Kampus Główny',
+c1p:'Akademickie i narracyjne centrum systemu MU zlokalizowane na Gibraltarze.',
+c2t:'Campus de Ceuta',
+c2p:'Hiszpańskojęzyczna filia stworzona dla wymiany międzynarodowej i regionalnej tożsamości.',
+c3t:'Wydziały',
+c3p:'Poznaj strukturę instytucjonalną, kierunki badań i organizację MU.'},
+fr:{
+title:'Université des Singes de Gibraltar',
+lead:'Une porte académique multilingue vers le système MU — Gibraltar comme campus central, Ceuta comme branche hispanophone et les facultés comme structure institutionnelle.',
+c1t:'Campus Central',
+c1p:'Le noyau académique et narratif du système MU situé à Gibraltar.',
+c2t:'Campus de Ceuta',
+c2p:'Une branche hispanophone conçue pour les échanges académiques internationaux et l’identité régionale.',
+c3t:'Facultés',
+c3p:'Explorez les départements institutionnels, les axes de recherche et la structure de MU.'}
+};
+const t=data[lang];
+document.getElementById('title').innerText=t.title;
+document.getElementById('lead').innerText=t.lead;
+document.getElementById('c1t').innerText=t.c1t;
+document.getElementById('c1p').innerText=t.c1p;
+document.getElementById('c2t').innerText=t.c2t;
+document.getElementById('c2p').innerText=t.c2p;
+document.getElementById('c3t').innerText=t.c3t;
+document.getElementById('c3p').innerText=t.c3p;
 }
-
-if(lang==="en"){
-document.getElementById("title").innerText="Monkeys University of Gibraltar";
-document.getElementById("hook").innerText="Memory defines identity.";
-document.getElementById("campusTitle").innerText="Campus Network";
-}
-}
-</script>
-
-</body>
+</script></body>
   </html>
