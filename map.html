@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MU Map System</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0B0E14;
+color:#E6E6E6;
+text-align:center;
+}
+
+header{
+padding:20px;
+border-bottom:1px solid #222;
+}
+
+h1{
+font-size:44px;
+margin-top:40px;
+}
+
+.map{
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:600px;
+margin:60px auto;
+}
+
+.node{
+padding:18px;
+border:1px solid #2a3342;
+border-radius:12px;
+background:#121826;
+cursor:pointer;
+transition:0.2s;
+}
+
+.node:hover{
+background:#1a2233;
+transform:scale(1.02);
+}
+
+.arrow{
+font-size:22px;
+opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<b>MU SYSTEM MAP</b>
+</header>
+
+<h1>World Structure</h1>
+
+<div class="map">
+
+<a class="node" href="index.html">
+🏛 Gibraltar — Core System
+</a>
+
+<div class="arrow">↓</div>
+
+<a class="node" href="ceuta.html">
+🌉 Ceuta — Intercontinental Bridge
+</a>
+
+<div class="arrow">↓</div>
+
+<a class="node" href="faculties.html">
+📚 Faculties — Knowledge Structure
+</a>
+
+</div>
+
+</body>
+</html>
