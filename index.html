@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MU System</title>
 
 <link rel="stylesheet" href="mu-core.css">
-
-<style>
-/* App Mode improvements */
-.card{
-cursor:pointer;
-transition:0.2s;
-}
-
-.card:hover{
-transform:scale(1.02);
-border-color:#4aa3ff;
-}
-</style>
 </head>
 
 <body>
@@ -28,37 +15,48 @@ border-color:#4aa3ff;
 
 <nav>
 <a href="index.html">Gibraltar</a>
-<a href="ceuta.html">Campus de Ceuta</a>
+<a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
 </nav>
 </header>
 
-<section class="hero">
+<main style="max-width:1000px;margin:40px auto;padding:0 20px;">
+
 <h1>Monkeys University of Gibraltar</h1>
-<p>Multilingual academic system: Gibraltar / Ceuta / Faculties</p>
-</section>
 
-<section class="cards">
+<p style="text-align:center;opacity:.8;">
+Central gateway of the MU System
+</p>
 
-<div class="card" onclick="location.href='index.html'">
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:40px;">
+
+<a href="index.html" style="text-decoration:none;color:inherit;">
+<div class="card" style="width:260px;">
 <h3>Central Campus</h3>
-<p>Main Gibraltar system</p>
+<p>Main Gibraltar node of the MU System.</p>
 </div>
+</a>
 
-<div class="card" onclick="location.href='ceuta.html'">
+<a href="ceuta.html" style="text-decoration:none;color:inherit;">
+<div class="card" style="width:260px;">
 <h3>Campus de Ceuta</h3>
-<p>Spanish branch system</p>
+<p>Intercontinental Bridge access point.</p>
 </div>
+</a>
 
-<div class="card" onclick="location.href='faculties.html'">
+<a href="faculties.html" style="text-decoration:none;color:inherit;">
+<div class="card" style="width:260px;">
 <h3>Faculties</h3>
-<p>Academic structure</p>
+<p>Academic structure and departments.</p>
+</div>
+</a>
+
 </div>
 
-</section>
+</main>
 
-<footer style="text-align:center;padding:20px;opacity:0.7;">
-MU System — App Mode Active
+<footer style="text-align:center;padding:30px;opacity:.6;">
+MU System
 </footer>
 
 </body>
