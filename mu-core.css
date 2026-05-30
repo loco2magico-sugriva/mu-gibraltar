@@ -1,10 +1,10 @@
-body {
+body{
 margin:0;
 font-family:Arial,sans-serif;
+background:#0B0E14;
 color:#E6E6E6;
 }
 
-/* HEADER SYSTEM */
 header{
 display:flex;
 justify-content:space-between;
@@ -12,10 +12,6 @@ align-items:center;
 padding:18px 24px;
 border-bottom:1px solid #222;
 background:#0E1118;
-}
-
-header b{
-letter-spacing:1px;
 }
 
 nav a{
@@ -29,13 +25,11 @@ nav a:hover{
 opacity:1;
 }
 
-/* PAGE TITLE */
 h1{
 text-align:center;
 margin-top:40px;
 }
 
-/* CARDS */
 .card{
 border:1px solid #2a3342;
 background:#121826;
