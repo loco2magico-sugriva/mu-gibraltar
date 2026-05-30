@@ -1,78 +1,92 @@
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background:#0B0E14;
+background:#0A0D14;
 color:#E6E6E6;
 }
 
-/* HEADER SYSTEM */
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 24px;
-border-bottom:1px solid #222;
+border-bottom:1px solid #1f2a3a;
 background:#0E1118;
 }
 
 header b{
-letter-spacing:1px;
+letter-spacing:2px;
+font-size:14px;
 }
 
 nav a{
 color:#E6E6E6;
 text-decoration:none;
 margin-left:14px;
-opacity:0.7;
+opacity:0.6;
+font-size:14px;
 }
 
 nav a:hover{
 opacity:1;
+color:#4aa3ff;
 }
 
-/* HERO SECTION */
+/* HERO (MUO GRADE LOOK) */
 .hero{
 text-align:center;
-margin-top:40px;
+margin-top:60px;
 padding:0 20px;
 }
 
 .hero h1{
-font-size:36px;
+font-size:48px;
+letter-spacing:3px;
 margin-bottom:10px;
 }
 
 .hero p{
 opacity:0.7;
+margin:6px 0;
 }
 
-/* CARDS GRID */
+/* CARD GRID (MU SYSTEM STYLE) */
 .cards{
 display:flex;
-gap:16px;
+gap:20px;
 justify-content:center;
 flex-wrap:wrap;
-margin-top:40px;
+margin-top:60px;
 padding:0 20px;
 }
 
-/* CARD SYSTEM */
+/* PREMIUM CARDS */
 .card{
 width:260px;
-background:#121826;
-border:1px solid #2a3342;
-padding:18px;
-border-radius:12px;
-transition:0.2s;
+background:linear-gradient(180deg,#121826,#0f1420);
+border:1px solid #263246;
+padding:20px;
+border-radius:14px;
+transition:0.25s ease;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-4px);
+transform:translateY(-6px);
 border-color:#4aa3ff;
+box-shadow:0 15px 40px rgba(74,163,255,0.15);
 }
 
-/* OPTIONAL LINK RESET (for clean clickable cards) */
+/* LINKS INSIDE CARDS */
 a{
 color:inherit;
 text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+font-size:12px;
+opacity:0.5;
 }
