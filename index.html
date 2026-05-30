@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MU OS</title>
+<title>MU OS PRO</title>
 
 <style>
 body{
@@ -14,51 +14,80 @@ color:#E6E6E6;
 overflow:hidden;
 }
 
+/* TOP BAR */
 header{
-padding:18px 24px;
-border-bottom:1px solid #222;
 display:flex;
 justify-content:space-between;
+align-items:center;
+padding:16px 22px;
+border-bottom:1px solid #222;
+background:#0E1118;
 }
 
+.title{
+font-weight:bold;
+letter-spacing:1px;
+}
+
+/* NAV */
 nav button{
 background:none;
 border:1px solid #2a3342;
 color:#E6E6E6;
 padding:8px 12px;
-margin-left:8px;
+margin-left:6px;
 border-radius:8px;
 cursor:pointer;
+transition:0.2s;
 }
 
 nav button:hover{
 background:#1a2233;
+transform:scale(1.05);
 }
 
+/* VIEWS */
 .view{
-display:none;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+height:calc(100% - 60px);
 padding:60px 20px;
 text-align:center;
-animation:fade 0.3s ease;
+
+opacity:0;
+transform:translateY(15px);
+pointer-events:none;
+transition:0.35s ease;
 }
 
-.active{
-display:block;
+.view.active{
+opacity:1;
+transform:translateY(0);
+pointer-events:auto;
 }
 
-@keyframes fade{
-from{opacity:0; transform:translateY(10px);}
-to{opacity:1; transform:translateY(0);}
-}
-
+/* CARD */
 .card{
 margin-top:20px;
-padding:20px;
+padding:22px;
 border:1px solid #2a3342;
 border-radius:12px;
 background:#121826;
 display:inline-block;
-min-width:260px;
+min-width:280px;
+box-shadow:0 0 0 rgba(0,0,0,0);
+transition:0.2s;
+}
+
+.card:hover{
+box-shadow:0 0 18px rgba(74,163,255,0.15);
+transform:scale(1.03);
+}
+
+h1{
+margin-top:0;
 }
 </style>
 </head>
@@ -66,7 +95,7 @@ min-width:260px;
 <body>
 
 <header>
-<div><b>MU OS SYSTEM</b></div>
+<div class="title">MU OS PRO</div>
 
 <nav>
 <button onclick="show('home')">Home</button>
@@ -79,25 +108,25 @@ min-width:260px;
 <!-- HOME -->
 <div id="home" class="view active">
 <h1>MU CONTROL SYSTEM</h1>
-<p>Unified operating system interface</p>
+<p>Unified operating interface for MU architecture</p>
 </div>
 
 <!-- GIBRALTAR -->
 <div id="gib" class="view">
 <h1>Gibraltar Core</h1>
-<div class="card">Main system nucleus</div>
+<div class="card">Central intelligence layer of MU system</div>
 </div>
 
 <!-- CEUTA -->
 <div id="ceuta" class="view">
 <h1>Ceuta Bridge</h1>
-<div class="card">Intercontinental transfer layer</div>
+<div class="card">Intercontinental transition node</div>
 </div>
 
 <!-- FACULTIES -->
 <div id="fac" class="view">
-<h1>Faculties</h1>
-<div class="card">Humanities / Tech / History System</div>
+<h1>Faculties System</h1>
+<div class="card">Humanities • Technology • History Layer</div>
 </div>
 
 <script>
