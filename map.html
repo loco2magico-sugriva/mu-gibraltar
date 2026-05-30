@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MU Map 2.0</title>
+<title>MU Map 3.0</title>
 
 <style>
 body{
@@ -20,7 +20,7 @@ border-bottom:1px solid #222;
 }
 
 h1{
-margin-top:40px;
+margin-top:35px;
 font-size:42px;
 }
 
@@ -29,7 +29,8 @@ max-width:600px;
 margin:60px auto;
 display:flex;
 flex-direction:column;
-gap:18px;
+gap:10px;
+position:relative;
 }
 
 .node{
@@ -39,11 +40,13 @@ border-radius:12px;
 background:#121826;
 cursor:pointer;
 transition:0.25s;
+position:relative;
+z-index:2;
 }
 
 .node:hover{
-background:#1a2233;
 transform:scale(1.03);
+background:#1a2233;
 }
 
 .active{
@@ -53,8 +56,23 @@ box-shadow:0 0 18px rgba(74,163,255,0.25);
 }
 
 .line{
-opacity:0.4;
-font-size:20px;
+height:30px;
+width:2px;
+background:#2a3342;
+margin:0 auto;
+opacity:0.7;
+transition:0.3s;
+}
+
+.line.active-line{
+background:#4aa3ff;
+box-shadow:0 0 10px rgba(74,163,255,0.4);
+}
+
+.info{
+margin-top:40px;
+color:#bdbdbd;
+min-height:40px;
 }
 </style>
 </head>
@@ -62,41 +80,59 @@ font-size:20px;
 <body>
 
 <header>
-<b>MU SYSTEM MAP 2.0</b>
+<b>MU SYSTEM MAP 3.0</b>
 </header>
 
-<h1>Interactive World Structure</h1>
+<h1>System Flow</h1>
 
 <div class="map">
 
-<div class="node" onclick="setActive(this)">
+<div class="node" onclick="selectNode(this,'Gibraltar Core System')">
 🏛 Gibraltar — Core System
 </div>
 
-<div class="line">↓</div>
+<div class="line"></div>
 
-<div class="node" onclick="setActive(this)">
+<div class="node" onclick="selectNode(this,'Ceuta Bridge Layer')">
 🌉 Ceuta — Intercontinental Bridge
 </div>
 
-<div class="line">↓</div>
+<div class="line"></div>
 
-<div class="node" onclick="setActive(this)">
+<div class="node" onclick="selectNode(this,'Faculties Knowledge Layer')">
 📚 Faculties — Knowledge System
 </div>
 
 </div>
 
-<script>
-function setActive(el){
+<div class="info" id="info">
+Kliknij w węzeł, aby aktywować warstwę systemu MU
+</div>
 
-// remove previous active
+<script>
+function selectNode(el, text){
+
+// reset nodes
 document.querySelectorAll('.node').forEach(n=>{
 n.classList.remove('active');
 });
 
-// set new active
+// reset lines
+document.querySelectorAll('.line').forEach(l=>{
+l.classList.remove('active-line');
+});
+
+// activate node
 el.classList.add('active');
+
+// activate previous line if exists
+let prev = el.previousElementSibling;
+if(prev && prev.classList.contains('line')){
+prev.classList.add('active-line');
+}
+
+// update info
+document.getElementById('info').innerText = "ACTIVE: " + text;
 }
 </script>
 
