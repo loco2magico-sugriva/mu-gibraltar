@@ -6,6 +6,19 @@
 <title>MU System</title>
 
 <link rel="stylesheet" href="mu-core.css">
+
+<style>
+/* App Mode improvements */
+.card{
+cursor:pointer;
+transition:0.2s;
+}
+
+.card:hover{
+transform:scale(1.02);
+border-color:#4aa3ff;
+}
+</style>
 </head>
 
 <body>
@@ -27,25 +40,25 @@
 
 <section class="cards">
 
-<div class="card">
+<div class="card" onclick="location.href='index.html'">
 <h3>Central Campus</h3>
-<p>Academic and narrative core of MU located in Gibraltar.</p>
+<p>Main Gibraltar system</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="location.href='ceuta.html'">
 <h3>Campus de Ceuta</h3>
-<p>Spanish branch focused on exchange and regional system.</p>
+<p>Spanish branch system</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="location.href='faculties.html'">
 <h3>Faculties</h3>
-<p>Research and academic structure of MU system.</p>
+<p>Academic structure</p>
 </div>
 
 </section>
 
 <footer style="text-align:center;padding:20px;opacity:0.7;">
-MU System — Gibraltar / Ceuta / Faculties
+MU System — App Mode Active
 </footer>
 
 </body>
