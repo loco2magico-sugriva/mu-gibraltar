@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MU System Dashboard</title>
+<title>MU OS</title>
 
 <style>
 body{
@@ -11,59 +11,54 @@ margin:0;
 font-family:Arial,sans-serif;
 background:#0B0E14;
 color:#E6E6E6;
+overflow:hidden;
 }
 
 header{
-padding:20px 30px;
+padding:18px 24px;
 border-bottom:1px solid #222;
 display:flex;
 justify-content:space-between;
-align-items:center;
 }
 
-h1{
-text-align:center;
-margin-top:50px;
-font-size:44px;
-}
-
-.sub{
-text-align:center;
-color:#bdbdbd;
-margin-top:10px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:900px;
-margin:60px auto;
-padding:0 20px;
-}
-
-.card{
-background:#121826;
+nav button{
+background:none;
 border:1px solid #2a3342;
-border-radius:12px;
-padding:20px;
-text-align:center;
-cursor:pointer;
-transition:0.2s;
-text-decoration:none;
 color:#E6E6E6;
-display:block;
+padding:8px 12px;
+margin-left:8px;
+border-radius:8px;
+cursor:pointer;
 }
 
-.card:hover{
-transform:scale(1.03);
+nav button:hover{
 background:#1a2233;
 }
 
-.small{
-color:#bdbdbd;
-font-size:14px;
-margin-top:8px;
+.view{
+display:none;
+padding:60px 20px;
+text-align:center;
+animation:fade 0.3s ease;
+}
+
+.active{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.card{
+margin-top:20px;
+padding:20px;
+border:1px solid #2a3342;
+border-radius:12px;
+background:#121826;
+display:inline-block;
+min-width:260px;
 }
 </style>
 </head>
@@ -71,36 +66,50 @@ margin-top:8px;
 <body>
 
 <header>
-<div><b>MU SYSTEM</b></div>
-<div>Dashboard</div>
+<div><b>MU OS SYSTEM</b></div>
+
+<nav>
+<button onclick="show('home')">Home</button>
+<button onclick="show('gib')">Gibraltar</button>
+<button onclick="show('ceuta')">Ceuta</button>
+<button onclick="show('fac')">Faculties</button>
+</nav>
 </header>
 
-<h1>MU Control System</h1>
-<div class="sub">Unified interface for Gibraltar, Ceuta and Faculties</div>
-
-<div class="grid">
-
-<a class="card" href="index.html">
-🏛 Gibraltar Core
-<div class="small">Main system hub</div>
-</a>
-
-<a class="card" href="ceuta.html">
-🌉 Ceuta Bridge
-<div class="small">Intercontinental transfer layer</div>
-</a>
-
-<a class="card" href="faculties.html">
-📚 Faculties
-<div class="small">Knowledge architecture</div>
-</a>
-
-<a class="card" href="map.html">
-🌍 MU Map
-<div class="small">System topology view</div>
-</a>
-
+<!-- HOME -->
+<div id="home" class="view active">
+<h1>MU CONTROL SYSTEM</h1>
+<p>Unified operating system interface</p>
 </div>
+
+<!-- GIBRALTAR -->
+<div id="gib" class="view">
+<h1>Gibraltar Core</h1>
+<div class="card">Main system nucleus</div>
+</div>
+
+<!-- CEUTA -->
+<div id="ceuta" class="view">
+<h1>Ceuta Bridge</h1>
+<div class="card">Intercontinental transfer layer</div>
+</div>
+
+<!-- FACULTIES -->
+<div id="fac" class="view">
+<h1>Faculties</h1>
+<div class="card">Humanities / Tech / History System</div>
+</div>
+
+<script>
+function show(id){
+
+document.querySelectorAll('.view').forEach(v=>{
+v.classList.remove('active');
+});
+
+document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
