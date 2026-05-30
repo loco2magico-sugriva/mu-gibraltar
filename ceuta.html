@@ -1,9 +1,19 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Faculties - MU</title><style>
-body{margin:0;font-family:Arial,sans-serif;background:#0E0F12;color:#E6E6E6;text-align:center;}
+<title>Ceuta Intercontinental Bridge - MU</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0B0E14;
+color:#E6E6E6;
+text-align:center;
+}
+
 header{
 display:flex;
 justify-content:space-between;
@@ -11,71 +21,102 @@ align-items:center;
 padding:20px 40px;
 border-bottom:1px solid #222;
 }
-nav a{color:#E6E6E6;text-decoration:none;margin-left:15px;opacity:.7;}
-nav a:hover{opacity:1;}
-.lang{cursor:pointer;margin-left:10px;opacity:.7;}
-.lang:hover{opacity:1;}
-.section{padding:80px 20px;max-width:1000px;margin:auto;}
-.card{
-border:1px solid #333;
-padding:18px;
-margin:10px;
-display:inline-block;
-background:#12141a;
-border-radius:10px;
-min-width:220px;
+
+nav a{
+color:#E6E6E6;
+text-decoration:none;
+margin-left:15px;
+opacity:.7;
 }
-h1{font-size:44px;margin-bottom:40px;}
-</style></head><body><header>
+
+nav a:hover{opacity:1;}
+
+.lang span{
+cursor:pointer;
+margin-left:10px;
+opacity:.7;
+}
+
+.lang span:hover{opacity:1;}
+
+.hero{
+padding:110px 20px;
+max-width:900px;
+margin:auto;
+}
+
+h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+p{
+color:#bdbdbd;
+line-height:1.6;
+font-size:18px;
+}
+
+.bridge{
+margin-top:40px;
+padding:20px;
+border:1px solid #2a3342;
+display:inline-block;
+border-radius:12px;
+background:#121826;
+}
+</style>
+</head>
+
+<body>
+
+<header>
 <div><b>MU SYSTEM</b></div>
+
 <nav>
 <a href="index.html">Gibraltar</a>
-<a href="ceuta.html">Campus de Ceuta</a>
+<a href="ceuta.html">Ceuta Bridge</a>
 <a href="faculties.html">Faculties</a>
-</nav><div>
-<span class="lang" onclick="setLang('en')">EN</span>
-<span class="lang" onclick="setLang('pl')">PL</span>
-<span class="lang" onclick="setLang('es')">ES</span>
-<span class="lang" onclick="setLang('fr')">FR</span>
+</nav>
+
+<div class="lang">
+<span onclick="setLang('en')">EN</span>
+<span onclick="setLang('es')">ES</span>
 </div>
-</header><section class="section"><h1 id="title">Faculties</h1><div class="card" id="f1">Wydział Humanistyczny</div>
-<div class="card" id="f2">Wydział Technologii Zaawansowanych</div>
-<div class="card" id="f3">Wydział Historii Oręża</div></section><script>
+</header>
+
+<section class="hero">
+
+<h1 id="title">Ceuta Intercontinental Bridge</h1>
+
+<p id="text">
+A strategic MU node connecting Gibraltar (Europe) and the African system layer.
+Information, data and academic structures pass through this bridge layer.
+</p>
+
+<div class="bridge" id="status">
+BRIDGE STATUS: ACTIVE
+</div>
+
+</section>
+
+<script>
 function setLang(lang){
 
 const t={
- en:{
- title:'Faculties',
- f1:'Faculty of Humanities',
- f2:'Faculty of Advanced Technologies',
- f3:'Faculty of Military History'
- },
- pl:{
- title:'Wydziały',
- f1:'Wydział Humanistyczny',
- f2:'Wydział Technologii Zaawansowanych',
- f3:'Wydział Historii Oręża'
- },
- es:{
- title:'Facultades',
- f1:'Facultad de Humanidades',
- f2:'Facultad de Tecnologías Avanzadas',
- f3:'Facultad de Historia Militar'
- },
- fr:{
- title:'Facultés',
- f1:'Faculté des Sciences Humaines',
- f2:'Faculté des Technologies Avancées',
- f3:'Faculté d’Histoire Militaire'
- }
+en:{
+title:"Ceuta Intercontinental Bridge",
+text:"A strategic MU node connecting Gibraltar (Europe) and the African system layer. Information, data and academic structures pass through this bridge layer."
+},
+es:{
+title:"Puente Intercontinental de Ceuta",
+text:"Un nodo estratégico del sistema MU que conecta Gibraltar (Europa) con la capa africana del sistema. Información, datos y estructuras académicas pasan por esta capa."
+}
 };
 
-const d=t[lang];
-
-document.getElementById('title').innerText=d.title;
-document.getElementById('f1').innerText=d.f1;
-document.getElementById('f2').innerText=d.f2;
-document.getElementById('f3').innerText=d.f3;
+document.getElementById("title").innerText=t[lang].title;
+document.getElementById("text").innerText=t[lang].text;
 }
-</script></body>
+</script>
+
+</body>
 </html>
