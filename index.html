@@ -3,18 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUoG System</title>
+<title>MUoG</title>
 
 <link rel="stylesheet" href="mu-core.css">
+
+<style>
+/* Netflix-style overlay upgrade (minimal, bez zmiany CSS core) */
+body{
+background: radial-gradient(circle at top, #111827, #0A0D14);
+}
+
+.hero{
+margin-top:80px;
+}
+
+.hero h1{
+font-size:56px;
+letter-spacing:4px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.top-badge{
+text-align:center;
+margin-top:10px;
+opacity:0.5;
+font-size:12px;
+letter-spacing:2px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-<div><b>MUoG SYSTEM</b></div>
+<div><b>MUoG</b></div>
 
 <nav>
-<a href="index.html">Gibraltar</a>
+<a href="index.html">Home</a>
 <a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
 </nav>
@@ -23,30 +51,30 @@
 <section class="hero">
 <h1>MUoG</h1>
 <p>powered by the G-System</p>
-<p style="opacity:0.6;">Monkeys University of Gibraltar</p>
+<div class="top-badge">ORIGINAL SCI-FI SYSTEM</div>
 </section>
 
 <section class="cards">
 
-<div class="card" onclick="location.href='index.html'">
-<h3>Central Campus</h3>
-<p>Main Gibraltar system</p>
-</div>
-
 <div class="card" onclick="location.href='ceuta.html'">
-<h3>Campus de Ceuta</h3>
-<p>Intercontinental bridge node</p>
+<h3>Continue Watching</h3>
+<p>Campus de Ceuta — Intercontinental Node</p>
 </div>
 
 <div class="card" onclick="location.href='faculties.html'">
-<h3>Faculties</h3>
-<p>Advanced research structure</p>
+<h3>Explore System</h3>
+<p>Faculties of MUoG Universe</p>
+</div>
+
+<div class="card">
+<h3>Episode 1 (Coming)</h3>
+<p>Sugriwa Initialization Event</p>
 </div>
 
 </section>
 
-<footer style="text-align:center;padding:30px;opacity:0.6;">
-MUoG — G-System Operational Core
+<footer style="text-align:center;padding:40px;opacity:0.5;">
+MUoG — A G-System Original
 </footer>
 
 </body>
