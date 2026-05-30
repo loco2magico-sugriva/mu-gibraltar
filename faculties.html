@@ -1,104 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Faculties - MU</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUoG Faculties</title>
+
 <link rel="stylesheet" href="mu-core.css">
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#0E0F12;color:#E6E6E6;text-align:center;}
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-border-bottom:1px solid #222;
-}
-nav a{color:#E6E6E6;text-decoration:none;margin-left:15px;opacity:.7;}
-nav a:hover{opacity:1;}
-.lang span{cursor:pointer;margin-left:10px;opacity:.7;}
-.lang span:hover{opacity:1;}
-.section{padding:80px 20px;max-width:1000px;margin:auto;}
-.card{
-border:1px solid #333;
-padding:18px;
-margin:10px;
-display:inline-block;
-background:#12141a;
-border-radius:10px;
-min-width:220px;
-}
-h1{font-size:44px;margin-bottom:40px;}
-</style>
 </head>
 
 <body>
 
 <header>
-<div><b>MU SYSTEM</b></div>
+<div><b>MUoG SYSTEM</b></div>
 
 <nav>
 <a href="index.html">Gibraltar</a>
-<a href="ceuta.html">Ceuta Bridge</a>
+<a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
 </nav>
-
-<div>
-<span class="lang" onclick="setLang('en')">EN</span>
-<span class="lang" onclick="setLang('pl')">PL</span>
-<span class="lang" onclick="setLang('es')">ES</span>
-<span class="lang" onclick="setLang('fr')">FR</span>
-</div>
 </header>
 
-<section class="section">
+<section class="hero">
+<h1>Faculties of MUoG</h1>
+<p>Academic and operational structure of the G-System universe</p>
+</section>
 
-<h1 id="title">Faculties</h1>
+<section class="cards">
 
-<div class="card" id="f1">Wydział Humanistyczny</div>
-<div class="card" id="f2">Wydział Technologii Zaawansowanych</div>
-<div class="card" id="f3">Wydział Historii Oręża</div>
+<div class="card">
+<h3>Faculty of Advanced Technologies</h3>
+<p>G-System Core, simulation layers, AI structures, operational logic of MUoG.</p>
+</div>
+
+<div class="card">
+<h3>Faculty of Humanities</h3>
+<p>Narrative studies, historical interpretation, cultural archives of Gibraltar & Ceuta.</p>
+</div>
+
+<div class="card">
+<h3>Faculty of Military History</h3>
+<p>Conflict archives, strategic studies, Wojtek-related historical structures.</p>
+</div>
+
+<div class="card">
+<h3>Faculty of System Operations</h3>
+<p>Intercontinental Bridge, node synchronization, MUoG infrastructure control layer.</p>
+</div>
 
 </section>
 
-<script>
-function setLang(lang){
-
-const t={
- en:{
- title:'Faculties',
- f1:'Faculty of Humanities',
- f2:'Faculty of Advanced Technologies',
- f3:'Faculty of Military History'
- },
- pl:{
- title:'Wydziały',
- f1:'Wydział Humanistyczny',
- f2:'Wydział Technologii Zaawansowanych',
- f3:'Wydział Historii Oręża'
- },
- es:{
- title:'Facultades',
- f1:'Facultad de Humanidades',
- f2:'Facultad de Tecnologías Avanzadas',
- f3:'Facultad de Historia Militar'
- },
- fr:{
- title:'Facultés',
- f1:'Faculté des Sciences Humaines',
- f2:'Faculté des Technologies Avancées',
- f3:'Faculté d’Histoire Militaire'
- }
-};
-
-const d=t[lang];
-
-document.getElementById('title').innerText=d.title;
-document.getElementById('f1').innerText=d.f1;
-document.getElementById('f2').innerText=d.f2;
-document.getElementById('f3').innerText=d.f3;
-}
-</script>
+<footer style="text-align:center;padding:30px;opacity:0.6;">
+MUoG — Faculties Division
+</footer>
 
 </body>
 </html>
