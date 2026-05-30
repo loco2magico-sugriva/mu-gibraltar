@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MU Map System</title>
+<title>MU Map 2.0</title>
 
 <style>
 body{
@@ -20,16 +20,16 @@ border-bottom:1px solid #222;
 }
 
 h1{
-font-size:44px;
 margin-top:40px;
+font-size:42px;
 }
 
 .map{
-display:flex;
-flex-direction:column;
-gap:20px;
 max-width:600px;
 margin:60px auto;
+display:flex;
+flex-direction:column;
+gap:18px;
 }
 
 .node{
@@ -38,17 +38,23 @@ border:1px solid #2a3342;
 border-radius:12px;
 background:#121826;
 cursor:pointer;
-transition:0.2s;
+transition:0.25s;
 }
 
 .node:hover{
 background:#1a2233;
-transform:scale(1.02);
+transform:scale(1.03);
 }
 
-.arrow{
-font-size:22px;
-opacity:0.6;
+.active{
+border:1px solid #4aa3ff;
+background:#16243a;
+box-shadow:0 0 18px rgba(74,163,255,0.25);
+}
+
+.line{
+opacity:0.4;
+font-size:20px;
 }
 </style>
 </head>
@@ -56,30 +62,43 @@ opacity:0.6;
 <body>
 
 <header>
-<b>MU SYSTEM MAP</b>
+<b>MU SYSTEM MAP 2.0</b>
 </header>
 
-<h1>World Structure</h1>
+<h1>Interactive World Structure</h1>
 
 <div class="map">
 
-<a class="node" href="index.html">
+<div class="node" onclick="setActive(this)">
 🏛 Gibraltar — Core System
-</a>
+</div>
 
-<div class="arrow">↓</div>
+<div class="line">↓</div>
 
-<a class="node" href="ceuta.html">
+<div class="node" onclick="setActive(this)">
 🌉 Ceuta — Intercontinental Bridge
-</a>
+</div>
 
-<div class="arrow">↓</div>
+<div class="line">↓</div>
 
-<a class="node" href="faculties.html">
-📚 Faculties — Knowledge Structure
-</a>
+<div class="node" onclick="setActive(this)">
+📚 Faculties — Knowledge System
+</div>
 
 </div>
+
+<script>
+function setActive(el){
+
+// remove previous active
+document.querySelectorAll('.node').forEach(n=>{
+n.classList.remove('active');
+});
+
+// set new active
+el.classList.add('active');
+}
+</script>
 
 </body>
 </html>
