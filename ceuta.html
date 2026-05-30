@@ -1,70 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ceuta Intercontinental Bridge - MU</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus de Ceuta</title>
+
 <link rel="stylesheet" href="mu-core.css">
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#0B0E14;
-color:#E6E6E6;
-text-align:center;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-border-bottom:1px solid #222;
-}
-
-nav a{
-color:#E6E6E6;
-text-decoration:none;
-margin-left:15px;
-opacity:.7;
-}
-
-nav a:hover{opacity:1;}
-
-.lang span{
-cursor:pointer;
-margin-left:10px;
-opacity:.7;
-}
-
-.lang span:hover{opacity:1;}
-
-.hero{
-padding:110px 20px;
-max-width:900px;
-margin:auto;
-}
-
-h1{
-font-size:50px;
-margin-bottom:15px;
-}
-
-p{
-color:#bdbdbd;
-line-height:1.6;
-font-size:18px;
-}
-
-.bridge{
-margin-top:40px;
-padding:20px;
-border:1px solid #2a3342;
-display:inline-block;
-border-radius:12px;
-background:#121826;
-}
-</style>
 </head>
 
 <body>
@@ -74,49 +15,38 @@ background:#121826;
 
 <nav>
 <a href="index.html">Gibraltar</a>
-<a href="ceuta.html">Ceuta Bridge</a>
+<a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
 </nav>
-
-<div class="lang">
-<span onclick="setLang('en')">EN</span>
-<span onclick="setLang('es')">ES</span>
-</div>
 </header>
 
-<section class="hero">
+<main style="max-width:1000px;margin:40px auto;padding:0 20px;">
 
-<h1 id="title">Ceuta Intercontinental Bridge</h1>
+<h1>Campus de Ceuta</h1>
 
-<p id="text">
-A strategic MU node connecting Gibraltar (Europe) and the African system layer.
-Information, data and academic structures pass through this bridge layer.
+<p style="text-align:center;opacity:.8;">
+Intercontinental node connecting Europe and Africa within the MU System.
 </p>
 
-<div class="bridge" id="status">
-BRIDGE STATUS: ACTIVE
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:40px;">
+
+<div class="card" style="width:260px;">
+<h3>Intercontinental Bridge</h3>
+<p>Connection layer between Gibraltar and Ceuta.</p>
 </div>
 
-</section>
+<div class="card" style="width:260px;">
+<h3>Spanish Division</h3>
+<p>Regional academic and cultural programs.</p>
+</div>
 
-<script>
-function setLang(lang){
+<div class="card" style="width:260px;">
+<h3>Exchange Network</h3>
+<p>Cross-campus cooperation and development.</p>
+</div>
 
-const t={
-en:{
-title:"Ceuta Intercontinental Bridge",
-text:"A strategic MU node connecting Gibraltar (Europe) and the African system layer. Information, data and academic structures pass through this bridge layer."
-},
-es:{
-title:"Puente Intercontinental de Ceuta",
-text:"Un nodo estratégico del sistema MU que conecta Gibraltar (Europa) con la capa africana del sistema. Información, datos y estructuras académicas pasan por esta capa."
-}
-};
+</div>
 
-document.getElementById("title").innerText=t[lang].title;
-document.getElementById("text").innerText=t[lang].text;
-}
-</script>
-
-</body>
-</html>
+<div style="text-align:center;margin-top:40px;">
+<a href="index.html" style="text-decoration:none;">
+<div class="card" style="
