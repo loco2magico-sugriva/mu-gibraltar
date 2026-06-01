@@ -11,172 +11,163 @@
 body{
 margin:0;
 background:#070A10;
+color:#E6E6E6;
 font-family:Arial, sans-serif;
-overflow:hidden;
 }
 
-/* LOADING SCREEN */
-.loader{
-position:fixed;
-inset:0;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:#070A10;
-z-index:9999;
-animation:fadeOut 1s ease forwards;
-animation-delay:3.2s;
+/* TOP BANNER */
+.world-banner{
+width:100%;
+background:rgba(10,12,18,0.95);
+border-bottom:1px solid #1f2a3a;
+text-align:center;
+padding:10px 12px;
+font-size:12px;
+letter-spacing:1px;
+opacity:0.9;
+position:sticky;
+top:0;
+z-index:200;
 }
 
-.logo{
-font-size:48px;
-letter-spacing:8px;
+.world-banner span{
 color:#4aa3ff;
-text-shadow:0 0 20px rgba(74,163,255,0.4);
 }
 
-.text{
-margin-top:15px;
-opacity:0.7;
-letter-spacing:2px;
-font-size:13px;
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 22px;
+border-bottom:1px solid #1f2a3a;
 }
 
-.bar{
-width:220px;
-height:2px;
-background:#1f2a3a;
-margin-top:25px;
-overflow:hidden;
-position:relative;
+nav a{
+color:#E6E6E6;
+text-decoration:none;
+margin-left:15px;
+font-size:14px;
+opacity:0.8;
 }
 
-.bar::after{
-content:"";
-position:absolute;
-left:-50%;
-width:50%;
-height:100%;
-background:#4aa3ff;
-animation:load 3s linear forwards;
+nav a:hover{
+color:#4aa3ff;
+opacity:1;
 }
 
-@keyframes load{
-0%{ left:-50%; }
-100%{ left:100%; }
-}
-
-@keyframes fadeOut{
-to{
-opacity:0;
-visibility:hidden;
-}
-}
-
-/* MAIN PAGE */
-.main{
-opacity:0;
-animation:show 1s ease forwards;
-animation-delay:3.3s;
-}
-
-@keyframes show{
-to{ opacity:1; }
-}
-
+/* HERO */
 .hero{
 text-align:center;
-padding:120px 20px 60px;
-background:radial-gradient(circle at top, rgba(74,163,255,0.20), transparent 60%);
+padding:110px 20px 60px;
+background:radial-gradient(circle at top, rgba(74,163,255,0.18), transparent 60%);
 }
 
 .hero h1{
-font-size:76px;
+font-size:72px;
 letter-spacing:10px;
-margin-bottom:10px;
-text-shadow:0 0 30px rgba(74,163,255,0.25);
+margin:0;
+text-shadow:0 0 25px rgba(74,163,255,0.25);
 }
 
-.powered{
+.subtitle{
+margin-top:10px;
 opacity:0.6;
 letter-spacing:3px;
-margin-bottom:30px;
 font-size:12px;
 }
 
+/* FEATURE */
 .feature{
-max-width:950px;
-margin:0 auto;
-padding:30px;
-border-radius:18px;
+max-width:900px;
+margin:50px auto 0;
+padding:28px;
+border-radius:16px;
 background:linear-gradient(180deg,#121a2a,#0b101a);
 border:1px solid #263246;
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
+box-shadow:0 20px 60px rgba(0,0,0,0.5);
 text-align:left;
+}
+
+.badge{
+display:inline-block;
+padding:6px 12px;
+border:1px solid #4aa3ff;
+border-radius:20px;
+font-size:11px;
+opacity:0.8;
+margin-bottom:12px;
 }
 
 .cta{
 display:inline-block;
-margin-top:20px;
-padding:12px 18px;
+margin-top:18px;
+padding:11px 16px;
 border:1px solid #4aa3ff;
 color:#4aa3ff;
 border-radius:10px;
 text-decoration:none;
 transition:0.2s;
+font-size:14px;
 }
 
 .cta:hover{
-background:rgba(74,163,255,0.1);
+background:rgba(74,163,255,0.12);
 }
 
+/* GRID */
 .grid{
 display:flex;
-gap:24px;
+gap:20px;
 justify-content:center;
 flex-wrap:wrap;
-padding:40px 20px;
+padding:50px 20px;
 }
 
 .card{
-width:300px;
-padding:22px;
-border-radius:16px;
+width:280px;
+padding:20px;
+border-radius:14px;
 background:linear-gradient(180deg,#141a28,#0c111b);
 border:1px solid #263246;
 cursor:pointer;
-transition:0.25s;
-box-shadow:0 12px 35px rgba(0,0,0,0.5);
+transition:0.2s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-6px);
 border-color:#4aa3ff;
 }
 
+.card h3{
+margin:0 0 8px 0;
+}
+
+.card p{
+opacity:0.7;
+font-size:14px;
+line-height:1.4;
+}
+
+/* FOOTER NOTE */
 .lore{
 text-align:center;
-opacity:0.4;
+opacity:0.35;
+font-size:11px;
+margin:20px 0 40px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.5;
 font-size:12px;
-margin-top:40px;
 }
 </style>
 
 </head>
 
 <body>
-
-<!-- LOADING INTRO -->
-<div class="loader">
-<div class="logo">G-ROCK</div>
-<div class="text">POWERING G-SYSTEM</div>
-<div class="text">INITIALIZING MUO-G ARCHIVE</div>
-<div class="bar"></div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="main">
 
 <div class="world-banner">
 G-ROCK • Digital Universe Platform • 
@@ -197,19 +188,20 @@ G-ROCK • Digital Universe Platform •
 <section class="hero">
 
 <h1>G-ROCK</h1>
-
-<div class="powered">POWERED BY G-SYSTEM</div>
+<div class="subtitle">DIGITAL UNIVERSE PLATFORM</div>
 
 <div class="feature">
 
+<div class="badge">FEATURED EVENT</div>
+
 <h2>MUO-G: Episode 1 — Sugriwa Initialization</h2>
 
-<p style="opacity:0.75;">
+<p style="opacity:0.75; line-height:1.5;">
 A system anomaly originating from Gibraltar Core Node.
 First recorded interaction between reality layers and G-System architecture.
 </p>
 
-<a class="cta" href="episode1.html">▶ Enter Experience</a>
+<a class="cta" href="episode1.html">▶ ENTER EXPERIENCE</a>
 
 </div>
 
@@ -219,12 +211,12 @@ First recorded interaction between reality layers and G-System architecture.
 
 <div class="card" onclick="location.href='season1.html'">
 <h3>Series Archive</h3>
-<p>All recorded narrative events inside the G-Rock universe.</p>
+<p>Recorded narrative events inside the G-Rock universe.</p>
 </div>
 
 <div class="card" onclick="location.href='map.html'">
 <h3>World Map</h3>
-<p>Gibraltar, Ceuta and system nodes visualization.</p>
+<p>Gibraltar, Ceuta and system node visualization.</p>
 </div>
 
 <div class="card" onclick="location.href='g-system.html'">
@@ -235,14 +227,12 @@ First recorded interaction between reality layers and G-System architecture.
 </section>
 
 <div class="lore">
-MUO-G is a subsystem archive layer of the G-Rock universe
+MUO-G operates as a subsystem layer within the G-Rock universe
 </div>
 
-<footer style="text-align:center;padding:50px;opacity:0.5;">
+<footer>
 G-ROCK — Digital Universe Platform
 </footer>
 
-</div>
-
 </body>
-</html>
+  </html>
