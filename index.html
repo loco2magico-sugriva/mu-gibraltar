@@ -14,7 +14,7 @@ font-family:Arial, sans-serif;
 overflow:hidden;
 }
 
-/* ===== INTRO ===== */
+/* INTRO */
 .intro{
 position:fixed;
 inset:0;
@@ -32,24 +32,22 @@ font-size:42px;
 letter-spacing:6px;
 opacity:0;
 animation:fadeIn 1.2s ease forwards;
-transform:translateY(10px);
 }
 
 .intro p{
 opacity:0;
 animation:fadeIn 1.2s ease 0.8s forwards;
 font-size:14px;
-transform:translateY(10px);
 }
 
-/* ===== MAIN ===== */
+/* MAIN */
 main{
 opacity:0;
 animation:show 0.6s ease 4s forwards;
 padding:20px;
 }
 
-/* HEADER */
+/* HEADER MENU */
 header{
 display:flex;
 justify-content:space-between;
@@ -58,9 +56,21 @@ padding:15px;
 border-bottom:1px solid #1f2a3a;
 }
 
+nav a{
+color:white;
+text-decoration:none;
+margin-right:15px;
+opacity:0.8;
+}
+
+nav a:hover{
+color:#4aa3ff;
+}
+
+/* HERO */
 .hero{
 text-align:center;
-padding:60px 20px;
+padding:50px 20px;
 }
 
 .hero h1{
@@ -72,6 +82,7 @@ margin:0;
 opacity:0.7;
 }
 
+/* CARD */
 .card{
 max-width:800px;
 margin:20px auto;
@@ -80,20 +91,18 @@ background:#111827;
 border-radius:12px;
 }
 
-/* LANG */
-.lang button{
-background:none;
-border:1px solid #4aa3ff;
-color:#4aa3ff;
-padding:4px 8px;
-margin-left:5px;
-cursor:pointer;
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+opacity:0.5;
+font-size:12px;
 }
 
 /* ANIMATIONS */
 @keyframes fadeIn{
-from{opacity:0; transform:translateY(15px); filter:blur(6px);}
-to{opacity:1; transform:translateY(0); filter:blur(0);}
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes fadeOut{
@@ -119,43 +128,31 @@ from{opacity:0;}
 <main>
 
 <header>
-<div>G-ROCK</div>
+<div><b>Monkeys University of Gibraltar</b></div>
 
-<div class="lang">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('es')">ES</button>
-<button onclick="setLang('pl')">PL</button>
-<button onclick="setLang('fr')">FR</button>
-</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="map.html">Map</a>
+<a href="season1.html">Episodes</a>
+<a href="g-system.html">System</a>
+</nav>
 </header>
 
 <section class="hero">
 <h1>G-ROCK</h1>
-<p id="subtitle">Powered by G-System</p>
+<p>Powered by G-System</p>
 </section>
 
 <div class="card">
 <h2>Professor Sugriva</h2>
-<p>
-First documented subject integrated into ESL / BSU system.
-</p>
+<p>First documented subject integrated into ESL / BSU system.</p>
 </div>
 
+<footer>
+G-ROCK • Monkeys University of Gibraltar
+</footer>
+
 </main>
-
-<script>
-const translations = {
-en:{subtitle:"Powered by G-System"},
-es:{subtitle:"Impulsado por G-System"},
-pl:{subtitle:"Napędzane przez G-System"},
-fr:{subtitle:"Propulsé por G-System"}
-};
-
-function setLang(lang){
-document.getElementById("subtitle").innerText =
-translations[lang].subtitle;
-}
-</script>
 
 </body>
 </html>
