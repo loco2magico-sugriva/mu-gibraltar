@@ -16,10 +16,7 @@ animation:boot 0.8s ease forwards;
 overflow-x:hidden;
 }
 
-/* =========================
-   BOOT ANIMATION
-========================= */
-
+/* BOOT ANIMATION */
 @keyframes boot{
 from{
 opacity:0;
@@ -33,23 +30,7 @@ filter:blur(0);
 }
 }
 
-/* =========================
-   TOP BANNER
-========================= */
-
-.world-banner{
-text-align:center;
-padding:10px;
-font-size:12px;
-border-bottom:1px solid #1f2a3a;
-background:#0b0f18;
-letter-spacing:1px;
-}
-
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -63,8 +44,6 @@ font-weight:bold;
 letter-spacing:2px;
 }
 
-/* NAV */
-
 nav a{
 color:#fff;
 text-decoration:none;
@@ -76,13 +55,9 @@ transition:0.2s;
 nav a:hover{
 color:#4aa3ff;
 opacity:1;
-transform:translateY(-1px);
 }
 
-/* =========================
-   LANG
-========================= */
-
+/* LANG */
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
@@ -90,7 +65,6 @@ color:#4aa3ff;
 padding:4px 8px;
 margin-left:5px;
 cursor:pointer;
-transition:0.2s;
 }
 
 .lang button:hover{
@@ -98,16 +72,10 @@ background:#4aa3ff;
 color:#000;
 }
 
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero{
 text-align:center;
-padding:80px 20px 40px;
-animation:fadeUp 0.8s ease forwards;
-opacity:0;
-animation-delay:0.2s;
+padding:80px 20px 30px;
 }
 
 .hero h1{
@@ -120,10 +88,7 @@ margin:0;
 opacity:0.7;
 }
 
-/* =========================
-   CARD
-========================= */
-
+/* CARD */
 .card{
 max-width:800px;
 margin:30px auto;
@@ -133,28 +98,10 @@ border-radius:12px;
 background:#111827;
 animation:fadeUp 0.8s ease forwards;
 opacity:0;
-animation-delay:0.35s;
+animation-delay:0.3s;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(12px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* =========================
-   LINKS GRID
-========================= */
-
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -164,28 +111,33 @@ margin:40px auto;
 padding:0 20px;
 }
 
-.grid .box{
+.box{
 background:#111827;
 border:1px solid #263246;
 border-radius:12px;
 padding:20px;
 cursor:pointer;
 transition:0.2s;
-animation:fadeUp 0.8s ease forwards;
 opacity:0;
+animation:fadeUp 0.8s ease forwards;
 }
 
-.grid .box:hover{
+.box:hover{
 transform:translateY(-4px);
 border-color:#4aa3ff;
 }
 
-.grid .box:nth-child(1){animation-delay:0.3s;}
-.grid .box:nth-child(2){animation-delay:0.4s;}
-.grid .box:nth-child(3){animation-delay:0.5s;}
+.box:nth-child(1){animation-delay:0.3s;}
+.box:nth-child(2){animation-delay:0.4s;}
+.box:nth-child(3){animation-delay:0.5s;}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
 
 /* FOOTER */
-
 footer{
 text-align:center;
 padding:40px;
@@ -193,24 +145,18 @@ opacity:0.5;
 font-size:12px;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="world-banner" data-i18n="banner">
-G-ROCK • Digital Universe • G-System Active • Gibraltar Node
-</div>
-
 <header>
-
 <div class="logo">G-ROCK</div>
 
 <nav>
-<a href="index.html" data-i18n="home">Home</a>
-<a href="map.html" data-i18n="map">Map</a>
-<a href="season1.html" data-i18n="episodes">Episodes</a>
-<a href="g-system.html" data-i18n="system">System</a>
+<a href="index.html">Home</a>
+<a href="map.html">Map</a>
+<a href="season1.html">Episodes</a>
+<a href="g-system.html">System</a>
 </nav>
 
 <div class="lang">
@@ -219,37 +165,24 @@ G-ROCK • Digital Universe • G-System Active • Gibraltar Node
 <button onclick="setLang('pl')">PL</button>
 <button onclick="setLang('fr')">FR</button>
 </div>
-
 </header>
 
 <section class="hero">
-
 <h1>G-ROCK</h1>
-<p data-i18n="subtitle">Powered by G-System</p>
-
+<p>Powered by G-System</p>
 </section>
 
 <div class="card">
 <h2>Professor Sugriva</h2>
-<p data-i18n="sugriva">
-First documented subject integrated into G-System academic layer (ESL / BSU classification).
+<p>
+First documented subject integrated into academic system (ESL / BSU classification).
 </p>
 </div>
 
 <div class="grid">
-
-<div class="box" onclick="location.href='map.html'">
-World Map
-</div>
-
-<div class="box" onclick="location.href='season1.html'">
-Episodes
-</div>
-
-<div class="box" onclick="location.href='g-system.html'">
-System Core
-</div>
-
+<div class="box" onclick="location.href='map.html'">World Map</div>
+<div class="box" onclick="location.href='season1.html'">Episodes</div>
+<div class="box" onclick="location.href='g-system.html'">System Core</div>
 </div>
 
 <footer>
@@ -257,36 +190,16 @@ G-ROCK • Powered by G-System
 </footer>
 
 <script>
-
-const translations = {
-en:{
-subtitle:"Powered by G-System",
-sugriva:"First documented subject integrated into G-System academic layer (ESL / BSU classification)."
-},
-es:{
-subtitle:"Impulsado por G-System",
-sugriva:"Primer sujeto documentado integrado en la capa académica del sistema."
-},
-pl:{
-subtitle:"Napędzane przez G-System",
-sugriva:"Pierwszy udokumentowany obiekt w systemie akademickim (ESL / BSU)."
-},
-fr:{
-subtitle:"Propulsé par G-System",
-sugriva:"Premier sujet documenté intégré au système académique."
-}
-};
-
 function setLang(lang){
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-const key = el.getAttribute("data-i18n");
-if(translations[lang][key]){
-el.innerText = translations[lang][key];
+const text = {
+en:"Powered by G-System",
+es:"Impulsado por G-System",
+pl:"Napędzane przez G-System",
+fr:"Propulsé par G-System"
+};
+document.querySelector(".hero p").innerText = text[lang];
 }
-});
-}
-
 </script>
 
 </body>
-  </html>
+</html>
