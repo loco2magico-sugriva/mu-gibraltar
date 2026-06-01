@@ -6,15 +6,21 @@
 <title>G-ROCK</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+text-rendering: geometricPrecision;
+-webkit-font-smoothing: antialiased;
+}
+
+body{
 background:#05070d;
 color:white;
 font-family:Arial, sans-serif;
-overflow:auto;
 }
 
-/* INTRO */
+/* ===== INTRO ===== */
 .intro{
 position:fixed;
 inset:0;
@@ -31,24 +37,24 @@ animation:fadeOut 0.8s ease 2.8s forwards;
 font-size:48px;
 letter-spacing:6px;
 opacity:0;
-animation:fadeIn 1s ease forwards;
+animation:fadeIn 0.8s ease forwards;
 }
 
 .intro p{
 font-size:14px;
 opacity:0;
-animation:fadeIn 1s ease 0.8s forwards;
+animation:fadeIn 0.8s ease 0.8s forwards;
 color:#aaa;
 }
 
-/* MAIN */
+/* ===== MAIN ===== */
 main{
 opacity:0;
 animation:show 0.8s ease 2.9s forwards;
 padding:20px;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
 display:flex;
 justify-content:space-between;
@@ -75,7 +81,7 @@ opacity:1;
 color:#4aa3ff;
 }
 
-/* LANG */
+/* ===== LANG ===== */
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
@@ -83,7 +89,6 @@ color:#4aa3ff;
 padding:5px 10px;
 margin-left:5px;
 cursor:pointer;
-transition:0.2s;
 }
 
 .lang button:hover{
@@ -91,7 +96,7 @@ background:#4aa3ff;
 color:black;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 text-align:center;
 padding:60px 20px;
@@ -106,7 +111,7 @@ margin:0;
 opacity:0.7;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card{
 max-width:800px;
 margin:20px auto;
@@ -116,7 +121,7 @@ border-radius:14px;
 border:1px solid #1f2a3a;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -141,7 +146,7 @@ border:1px solid #4aa3ff;
 box-shadow:0 0 18px rgba(74,163,255,0.3);
 }
 
-/* ANIMATIONS */
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(15px);}
 to{opacity:1; transform:translateY(0);}
@@ -163,14 +168,14 @@ to{opacity:1;}
 <!-- INTRO -->
 <div class="intro">
 <h1>G-ROCK PRESENTS</h1>
-<p>Monkey University of Gibraltar • Powered by G-System</p>
+<p>Monkeys University of Gibraltar • Powered by G-System</p>
 </div>
 
 <!-- MAIN -->
 <main>
 
 <header>
-<div><b>Monkey University of Gibraltar</b></div>
+<div><b>Monkeys University of Gibraltar</b></div>
 
 <nav>
 <a href="#">Home</a>
@@ -180,21 +185,21 @@ to{opacity:1;}
 </nav>
 
 <div class="lang">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('es')">ES</button>
-<button onclick="setLang('pl')">PL</button>
-<button onclick="setLang('fr')">FR</button>
+<button>EN</button>
+<button>ES</button>
+<button>PL</button>
+<button>FR</button>
 </div>
 </header>
 
 <section class="hero">
 <h1>G-ROCK</h1>
-<p id="text">Powered by G-System</p>
+<p>Powered by G-System</p>
 </section>
 
 <div class="card">
 <h2>Professor Sugriva</h2>
-<p>First documented subject integrated into system core.</p>
+<p>System core active.</p>
 </div>
 
 <div class="grid">
@@ -205,19 +210,6 @@ to{opacity:1;}
 </div>
 
 </main>
-
-<script>
-const texts = {
-en:"Powered by G-System",
-es:"Impulsado por G-System",
-pl:"Napędzane przez G-System",
-fr:"Propulsé par G-System"
-};
-
-function setLang(l){
-document.getElementById("text").innerText = texts[l];
-}
-</script>
 
 </body>
 </html>
