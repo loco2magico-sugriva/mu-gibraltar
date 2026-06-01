@@ -10,17 +10,15 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-text-rendering: geometricPrecision;
--webkit-font-smoothing: antialiased;
+font-family:Arial;
 }
 
 body{
 background:#05070d;
 color:white;
-font-family:Arial, sans-serif;
 }
 
-/* ===== INTRO ===== */
+/* INTRO */
 .intro{
 position:fixed;
 inset:0;
@@ -30,35 +28,28 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:fadeOut 0.8s ease 2.8s forwards;
+animation:fadeOut 0.8s ease 2.5s forwards;
 }
 
 .intro h1{
-font-size:52px;
-letter-spacing:8px;
+font-size:48px;
+letter-spacing:6px;
 text-transform:uppercase;
-opacity:0;
-transform:scale(1);
-animation:fadeInStable 0.8s ease forwards;
 }
 
 .intro p{
-font-size:14px;
-opacity:0;
-animation:fadeIn 0.8s ease 0.8s forwards;
-color:#aaa;
-text-align:center;
-padding:0 20px;
+opacity:0.7;
+margin-top:10px;
 }
 
-/* ===== MAIN ===== */
+/* MAIN */
 main{
 opacity:0;
-animation:show 0.8s ease 2.9s forwards;
+animation:show 0.8s ease 2.6s forwards;
 padding:20px;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -67,18 +58,11 @@ padding:15px;
 border-bottom:1px solid #1a2233;
 }
 
-header div{
-font-size:18px;
-letter-spacing:0.5px;
-text-transform:uppercase;
-}
-
 nav a{
 color:white;
 text-decoration:none;
-margin-right:15px;
+margin-right:10px;
 opacity:0.7;
-transition:0.2s;
 }
 
 nav a:hover{
@@ -86,14 +70,14 @@ opacity:1;
 color:#4aa3ff;
 }
 
-/* ===== LANG ===== */
+/* LANG */
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
 color:#4aa3ff;
 padding:5px 10px;
-margin-left:5px;
 cursor:pointer;
+margin-left:5px;
 }
 
 .lang button:hover{
@@ -101,71 +85,25 @@ background:#4aa3ff;
 color:black;
 }
 
-/* ===== HERO ===== */
-.hero{
-text-align:center;
-padding:60px 20px;
-}
-
-.hero h1{
-font-size:70px;
-margin:0;
-text-transform:uppercase;
-}
-
-.hero p{
-opacity:0.7;
-}
-
-/* ===== CARD ===== */
-.card{
-max-width:800px;
-margin:20px auto;
-padding:20px;
-background:#0f1626;
-border-radius:14px;
-border:1px solid #1f2a3a;
-}
-
-/* ===== GRID ===== */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
-max-width:900px;
-margin:40px auto;
+margin-top:30px;
 }
 
 .box{
 background:#0f1626;
-padding:25px;
-border-radius:14px;
+padding:20px;
+border-radius:10px;
 text-align:center;
 cursor:pointer;
-transition:0.25s;
-border:1px solid transparent;
-text-transform:uppercase;
 }
 
-.box:hover{
-transform:translateY(-6px);
-border:1px solid #4aa3ff;
-box-shadow:0 0 18px rgba(74,163,255,0.3);
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(15px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeInStable{
-from{opacity:0;}
-to{opacity:1;}
-}
-
+/* ANIM */
 @keyframes fadeOut{
-to{opacity:0; visibility:hidden; pointer-events:none;}
+to{opacity:0;visibility:hidden;}
 }
 
 @keyframes show{
@@ -180,48 +118,86 @@ to{opacity:1;}
 <!-- INTRO -->
 <div class="intro">
 <h1>G-ROCK PRESENTS</h1>
-<p>MONKEYS UNIVERSITY OF GIBRALTAR • POWERED BY G-SYSTEM</p>
+<p>Monkeys University of Gibraltar • Powered by G-System</p>
 </div>
 
-<!-- MAIN -->
 <main>
 
 <header>
-<div>MONKEYS UNIVERSITY OF GIBRALTAR</div>
+<div id="title">Monkeys University of Gibraltar</div>
 
 <nav>
-<a href="#">HOME</a>
-<a href="#">MAP</a>
-<a href="#">EPISODES</a>
-<a href="#">SYSTEM</a>
+<a href="#">Home</a>
+<a href="#">Map</a>
+<a href="#">Episodes</a>
+<a href="#">System</a>
 </nav>
 
 <div class="lang">
-<button>EN</button>
-<button>ES</button>
-<button>PL</button>
-<button>FR</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+<button onclick="setLang('pl')">PL</button>
+<button onclick="setLang('fr')">FR</button>
 </div>
 </header>
 
-<section class="hero">
+<section style="text-align:center;margin-top:40px;">
 <h1>G-ROCK</h1>
-<p>Powered by G-System</p>
+<p id="subtitle">Powered by G-System</p>
 </section>
 
-<div class="card">
-<h2>Professor Sugriva</h2>
-<p>System core active.</p>
-</div>
-
 <div class="grid">
-<div class="box">Gibraltar</div>
-<div class="box">Ceuta</div>
-<div class="box">Faculties</div>
+
+<div class="box" id="gibraltar">Gibraltar</div>
+<div class="box" id="ceuta">Ceuta</div>
+<div class="box" id="faculty">Faculty</div>
 <div class="box">System Core</div>
+
 </div>
 
 </main>
+
+<script>
+const langData = {
+en:{
+title:"Monkeys University of Gibraltar",
+subtitle:"Powered by G-System",
+gibraltar:"Gibraltar",
+ceuta:"Ceuta",
+faculty:"Faculty"
+},
+es:{
+title:"Universidad de los Monos de Gibraltar",
+subtitle:"Impulsado por G-System",
+gibraltar:"Gibraltar",
+ceuta:"Ceuta",
+faculty:"Facultad"
+},
+pl:{
+title:"Uniwersytet Małp Gibraltar",
+subtitle:"Napędzane przez G-System",
+gibraltar:"Gibraltar",
+ceuta:"Ceuta",
+faculty:"Wydział"
+},
+fr:{
+title:"Université des Singes de Gibraltar",
+subtitle:"Propulsé par G-System",
+gibraltar:"Gibraltar",
+ceuta:"Ceuta",
+faculty:"Faculté"
+}
+};
+
+function setLang(l){
+document.getElementById("title").innerText = langData[l].title;
+document.getElementById("subtitle").innerText = langData[l].subtitle;
+
+document.getElementById("gibraltar").innerText = langData[l].gibraltar;
+document.getElementById("ceuta").innerText = langData[l].ceuta;
+document.getElementById("faculty").innerText = langData[l].faculty;
+}
+</script>
 
 </body>
 </html>
