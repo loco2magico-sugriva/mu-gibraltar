@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G-ROCK</title>
+<title>G-ROCK DASHBOARD</title>
 
 <style>
 body{
@@ -28,8 +28,8 @@ animation:fadeOut 1s ease 3s forwards;
 }
 
 .intro h1{
-font-size:48px;
-letter-spacing:6px;
+font-size:50px;
+letter-spacing:8px;
 opacity:0;
 animation:fadeIn 1s ease forwards;
 }
@@ -41,37 +41,55 @@ animation:fadeIn 1s ease 1s forwards;
 color:#aaa;
 }
 
-/* MAIN */
+/* LAYOUT */
 main{
 opacity:0;
 animation:show 0.8s ease 3.6s forwards;
-padding:20px;
-}
-
-/* HEADER */
-header{
 display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-border-bottom:1px solid #1a2233;
+min-height:100vh;
 }
 
-nav a{
+/* SIDEBAR */
+.sidebar{
+width:220px;
+background:#0b1220;
+padding:20px;
+border-right:1px solid #1a2233;
+}
+
+.sidebar h3{
+margin-top:0;
+color:#4aa3ff;
+}
+
+.sidebar a{
+display:block;
 color:white;
 text-decoration:none;
-margin-right:15px;
+margin:15px 0;
 opacity:0.7;
 transition:0.2s;
 }
 
-nav a:hover{
+.sidebar a:hover{
 opacity:1;
 color:#4aa3ff;
-text-shadow:0 0 10px #4aa3ff;
 }
 
-/* LANG */
+/* CONTENT */
+.content{
+flex:1;
+padding:30px;
+}
+
+/* HEADER */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
@@ -79,7 +97,6 @@ color:#4aa3ff;
 padding:5px 10px;
 margin-left:5px;
 cursor:pointer;
-transition:0.2s;
 }
 
 .lang button:hover{
@@ -88,13 +105,8 @@ color:black;
 }
 
 /* HERO */
-.hero{
-text-align:center;
-padding:60px 20px;
-}
-
 .hero h1{
-font-size:70px;
+font-size:65px;
 margin:0;
 }
 
@@ -102,49 +114,53 @@ margin:0;
 opacity:0.7;
 }
 
-/* CARD */
-.card{
-max-width:800px;
-margin:20px auto;
-padding:20px;
-background:#0f1626;
-border-radius:14px;
-border:1px solid #1f2a3a;
-}
-
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
-max-width:900px;
-margin:40px auto;
+margin-top:30px;
 }
 
-.box{
+.card{
 background:#0f1626;
-padding:25px;
+padding:20px;
 border-radius:14px;
-text-align:center;
+border:1px solid #1f2a3a;
 cursor:pointer;
 transition:0.25s;
-border:1px solid transparent;
+position:relative;
+overflow:hidden;
 }
 
-.box:hover{
+.card:hover{
 transform:translateY(-6px);
-border:1px solid #4aa3ff;
-box-shadow:0 0 18px rgba(74,163,255,0.3);
+border-color:#4aa3ff;
+box-shadow:0 0 20px rgba(74,163,255,0.25);
 }
 
-/* ANIMATIONS */
+/* preview glow */
+.card::after{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at center, rgba(74,163,255,0.2), transparent);
+opacity:0;
+transition:0.3s;
+}
+
+.card:hover::after{
+opacity:1;
+}
+
+/* ANIM */
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(15px);}
 to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes fadeOut{
-to{opacity:0; visibility:hidden; pointer-events:none;}
+to{opacity:0; visibility:hidden;}
 }
 
 @keyframes show{
@@ -158,22 +174,27 @@ to{opacity:1;}
 
 <!-- INTRO -->
 <div class="intro">
-<h1>G-ROCK PRESENTS</h1>
+<h1>G-ROCK DASHBOARD</h1>
 <p>Monkey University of Gibraltar • Powered by G-System</p>
 </div>
 
-<!-- MAIN -->
 <main>
 
-<header>
-<div><b id="title">Monkey University of Gibraltar</b></div>
-
-<nav>
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h3>G-ROCK</h3>
 <a href="#">Home</a>
-<a href="#">Map</a>
-<a href="#">Episodes</a>
-<a href="#">System</a>
-</nav>
+<a href="#">Gibraltar</a>
+<a href="#">Ceuta</a>
+<a href="#">Faculties</a>
+<a href="#">System Core</a>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<div class="topbar">
+<div id="title"><b>Monkey University of Gibraltar</b></div>
 
 <div class="lang">
 <button onclick="setLang('en')">EN</button>
@@ -181,23 +202,22 @@ to{opacity:1;}
 <button onclick="setLang('pl')">PL</button>
 <button onclick="setLang('fr')">FR</button>
 </div>
-</header>
+</div>
 
-<section class="hero">
+<div class="hero">
 <h1>G-ROCK</h1>
 <p id="text">Powered by G-System</p>
-</section>
-
-<div class="card">
-<h2>Professor Sugriva</h2>
-<p>First documented subject integrated into system core.</p>
 </div>
 
 <div class="grid">
-<div class="box">Gibraltar</div>
-<div class="box">Ceuta</div>
-<div class="box">Faculties</div>
-<div class="box">System Core</div>
+
+<div class="card">Gibraltar Node</div>
+<div class="card">Ceuta Node</div>
+<div class="card">Faculties Layer</div>
+<div class="card">System Core</div>
+
+</div>
+
 </div>
 
 </main>
@@ -225,4 +245,3 @@ document.getElementById("title").innerText = titles[l];
 
 </body>
 </html>
-                                                              </html>
