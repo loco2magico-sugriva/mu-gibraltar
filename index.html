@@ -10,8 +10,32 @@ body{
 margin:0;
 background:#070A10;
 color:#E6E6E6;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
+opacity:0;
+animation:boot 0.8s ease forwards;
+overflow-x:hidden;
 }
+
+/* =========================
+   BOOT ANIMATION
+========================= */
+
+@keyframes boot{
+from{
+opacity:0;
+transform:translateY(12px);
+filter:blur(6px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+filter:blur(0);
+}
+}
+
+/* =========================
+   TOP BANNER
+========================= */
 
 .world-banner{
 text-align:center;
@@ -21,6 +45,10 @@ border-bottom:1px solid #1f2a3a;
 background:#0b0f18;
 letter-spacing:1px;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header{
 display:flex;
@@ -35,16 +63,25 @@ font-weight:bold;
 letter-spacing:2px;
 }
 
+/* NAV */
+
 nav a{
 color:#fff;
 text-decoration:none;
 margin-right:14px;
 opacity:0.8;
+transition:0.2s;
 }
 
 nav a:hover{
 color:#4aa3ff;
+opacity:1;
+transform:translateY(-1px);
 }
+
+/* =========================
+   LANG
+========================= */
 
 .lang button{
 background:none;
@@ -53,55 +90,101 @@ color:#4aa3ff;
 padding:4px 8px;
 margin-left:5px;
 cursor:pointer;
+transition:0.2s;
 }
+
+.lang button:hover{
+background:#4aa3ff;
+color:#000;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
 text-align:center;
-padding:90px 20px 40px;
+padding:80px 20px 40px;
+animation:fadeUp 0.8s ease forwards;
+opacity:0;
+animation-delay:0.2s;
 }
 
-.title{
-font-size:52px;
-letter-spacing:6px;
+.hero h1{
+font-size:64px;
+letter-spacing:8px;
 margin:0;
 }
 
-.subtitle{
-opacity:0.8;
-margin-top:10px;
+.hero p{
+opacity:0.7;
 }
 
-.panel{
-max-width:900px;
-margin:40px auto;
+/* =========================
+   CARD
+========================= */
+
+.card{
+max-width:800px;
+margin:30px auto;
 padding:25px;
-border-radius:16px;
-background:linear-gradient(180deg,#121a2a,#0b101a);
 border:1px solid #263246;
+border-radius:12px;
+background:#111827;
+animation:fadeUp 0.8s ease forwards;
+opacity:0;
+animation-delay:0.35s;
 }
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(12px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* =========================
+   LINKS GRID
+========================= */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
-max-width:1000px;
-margin:30px auto;
+max-width:900px;
+margin:40px auto;
 padding:0 20px;
 }
 
-.card{
+.grid .box{
 background:#111827;
 border:1px solid #263246;
 border-radius:12px;
-padding:22px;
+padding:20px;
 cursor:pointer;
-transition:0.25s;
+transition:0.2s;
+animation:fadeUp 0.8s ease forwards;
+opacity:0;
 }
 
-.card:hover{
+.grid .box:hover{
 transform:translateY(-4px);
 border-color:#4aa3ff;
 }
+
+.grid .box:nth-child(1){animation-delay:0.3s;}
+.grid .box:nth-child(2){animation-delay:0.4s;}
+.grid .box:nth-child(3){animation-delay:0.5s;}
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -110,21 +193,24 @@ opacity:0.5;
 font-size:12px;
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="world-banner" id="banner"></div>
+<div class="world-banner" data-i18n="banner">
+G-ROCK • Digital Universe • G-System Active • Gibraltar Node
+</div>
 
 <header>
 
 <div class="logo">G-ROCK</div>
 
 <nav>
-<a href="index.html" id="navHome">Home</a>
-<a href="map.html" id="navMap">World Map</a>
-<a href="season1.html" id="navEp">Episodes</a>
-<a href="g-system.html" id="navSys">G-System</a>
+<a href="index.html" data-i18n="home">Home</a>
+<a href="map.html" data-i18n="map">Map</a>
+<a href="season1.html" data-i18n="episodes">Episodes</a>
+<a href="g-system.html" data-i18n="system">System</a>
 </nav>
 
 <div class="lang">
@@ -138,145 +224,68 @@ font-size:12px;
 
 <section class="hero">
 
-<div class="title" id="title">G-ROCK</div>
-<div class="subtitle" id="subtitle1">Monkeys University of Gibraltar</div>
-<div class="subtitle" id="subtitle2">Powered by G-System</div>
+<h1>G-ROCK</h1>
+<p data-i18n="subtitle">Powered by G-System</p>
 
 </section>
 
-<section class="panel">
-
-<h2 id="welcomeTitle">Welcome</h2>
-
-<p id="welcomeText" style="opacity:0.8; line-height:1.6;">
-G-ROCK is a digital universe built around Gibraltar, the G-Rock State, the Monkeys University of Gibraltar and the G-System infrastructure layer.
+<div class="card">
+<h2>Professor Sugriva</h2>
+<p data-i18n="sugriva">
+First documented subject integrated into G-System academic layer (ESL / BSU classification).
 </p>
-
-</section>
-
-<section class="grid">
-
-<div class="card" onclick="location.href='map.html'">
-<h3 id="card1">World Map</h3>
-<p id="card1desc">Explore Gibraltar and key world nodes.</p>
 </div>
 
-<div class="card" onclick="location.href='season1.html'">
-<h3 id="card2">Episodes</h3>
-<p id="card2desc">Access the story archive including Professor Sugriva.</p>
+<div class="grid">
+
+<div class="box" onclick="location.href='map.html'">
+World Map
 </div>
 
-<div class="card" onclick="location.href='g-system.html'">
-<h3 id="card3">G-System</h3>
-<p id="card3desc">View system architecture and live simulation.</p>
+<div class="box" onclick="location.href='season1.html'">
+Episodes
 </div>
 
-</section>
+<div class="box" onclick="location.href='g-system.html'">
+System Core
+</div>
+
+</div>
 
 <footer>
-G-ROCK • Monkeys University of Gibraltar • Powered by G-System
+G-ROCK • Powered by G-System
 </footer>
 
 <script>
-const langData = {
+
+const translations = {
 en:{
-banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
-home:"Home",
-map:"World Map",
-episodes:"Episodes",
-system:"G-System",
-title:"G-ROCK",
-subtitle1:"Monkeys University of Gibraltar",
-subtitle2:"Powered by G-System",
-welcomeTitle:"Welcome",
-welcomeText:"G-ROCK is a digital universe built around Gibraltar, the G-Rock State, the Monkeys University of Gibraltar and the G-System infrastructure layer.",
-card1:"World Map",
-card1desc:"Explore Gibraltar and key world nodes.",
-card2:"Episodes",
-card2desc:"Access the story archive including Professor Sugriva.",
-card3:"G-System",
-card3desc:"View system architecture and live simulation."
+subtitle:"Powered by G-System",
+sugriva:"First documented subject integrated into G-System academic layer (ESL / BSU classification)."
 },
-
-pl:{
-banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
-home:"Start",
-map:"Mapa Świata",
-episodes:"Odcinki",
-system:"G-System",
-title:"G-ROCK",
-subtitle1:"Monkeys University of Gibraltar",
-subtitle2:"Napędzane przez G-System",
-welcomeTitle:"Witamy",
-welcomeText:"G-ROCK to cyfrowy świat oparty o Gibraltar, G-Rock State, Monkeys University of Gibraltar oraz G-System.",
-card1:"Mapa Świata",
-card1desc:"Poznaj Gibraltar i kluczowe lokalizacje.",
-card2:"Odcinki",
-card2desc:"Archiwum historii z Professor Sugriva.",
-card3:"G-System",
-card3desc:"System operacyjny uniwersum."
-},
-
 es:{
-banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
-home:"Inicio",
-map:"Mapa",
-episodes:"Episodios",
-system:"G-System",
-title:"G-ROCK",
-subtitle1:"Monkeys University of Gibraltar",
-subtitle2:"Impulsado por G-System",
-welcomeTitle:"Bienvenido",
-welcomeText:"G-ROCK es un universo digital basado en Gibraltar, G-Rock State, la universidad y el sistema G-System.",
-card1:"Mapa Mundial",
-card1desc:"Explora Gibraltar y nodos clave.",
-card2:"Episodios",
-card2desc:"Archivo con Professor Sugriva.",
-card3:"G-System",
-card3desc:"Arquitectura del sistema."
+subtitle:"Impulsado por G-System",
+sugriva:"Primer sujeto documentado integrado en la capa académica del sistema."
 },
-
+pl:{
+subtitle:"Napędzane przez G-System",
+sugriva:"Pierwszy udokumentowany obiekt w systemie akademickim (ESL / BSU)."
+},
 fr:{
-banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
-home:"Accueil",
-map:"Carte",
-episodes:"Épisodes",
-system:"G-System",
-title:"G-ROCK",
-subtitle1:"Monkeys University of Gibraltar",
-subtitle2:"Propulsé par G-System",
-welcomeTitle:"Bienvenue",
-welcomeText:"G-ROCK est un univers numérique basé sur Gibraltar, G-Rock State, l'université et le système G-System.",
-card1:"Carte du Monde",
-card1desc:"Explorez Gibraltar et les nœuds clés.",
-card2:"Épisodes",
-card2desc:"Archive avec Professor Sugriva.",
-card3:"G-System",
-card3desc:"Architecture du système."
+subtitle:"Propulsé par G-System",
+sugriva:"Premier sujet documenté intégré au système académique."
 }
 };
 
 function setLang(lang){
-document.getElementById("banner").innerText = langData[lang].banner;
-document.getElementById("navHome").innerText = langData[lang].home;
-document.getElementById("navMap").innerText = langData[lang].map;
-document.getElementById("navEp").innerText = langData[lang].episodes;
-document.getElementById("navSys").innerText = langData[lang].system;
-
-document.getElementById("title").innerText = langData[lang].title;
-document.getElementById("subtitle1").innerText = langData[lang].subtitle1;
-document.getElementById("subtitle2").innerText = langData[lang].subtitle2;
-
-document.getElementById("welcomeTitle").innerText = langData[lang].welcomeTitle;
-document.getElementById("welcomeText").innerText = langData[lang].welcomeText;
-
-document.getElementById("card1").innerText = langData[lang].card1;
-document.getElementById("card1desc").innerText = langData[lang].card1desc;
-document.getElementById("card2").innerText = langData[lang].card2;
-document.getElementById("card2desc").innerText = langData[lang].card2desc;
-document.getElementById("card3").innerText = langData[lang].card3;
-document.getElementById("card3desc").innerText = langData[lang].card3desc;
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const key = el.getAttribute("data-i18n");
+if(translations[lang][key]){
+el.innerText = translations[lang][key];
 }
+});
+}
+
 </script>
 
 </body>
