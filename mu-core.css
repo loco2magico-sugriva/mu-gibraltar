@@ -125,9 +125,27 @@ font-size:13px;
 .hero h1{
 font-size:42px;
 }
+  
 
 .card{
 width:100%;
 max-width:340px;
 }
+}
+.world-banner{
+width:100%;
+background:rgba(10,12,18,0.95);
+border-bottom:1px solid #1f2a3a;
+text-align:center;
+padding:10px 12px;
+font-size:13px;
+letter-spacing:1px;
+opacity:0.9;
+position:sticky;
+top:0;
+z-index:200;
+}
+
+.world-banner span{
+color:#4aa3ff;
 }
