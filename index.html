@@ -9,25 +9,44 @@
 body{
 margin:0;
 background:#070A10;
-color:#E6E6E6;
+color:white;
 font-family:Arial, sans-serif;
-opacity:0;
-animation:boot 0.8s ease forwards;
-overflow-x:hidden;
+overflow:hidden;
 }
 
-/* BOOT */
-@keyframes boot{
-from{
+/* ===== INTRO ===== */
+.intro{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 1s ease 3.5s forwards;
+}
+
+.intro h1{
+font-size:42px;
+letter-spacing:6px;
 opacity:0;
-transform:translateY(12px);
-filter:blur(6px);
+animation:fadeIn 1.2s ease forwards;
+transform:translateY(10px);
 }
-to{
-opacity:1;
-transform:translateY(0);
-filter:blur(0);
+
+.intro p{
+opacity:0;
+animation:fadeIn 1.2s ease 0.8s forwards;
+font-size:14px;
+transform:translateY(10px);
 }
+
+/* ===== MAIN ===== */
+main{
+opacity:0;
+animation:show 0.6s ease 4s forwards;
+padding:20px;
 }
 
 /* HEADER */
@@ -35,28 +54,33 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px;
+padding:15px;
 border-bottom:1px solid #1f2a3a;
 }
 
-.logo{
-font-weight:bold;
-letter-spacing:2px;
+.hero{
+text-align:center;
+padding:60px 20px;
 }
 
-nav a{
-color:#fff;
-text-decoration:none;
-margin-right:14px;
-opacity:0.8;
-transition:0.2s;
+.hero h1{
+font-size:60px;
+margin:0;
 }
 
-nav a:hover{
-color:#4aa3ff;
-opacity:1;
+.hero p{
+opacity:0.7;
 }
 
+.card{
+max-width:800px;
+margin:20px auto;
+padding:20px;
+background:#111827;
+border-radius:12px;
+}
+
+/* LANG */
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
@@ -64,108 +88,38 @@ color:#4aa3ff;
 padding:4px 8px;
 margin-left:5px;
 cursor:pointer;
-transition:0.2s;
 }
 
-.lang button:hover{
-background:#4aa3ff;
-color:#000;
+/* ANIMATIONS */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(15px); filter:blur(6px);}
+to{opacity:1; transform:translateY(0); filter:blur(0);}
 }
 
-/* HERO */
-.hero{
-text-align:center;
-padding:80px 20px 20px;
+@keyframes fadeOut{
+to{opacity:0; visibility:hidden;}
 }
 
-.hero h1{
-font-size:64px;
-letter-spacing:8px;
-margin:0;
-}
-
-.subtitle{
-opacity:0.7;
-margin-top:10px;
-}
-
-/* UNIVERSITY */
-.university{
-text-align:center;
-margin-top:10px;
-letter-spacing:3px;
-opacity:0.75;
-font-size:14px;
-}
-
-/* CARD */
-.card{
-max-width:800px;
-margin:30px auto;
-padding:25px;
-border:1px solid #263246;
-border-radius:12px;
-background:#111827;
-animation:fadeUp 0.8s ease forwards;
-opacity:0;
-animation-delay:0.3s;
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(10px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-max-width:900px;
-margin:40px auto;
-padding:0 20px;
-}
-
-.box{
-background:#111827;
-border:1px solid #263246;
-border-radius:12px;
-padding:20px;
-cursor:pointer;
-transition:0.2s;
-}
-
-.box:hover{
-transform:translateY(-4px);
-border-color:#4aa3ff;
-}
-
-footer{
-text-align:center;
-padding:40px;
-opacity:0.5;
-font-size:12px;
+@keyframes show{
+to{opacity:1;}
+from{opacity:0;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">G-ROCK</div>
+<!-- INTRO -->
+<div class="intro">
+<h1>G-ROCK PRESENTS</h1>
+<p>Powered by G-System</p>
+</div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="map.html">Map</a>
-<a href="season1.html">Episodes</a>
-<a href="g-system.html">System</a>
-</nav>
+<!-- MAIN -->
+<main>
+
+<header>
+<div>G-ROCK</div>
 
 <div class="lang">
 <button onclick="setLang('en')">EN</button>
@@ -176,49 +130,30 @@ font-size:12px;
 </header>
 
 <section class="hero">
-<div class="subtitle">G-ROCK PRESENTS</div>
 <h1>G-ROCK</h1>
-<div class="university">MONKEYS UNIVERSITY OF GIBRALTAR</div>
-<div class="subtitle">Powered by G-System</div>
+<p id="subtitle">Powered by G-System</p>
 </section>
 
 <div class="card">
 <h2>Professor Sugriva</h2>
 <p>
-First documented subject integrated into academic system (ESL / BSU classification).
+First documented subject integrated into ESL / BSU system.
 </p>
 </div>
 
-<div class="grid">
-<div class="box" onclick="location.href='map.html'">World Map</div>
-<div class="box" onclick="location.href='season1.html'">Episodes</div>
-<div class="box" onclick="location.href='g-system.html'">System Core</div>
-</div>
-
-<footer>
-G-ROCK • Monkeys University of Gibraltar • Powered by G-System
-</footer>
+</main>
 
 <script>
-function setLang(lang){
-const data = {
-en:{
-subtitle:"Powered by G-System"
-},
-es:{
-subtitle:"Impulsado por G-System"
-},
-pl:{
-subtitle:"Napędzane przez G-System"
-},
-fr:{
-subtitle:"Propulsé par G-System"
-}
+const translations = {
+en:{subtitle:"Powered by G-System"},
+es:{subtitle:"Impulsado por G-System"},
+pl:{subtitle:"Napędzane przez G-System"},
+fr:{subtitle:"Propulsé por G-System"}
 };
 
-document.querySelectorAll(".subtitle").forEach(el=>{
-el.innerText = data[lang].subtitle;
-});
+function setLang(lang){
+document.getElementById("subtitle").innerText =
+translations[lang].subtitle;
 }
 </script>
 
