@@ -40,7 +40,7 @@ animation:fadeIn 1s ease 1s forwards;
 
 /* MAIN */
 main{
-opacity:0;
+opacity:1;
 animation:show 0.6s ease 3.5s forwards;
 padding:20px;
 }
@@ -127,7 +127,7 @@ transition:0.2s;
 
 .box:hover{
 transform:translateY(-4px);
-border-color:#4aa3ff;
+border:1px solid #4aa3ff;
 }
 
 /* ANIMATIONS */
@@ -159,7 +159,7 @@ to{opacity:1;}
 <main>
 
 <header>
-<div><b>Monkeys University of Gibraltar</b></div>
+<div><b id="title">Monkeys University of Gibraltar</b></div>
 
 <nav>
 <a href="index.html">Home</a>
@@ -196,16 +196,17 @@ to{opacity:1;}
 
 <script>
 const texts = {
-en:"Powered by G-System",
-es:"Impulsado por G-System",
-pl:"Napędzane przez G-System",
-fr:"Propulsé par G-System"
+en: { title:"Monkeys University of Gibraltar", text:"Powered by G-System" },
+es: { title:"Universidad de Gibraltar", text:"Impulsado por G-System" },
+pl: { title:"Uniwersytet Gibraltarski Małp", text:"Napędzane przez G-System" },
+fr: { title:"Université de Gibraltar", text:"Propulsé par G-System" }
 };
 
 function setLang(l){
-document.getElementById("text").innerText = texts[l];
+document.getElementById("title").innerText = texts[l].title;
+document.getElementById("text").innerText = texts[l].text;
 }
 </script>
 
 </body>
-  </html>
+</html>
