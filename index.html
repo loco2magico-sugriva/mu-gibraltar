@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G-ROCK DASHBOARD</title>
+<title>G-ROCK</title>
 
 <style>
 body{
@@ -24,72 +24,58 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:fadeOut 1s ease 3s forwards;
+animation:fadeOut 0.8s ease 2.8s forwards;
 }
 
 .intro h1{
-font-size:50px;
-letter-spacing:8px;
+font-size:48px;
+letter-spacing:6px;
 opacity:0;
 animation:fadeIn 1s ease forwards;
 }
 
 .intro p{
-opacity:0;
 font-size:14px;
-animation:fadeIn 1s ease 1s forwards;
+opacity:0;
+animation:fadeIn 1s ease 0.8s forwards;
 color:#aaa;
 }
 
-/* LAYOUT */
+/* MAIN */
 main{
 opacity:0;
-animation:show 0.8s ease 3.6s forwards;
-display:flex;
-min-height:100vh;
-}
-
-/* SIDEBAR */
-.sidebar{
-width:220px;
-background:#0b1220;
+animation:show 0.8s ease 2.9s forwards;
 padding:20px;
-border-right:1px solid #1a2233;
 }
 
-.sidebar h3{
-margin-top:0;
-color:#4aa3ff;
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+border-bottom:1px solid #1a2233;
 }
 
-.sidebar a{
-display:block;
+header div{
+font-size:18px;
+letter-spacing:0.5px;
+}
+
+nav a{
 color:white;
 text-decoration:none;
-margin:15px 0;
+margin-right:15px;
 opacity:0.7;
 transition:0.2s;
 }
 
-.sidebar a:hover{
+nav a:hover{
 opacity:1;
 color:#4aa3ff;
 }
 
-/* CONTENT */
-.content{
-flex:1;
-padding:30px;
-}
-
-/* HEADER */
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
+/* LANG */
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
@@ -97,6 +83,7 @@ color:#4aa3ff;
 padding:5px 10px;
 margin-left:5px;
 cursor:pointer;
+transition:0.2s;
 }
 
 .lang button:hover{
@@ -105,8 +92,13 @@ color:black;
 }
 
 /* HERO */
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
 .hero h1{
-font-size:65px;
+font-size:70px;
 margin:0;
 }
 
@@ -114,53 +106,49 @@ margin:0;
 opacity:0.7;
 }
 
+/* CARD */
+.card{
+max-width:800px;
+margin:20px auto;
+padding:20px;
+background:#0f1626;
+border-radius:14px;
+border:1px solid #1f2a3a;
+}
+
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
-margin-top:30px;
+max-width:900px;
+margin:40px auto;
 }
 
-.card{
+.box{
 background:#0f1626;
-padding:20px;
+padding:25px;
 border-radius:14px;
-border:1px solid #1f2a3a;
+text-align:center;
 cursor:pointer;
 transition:0.25s;
-position:relative;
-overflow:hidden;
+border:1px solid transparent;
 }
 
-.card:hover{
+.box:hover{
 transform:translateY(-6px);
-border-color:#4aa3ff;
-box-shadow:0 0 20px rgba(74,163,255,0.25);
+border:1px solid #4aa3ff;
+box-shadow:0 0 18px rgba(74,163,255,0.3);
 }
 
-/* preview glow */
-.card::after{
-content:"";
-position:absolute;
-inset:0;
-background:radial-gradient(circle at center, rgba(74,163,255,0.2), transparent);
-opacity:0;
-transition:0.3s;
-}
-
-.card:hover::after{
-opacity:1;
-}
-
-/* ANIM */
+/* ANIMATIONS */
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(15px);}
 to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes fadeOut{
-to{opacity:0; visibility:hidden;}
+to{opacity:0; visibility:hidden; pointer-events:none;}
 }
 
 @keyframes show{
@@ -174,27 +162,22 @@ to{opacity:1;}
 
 <!-- INTRO -->
 <div class="intro">
-<h1>G-ROCK DASHBOARD</h1>
+<h1>G-ROCK PRESENTS</h1>
 <p>Monkey University of Gibraltar • Powered by G-System</p>
 </div>
 
+<!-- MAIN -->
 <main>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-<h3>G-ROCK</h3>
+<header>
+<div><b>Monkey University of Gibraltar</b></div>
+
+<nav>
 <a href="#">Home</a>
-<a href="#">Gibraltar</a>
-<a href="#">Ceuta</a>
-<a href="#">Faculties</a>
-<a href="#">System Core</a>
-</div>
-
-<!-- CONTENT -->
-<div class="content">
-
-<div class="topbar">
-<div id="title"><b>Monkey University of Gibraltar</b></div>
+<a href="#">Map</a>
+<a href="#">Episodes</a>
+<a href="#">System</a>
+</nav>
 
 <div class="lang">
 <button onclick="setLang('en')">EN</button>
@@ -202,22 +185,23 @@ to{opacity:1;}
 <button onclick="setLang('pl')">PL</button>
 <button onclick="setLang('fr')">FR</button>
 </div>
-</div>
+</header>
 
-<div class="hero">
+<section class="hero">
 <h1>G-ROCK</h1>
 <p id="text">Powered by G-System</p>
+</section>
+
+<div class="card">
+<h2>Professor Sugriva</h2>
+<p>First documented subject integrated into system core.</p>
 </div>
 
 <div class="grid">
-
-<div class="card">Gibraltar Node</div>
-<div class="card">Ceuta Node</div>
-<div class="card">Faculties Layer</div>
-<div class="card">System Core</div>
-
-</div>
-
+<div class="box">Gibraltar</div>
+<div class="box">Ceuta</div>
+<div class="box">Faculties</div>
+<div class="box">System Core</div>
 </div>
 
 </main>
@@ -230,16 +214,8 @@ pl:"Napędzane przez G-System",
 fr:"Propulsé par G-System"
 };
 
-const titles = {
-en:"Monkey University of Gibraltar",
-es:"Universidad de Gibraltar",
-pl:"Uniwersytet Gibraltarski",
-fr:"Université de Gibraltar"
-};
-
 function setLang(l){
 document.getElementById("text").innerText = texts[l];
-document.getElementById("title").innerText = titles[l];
 }
 </script>
 
