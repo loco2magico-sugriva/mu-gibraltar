@@ -3,47 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUoG</title>
+<title>G-Rock</title>
+
 <link rel="stylesheet" href="mu-core.css">
 
 <style>
-/* CINEMATIC BACKGROUND */
-body{
-background: radial-gradient(circle at top, #0b1220 0%, #070a10 60%);
-}
-
-/* HERO CINEMATIC */
 .hero{
 text-align:center;
-padding:120px 20px 60px;
+padding:130px 20px 70px;
+background:radial-gradient(circle at top, rgba(74,163,255,0.20), transparent 60%);
 position:relative;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:radial-gradient(circle at center, rgba(74,163,255,0.18), transparent 60%);
-z-index:-1;
-}
-
-/* MAIN TITLE */
 .hero h1{
-font-size:72px;
-letter-spacing:8px;
+font-size:76px;
+letter-spacing:10px;
 margin-bottom:10px;
-text-shadow:0 0 25px rgba(74,163,255,0.25);
+text-shadow:0 0 30px rgba(74,163,255,0.25);
 }
 
-/* FEATURE BOX */
+.powered{
+opacity:0.6;
+letter-spacing:3px;
+margin-bottom:30px;
+font-size:12px;
+}
+
 .feature{
-max-width:900px;
-margin:40px auto;
+max-width:950px;
+margin:0 auto;
 padding:30px;
-border-radius:16px;
+border-radius:18px;
 background:linear-gradient(180deg,#121a2a,#0b101a);
 border:1px solid #263246;
-box-shadow:0 20px 50px rgba(0,0,0,0.6);
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+text-align:left;
 }
 
 .badge{
@@ -56,7 +50,7 @@ opacity:0.8;
 margin-bottom:15px;
 }
 
-.play{
+.cta{
 display:inline-block;
 margin-top:20px;
 padding:12px 18px;
@@ -67,8 +61,48 @@ text-decoration:none;
 transition:0.2s;
 }
 
-.play:hover{
+.cta:hover{
 background:rgba(74,163,255,0.1);
+}
+
+.grid{
+display:flex;
+gap:24px;
+justify-content:center;
+flex-wrap:wrap;
+padding:40px 20px;
+}
+
+.card{
+width:300px;
+padding:22px;
+border-radius:16px;
+background:linear-gradient(180deg,#141a28,#0c111b);
+border:1px solid #263246;
+cursor:pointer;
+transition:0.25s;
+box-shadow:0 12px 35px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#4aa3ff;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+opacity:0.7;
+line-height:1.5;
+}
+
+.lore{
+text-align:center;
+opacity:0.4;
+font-size:12px;
+margin-top:40px;
 }
 </style>
 
@@ -77,65 +111,69 @@ background:rgba(74,163,255,0.1);
 <body>
 
 <div class="world-banner">
-MUoG • Monkeys University of Gibraltar • 
-<span>Gibraltar (G-Rock State)</span> • G-System Active
+G-ROCK • Digital Universe Platform • 
+<span>MUO-G System Layer Active</span> • Gibraltar Core Node
 </div>
 
 <header>
-<div><b>MUoG</b></div>
+<div><b>G-ROCK</b></div>
 
 <nav>
 <a href="index.html">Home</a>
-<a href="season1.html">Season 1</a>
-<a href="faculties.html">Faculties</a>
+<a href="season1.html">Series</a>
+<a href="map.html">World Map</a>
+<a href="g-system.html">System</a>
 </nav>
 </header>
 
 <section class="hero">
 
-<h1>MUoG</h1>
+<h1>G-ROCK</h1>
 
-<p>Monkeys University of Gibraltar</p>
-<p style="opacity:0.6;">Gibraltar (G-Rock State)</p>
+<div class="powered">POWERED BY G-SYSTEM</div>
 
 <div class="feature">
 
-<div class="badge">FEATURED EPISODE</div>
+<div class="badge">FEATURED EVENT</div>
 
-<h2>Episode 1 — Sugriwa Initialization</h2>
+<h2>MUO-G: Episode 1 — Sugriwa Initialization</h2>
 
 <p style="opacity:0.75;">
-First recorded anomaly inside the MUoG Gibraltar system layer.
-Synchronization event between Gibraltar and Ceuta nodes.
+A system anomaly originating from Gibraltar Core Node.
+First recorded interaction between reality layers and G-System architecture.
 </p>
 
-<a class="play" href="episode1.html">▶ Enter Episode</a>
+<a class="cta" href="episode1.html">▶ Enter Experience</a>
 
 </div>
 
 </section>
 
-<section class="cards">
+<section class="grid">
 
 <div class="card" onclick="location.href='season1.html'">
-<h3>Season 1</h3>
-<p>MUoG Narrative Archive</p>
+<h3>Series Archive</h3>
+<p>All recorded narrative events inside the G-Rock universe.</p>
 </div>
 
-<div class="card" onclick="location.href='ceuta.html'">
-<h3>Campus de Ceuta</h3>
-<p>Intercontinental node</p>
+<div class="card" onclick="location.href='map.html'">
+<h3>World Map</h3>
+<p>Gibraltar, Ceuta and system nodes visualization.</p>
 </div>
 
-<div class="card" onclick="location.href='faculties.html'">
-<h3>Faculties</h3>
-<p>Academic structure</p>
+<div class="card" onclick="location.href='g-system.html'">
+<h3>G-System Panel</h3>
+<p>Live runtime monitoring of universe stability.</p>
 </div>
 
 </section>
 
-<footer>
-MUoG — Monkeys University of Gibraltar
+<div class="lore">
+MUO-G is a subsystem archive layer of the G-Rock universe
+</div>
+
+<footer style="text-align:center;padding:50px;opacity:0.5;">
+G-ROCK — Digital Universe Platform
 </footer>
 
 </body>
