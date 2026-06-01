@@ -11,10 +11,9 @@ margin:0;
 background:#070A10;
 color:white;
 font-family:Arial, sans-serif;
-overflow:auto;
 }
 
-/* ================= INTRO ================= */
+/* INTRO */
 .intro{
 position:fixed;
 inset:0;
@@ -24,41 +23,29 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:fadeOut 1s ease 3.5s forwards;
+animation:fadeOut 1s ease 3s forwards;
 }
 
-.intro .line{
-opacity:0;
-animation:fadeIn 1s ease forwards;
-margin:6px 0;
-text-align:center;
-}
-
-.intro .line:nth-child(1){
-font-size:34px;
+.intro h1{
+font-size:40px;
 letter-spacing:6px;
-animation-delay:0.3s;
+animation:fadeIn 1s ease forwards;
 }
 
-.intro .line:nth-child(2){
-font-size:18px;
-animation-delay:1.2s;
-}
-
-.intro .line:nth-child(3){
+.intro p{
 font-size:14px;
-opacity:0.7;
-animation-delay:2.2s;
+opacity:0;
+animation:fadeIn 1s ease 1s forwards;
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 main{
 opacity:0;
-animation:show 0.6s ease 3.8s forwards;
+animation:show 0.6s ease 3.5s forwards;
 padding:20px;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -71,7 +58,7 @@ nav a{
 color:white;
 text-decoration:none;
 margin-right:15px;
-opacity:0.8;
+opacity:0.7;
 transition:0.2s;
 }
 
@@ -80,7 +67,23 @@ color:#4aa3ff;
 opacity:1;
 }
 
-/* ================= HERO ================= */
+/* LANG */
+.lang button{
+background:none;
+border:1px solid #4aa3ff;
+color:#4aa3ff;
+padding:4px 8px;
+margin-left:5px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.lang button:hover{
+background:#4aa3ff;
+color:black;
+}
+
+/* HERO */
 .hero{
 text-align:center;
 padding:60px 20px;
@@ -95,7 +98,7 @@ margin:0;
 opacity:0.7;
 }
 
-/* ================= CARD ================= */
+/* CARD */
 .card{
 max-width:800px;
 margin:20px auto;
@@ -104,7 +107,7 @@ background:#111827;
 border-radius:12px;
 }
 
-/* ================= GRID ================= */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -127,15 +130,7 @@ transform:translateY(-4px);
 border-color:#4aa3ff;
 }
 
-/* ================= FOOTER ================= */
-footer{
-text-align:center;
-padding:30px;
-opacity:0.5;
-font-size:12px;
-}
-
-/* ================= ANIMATIONS ================= */
+/* ANIMATIONS */
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(10px);}
 to{opacity:1; transform:translateY(0);}
@@ -156,9 +151,8 @@ to{opacity:1;}
 
 <!-- INTRO -->
 <div class="intro">
-<div class="line">G-ROCK PRESENTS</div>
-<div class="line">Monkeys University of Gibraltar</div>
-<div class="line">Powered by G-System</div>
+<h1>G-ROCK PRESENTS</h1>
+<p>Monkeys University of Gibraltar • Powered by G-System</p>
 </div>
 
 <!-- MAIN -->
@@ -173,12 +167,24 @@ to{opacity:1;}
 <a href="season1.html">Episodes</a>
 <a href="g-system.html">System</a>
 </nav>
+
+<div class="lang">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+<button onclick="setLang('pl')">PL</button>
+<button onclick="setLang('fr')">FR</button>
+</div>
 </header>
 
 <section class="hero">
 <h1>G-ROCK</h1>
-<p>Powered by G-System</p>
+<p id="text">Powered by G-System</p>
 </section>
+
+<div class="card">
+<h2>Professor Sugriva</h2>
+<p>First documented subject integrated into ESL / BSU system.</p>
+</div>
 
 <div class="grid">
 <div class="box">City</div>
@@ -186,16 +192,20 @@ to{opacity:1;}
 <div class="box">System Core</div>
 </div>
 
-<div class="card">
-<h2>Professor Sugriva</h2>
-<p>First documented subject integrated into ESL / BSU system.</p>
-</div>
-
-<footer>
-G-ROCK • Monkeys University of Gibraltar
-</footer>
-
 </main>
 
+<script>
+const texts = {
+en:"Powered by G-System",
+es:"Impulsado por G-System",
+pl:"Napędzane przez G-System",
+fr:"Propulsé par G-System"
+};
+
+function setLang(l){
+document.getElementById("text").innerText = texts[l];
+}
+</script>
+
 </body>
-</html>
+  </html>
