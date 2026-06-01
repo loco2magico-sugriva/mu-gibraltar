@@ -34,10 +34,12 @@ animation:fadeOut 0.8s ease 2.8s forwards;
 }
 
 .intro h1{
-font-size:48px;
-letter-spacing:6px;
+font-size:52px;
+letter-spacing:8px;
+text-transform:uppercase;
 opacity:0;
-animation:fadeIn 0.8s ease forwards;
+transform:scale(1);
+animation:fadeInStable 0.8s ease forwards;
 }
 
 .intro p{
@@ -45,6 +47,8 @@ font-size:14px;
 opacity:0;
 animation:fadeIn 0.8s ease 0.8s forwards;
 color:#aaa;
+text-align:center;
+padding:0 20px;
 }
 
 /* ===== MAIN ===== */
@@ -66,6 +70,7 @@ border-bottom:1px solid #1a2233;
 header div{
 font-size:18px;
 letter-spacing:0.5px;
+text-transform:uppercase;
 }
 
 nav a{
@@ -105,6 +110,7 @@ padding:60px 20px;
 .hero h1{
 font-size:70px;
 margin:0;
+text-transform:uppercase;
 }
 
 .hero p{
@@ -138,6 +144,7 @@ text-align:center;
 cursor:pointer;
 transition:0.25s;
 border:1px solid transparent;
+text-transform:uppercase;
 }
 
 .box:hover{
@@ -150,6 +157,11 @@ box-shadow:0 0 18px rgba(74,163,255,0.3);
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(15px);}
 to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeInStable{
+from{opacity:0;}
+to{opacity:1;}
 }
 
 @keyframes fadeOut{
@@ -168,20 +180,20 @@ to{opacity:1;}
 <!-- INTRO -->
 <div class="intro">
 <h1>G-ROCK PRESENTS</h1>
-<p>Monkeys University of Gibraltar • Powered by G-System</p>
+<p>MONKEYS UNIVERSITY OF GIBRALTAR • POWERED BY G-SYSTEM</p>
 </div>
 
 <!-- MAIN -->
 <main>
 
 <header>
-<div><b>Monkeys University of Gibraltar</b></div>
+<div>MONKEYS UNIVERSITY OF GIBRALTAR</div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Map</a>
-<a href="#">Episodes</a>
-<a href="#">System</a>
+<a href="#">HOME</a>
+<a href="#">MAP</a>
+<a href="#">EPISODES</a>
+<a href="#">SYSTEM</a>
 </nav>
 
 <div class="lang">
