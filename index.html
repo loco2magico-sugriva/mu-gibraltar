@@ -8,13 +8,13 @@
 <style>
 body{
 margin:0;
-background:#070A10;
+background:#05070d;
 color:white;
 font-family:Arial, sans-serif;
-overflow:hidden;
+overflow:auto;
 }
 
-/* INTRO */
+/* ===== INTRO ===== */
 .intro{
 position:fixed;
 inset:0;
@@ -24,36 +24,37 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:fadeOut 1s ease 3s forwards;
+animation:fadeOut 1s ease 3.2s forwards;
 }
 
 .intro h1{
-font-size:42px;
-letter-spacing:6px;
+font-size:48px;
+letter-spacing:8px;
 opacity:0;
 animation:fadeIn 1s ease forwards;
 }
 
 .intro p{
 opacity:0;
-animation:fadeIn 1s ease 1s forwards;
 font-size:14px;
+animation:fadeIn 1s ease 1s forwards;
+color:#aaa;
 }
 
-/* MAIN */
+/* ===== MAIN ===== */
 main{
 opacity:0;
-animation:show 0.6s ease 3.5s forwards;
+animation:show 0.8s ease 3.8s forwards;
 padding:20px;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
-border-bottom:1px solid #1f2a3a;
+padding:15px 20px;
+border-bottom:1px solid #1a2233;
 }
 
 nav a{
@@ -65,16 +66,17 @@ transition:0.2s;
 }
 
 nav a:hover{
-color:#4aa3ff;
 opacity:1;
+color:#4aa3ff;
+text-shadow:0 0 10px #4aa3ff;
 }
 
-/* LANG */
+/* ===== LANG ===== */
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
 color:#4aa3ff;
-padding:4px 8px;
+padding:5px 10px;
 margin-left:5px;
 cursor:pointer;
 transition:0.2s;
@@ -83,59 +85,63 @@ transition:0.2s;
 .lang button:hover{
 background:#4aa3ff;
 color:black;
+box-shadow:0 0 10px #4aa3ff;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 text-align:center;
 padding:60px 20px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:70px;
 margin:0;
+letter-spacing:3px;
 }
 
 .hero p{
 opacity:0.7;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card{
 max-width:800px;
 margin:20px auto;
 padding:20px;
-background:#111827;
-border-radius:12px;
+background:#0f1626;
+border-radius:14px;
+border:1px solid #1f2a3a;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
 max-width:900px;
-margin:30px auto;
+margin:40px auto;
 }
 
 .box{
-background:#111827;
-padding:20px;
-border-radius:12px;
+background:#0f1626;
+padding:25px;
+border-radius:14px;
 text-align:center;
 cursor:pointer;
-transition:0.2s;
+transition:0.25s;
 border:1px solid transparent;
 }
 
 .box:hover{
-transform:translateY(-4px);
+transform:translateY(-6px);
 border:1px solid #4aa3ff;
+box-shadow:0 0 18px rgba(74,163,255,0.3);
 }
 
-/* ANIMATIONS */
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn{
-from{opacity:0; transform:translateY(10px);}
+from{opacity:0; transform:translateY(15px);}
 to{opacity:1; transform:translateY(0);}
 }
 
@@ -162,13 +168,13 @@ to{opacity:1;}
 <main>
 
 <header>
-<div><b>Monkeys University of Gibraltar</b></div>
+<div><b id="title">Monkeys University of Gibraltar</b></div>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="map.html">Map</a>
-<a href="season1.html">Episodes</a>
-<a href="g-system.html">System</a>
+<a href="#">Home</a>
+<a href="#">Map</a>
+<a href="#">Episodes</a>
+<a href="#">System</a>
 </nav>
 
 <div class="lang">
@@ -186,13 +192,16 @@ to{opacity:1;}
 
 <div class="card">
 <h2>Professor Sugriva</h2>
-<p>First documented subject integrated into ESL / BSU system.</p>
+<p>First documented subject integrated into system core archive.</p>
 </div>
 
 <div class="grid">
-<div class="box" onclick="location.href='gibraltar.html'">City</div>
-<div class="box" onclick="location.href='faculties.html'">Faculties</div>
-<div class="box" onclick="location.href='g-system.html'">System Core</div>
+
+<div class="box" onclick="alert('Gibraltar node')">Gibraltar</div>
+<div class="box" onclick="alert('Ceuta node')">Ceuta</div>
+<div class="box" onclick="alert('Faculties layer')">Faculties</div>
+<div class="box" onclick="alert('System Core active')">System Core</div>
+
 </div>
 
 </main>
@@ -202,13 +211,21 @@ const texts = {
 en:"Powered by G-System",
 es:"Impulsado por G-System",
 pl:"Napędzane przez G-System",
-fr:"Propulsé por G-System"
+fr:"Propulsé par G-System"
+};
+
+const titles = {
+en:"Monkeys University of Gibraltar",
+es:"Universidad de Gibraltar",
+pl:"Uniwersytet Gibraltarski Małp",
+fr:"Université de Gibraltar"
 };
 
 function setLang(l){
 document.getElementById("text").innerText = texts[l];
+document.getElementById("title").innerText = titles[l];
 }
 </script>
 
 </body>
-</html>
+                                                              </html>
