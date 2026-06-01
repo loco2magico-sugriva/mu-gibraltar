@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G-System — MUoG</title>
+
+<link rel="stylesheet" href="mu-core.css">
+
+<style>
+h1{
+text-align:center;
+margin-top:80px;
+letter-spacing:4px;
+}
+
+.panel{
+max-width:900px;
+margin:60px auto;
+padding:25px;
+border-radius:16px;
+background:linear-gradient(180deg,#121a2a,#0b101a);
+border:1px solid #263246;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+.status{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid #1f2a3a;
+font-size:14px;
+}
+
+.status:last-child{
+border-bottom:none;
+}
+
+.ok{
+color:#4aa3ff;
+}
+
+.warn{
+color:#ffcc00;
+}
+
+.bad{
+color:#ff4a4a;
+}
+
+.bar{
+height:10px;
+background:#0a0f18;
+border:1px solid #263246;
+border-radius:10px;
+overflow:hidden;
+margin-top:6px;
+}
+
+.fill{
+height:100%;
+width:72%;
+background:linear-gradient(90deg,#4aa3ff,#2b6fff);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="world-banner">
+MUoG • Monkeys University of Gibraltar • 
+<span>Gibraltar (G-Rock State)</span> • G-System Active
+</div>
+
+<header>
+<div><b>MUoG</b></div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="season1.html">Season 1</a>
+<a href="map.html">Map</a>
+<a href="g-system.html">G-System</a>
+</nav>
+</header>
+
+<h1>G-SYSTEM STATUS PANEL</h1>
+
+<div class="panel">
+
+<div class="status">
+<div>Gibraltar Core Node</div>
+<div class="ok">ONLINE</div>
+</div>
+
+<div class="status">
+<div>Ceuta Interlink</div>
+<div class="ok">SYNC ACTIVE</div>
+</div>
+
+<div class="status">
+<div>MUoG Narrative Engine</div>
+<div class="ok">RUNNING</div>
+</div>
+
+<div class="status">
+<div>Reality Layer Stability</div>
+<div class="warn">STABLE (87%)</div>
+</div>
+
+<div class="status">
+<div>Sugriwa Event Trace</div>
+<div class="warn">PARTIAL LOG</div>
+</div>
+
+<div class="status">
+<div>System Integrity</div>
+<div class="ok">OK</div>
+</div>
+
+<h3 style="margin-top:25px;">Global Load</h3>
+
+<div class="bar">
+<div class="fill"></div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:40px;opacity:0.5;">
+MUoG — G-System Runtime Panel
+</footer>
+
+</body>
+</html>
