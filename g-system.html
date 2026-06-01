@@ -3,67 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G-System — LIVE</title>
-
-<link rel="stylesheet" href="mu-core.css">
+<title>G-SYSTEM — LIVE</title>
 
 <style>
-h1{
-text-align:center;
-margin-top:80px;
-letter-spacing:4px;
+body{
+margin:0;
+background:#070A10;
+color:#E6E6E6;
+font-family:Arial,sans-serif;
 }
 
-/* PANEL */
+.world-banner{
+text-align:center;
+padding:10px;
+font-size:12px;
+border-bottom:1px solid #1f2a3a;
+background:#0b0f18;
+letter-spacing:1px;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+border-bottom:1px solid #1f2a3a;
+}
+
+.logo{
+font-weight:bold;
+letter-spacing:2px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-right:14px;
+opacity:0.8;
+}
+
+nav a:hover{
+color:#4aa3ff;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:50px 20px 10px;
+}
+
+.title{
+font-size:44px;
+letter-spacing:4px;
+margin:0;
+}
+
+.subtitle{
+opacity:0.7;
+margin-top:10px;
+}
+
+/* DASHBOARD */
+.dashboard{
+max-width:1000px;
+margin:40px auto;
+padding:0 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
 .panel{
-max-width:900px;
-margin:60px auto;
-padding:25px;
-border-radius:16px;
 background:linear-gradient(180deg,#121a2a,#0b101a);
 border:1px solid #263246;
+border-radius:14px;
+padding:20px;
 box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 
-/* STATUS ROW */
+.panel h3{
+margin-top:0;
+letter-spacing:1px;
+}
+
+/* STATUS */
 .status{
 display:flex;
 justify-content:space-between;
-padding:12px 0;
+padding:8px 0;
 border-bottom:1px solid #1f2a3a;
-font-size:14px;
+font-size:13px;
 }
 
-/* LAST ROW FIX */
 .status:last-child{
 border-bottom:none;
 }
 
-/* COLORS */
 .ok{ color:#4aa3ff; }
 .warn{ color:#ffcc00; }
 .bad{ color:#ff4a4a; }
 
 /* LIVE DOT */
 .dot{
-width:10px;
-height:10px;
+width:8px;
+height:8px;
 border-radius:50%;
 display:inline-block;
-margin-left:8px;
+margin-left:6px;
 background:#4aa3ff;
 box-shadow:0 0 10px #4aa3ff;
 animation:pulse 1.2s infinite;
 }
 
-/* PULSE ANIMATION */
 @keyframes pulse{
 0%{ transform:scale(1); opacity:1; }
 50%{ transform:scale(1.6); opacity:0.4; }
 100%{ transform:scale(1); opacity:1; }
 }
 
-/* PROGRESS BAR */
+/* LOG WINDOW */
+.log{
+background:#0a0f18;
+border:1px solid #1f2a3a;
+border-radius:10px;
+padding:12px;
+height:220px;
+overflow:hidden;
+font-size:12px;
+line-height:1.6;
+opacity:0.9;
+}
+
+.log span{
+color:#4aa3ff;
+}
+
+/* PROGRESS */
 .bar{
 height:10px;
 background:#0a0f18;
@@ -75,55 +150,56 @@ margin-top:10px;
 
 .fill{
 height:100%;
-width:78%;
+width:70%;
 background:linear-gradient(90deg,#4aa3ff,#2b6fff);
 animation:load 3s infinite alternate;
 }
 
 @keyframes load{
-0%{ width:65%; }
-100%{ width:85%; }
+0%{ width:60%; }
+100%{ width:88%; }
 }
 
-/* LIVE HEADER */
-.live{
+footer{
 text-align:center;
-margin-top:10px;
-color:#4aa3ff;
-letter-spacing:3px;
+padding:40px;
+opacity:0.5;
 font-size:12px;
-opacity:0.8;
 }
-
 </style>
-
 </head>
 
 <body>
 
 <div class="world-banner">
-MUoG • Monkeys University of Gibraltar • 
-<span>Gibraltar (G-Rock State)</span> • G-System Active
+G-ROCK • G-SYSTEM LIVE CORE • Gibraltar Node Active • Reality Sync Enabled
 </div>
 
 <header>
-<div><b>MUoG</b></div>
+
+<div class="logo">G-SYSTEM</div>
 
 <nav>
 <a href="index.html">Home</a>
-<a href="season1.html">Season 1</a>
 <a href="map.html">Map</a>
-<a href="g-system.html">G-System</a>
+<a href="season1.html">Episodes</a>
+<a href="g-system.html">System</a>
 </nav>
+
 </header>
 
-<h1>G-SYSTEM LIVE STATUS</h1>
+<section class="hero">
 
-<div class="live">
-● SYSTEM RUNNING IN REAL-TIME SIMULATION MODE
-</div>
+<h1 class="title">LIVE SYSTEM DASHBOARD</h1>
+<div class="subtitle">Gibraltar Core Node • Real-time simulation layer</div>
 
+</section>
+
+<section class="dashboard">
+
+<!-- CORE STATUS -->
 <div class="panel">
+<h3>CORE STATUS</h3>
 
 <div class="status">
 <div>Gibraltar Core Node</div>
@@ -131,41 +207,74 @@ MUoG • Monkeys University of Gibraltar •
 </div>
 
 <div class="status">
-<div>Ceuta Interlink</div>
-<div class="ok">SYNC ACTIVE <span class="dot"></span></div>
+<div>Reality Sync Layer</div>
+<div class="ok">STABLE <span class="dot"></span></div>
 </div>
 
 <div class="status">
-<div>MUoG Narrative Engine</div>
+<div>G-System Kernel</div>
 <div class="ok">RUNNING <span class="dot"></span></div>
-</div>
-
-<div class="status">
-<div>Reality Layer Stability</div>
-<div class="warn">STABLE (89%)</div>
-</div>
-
-<div class="status">
-<div>Sugriwa Event Trace</div>
-<div class="warn">PARTIAL LOG</div>
 </div>
 
 <div class="status">
 <div>System Integrity</div>
 <div class="ok">OK</div>
 </div>
+</div>
 
-<h3 style="margin-top:25px;">Global Load</h3>
+<!-- EVENT MONITOR -->
+<div class="panel">
+<h3>EVENT MONITOR</h3>
+
+<div class="status">
+<div>Professor Sugriva Signal</div>
+<div class="warn">ACTIVE TRACE</div>
+</div>
+
+<div class="status">
+<div>ESL Node Sync</div>
+<div class="ok">LINKED</div>
+</div>
+
+<div class="status">
+<div>BSU Research Layer</div>
+<div class="ok">LINKED</div>
+</div>
+
+<div class="status">
+<div>Anomaly Detection</div>
+<div class="warn">1 EVENT</div>
+</div>
+</div>
+
+<!-- LIVE LOG -->
+<div class="panel">
+<h3>LIVE LOG</h3>
+
+<div class="log" id="log">
+<span>[SYS]</span> Initializing G-System core...<br>
+<span>[OK]</span> Gibraltar Node connected<br>
+<span>[SYNC]</span> Reality layer stabilizing...<br>
+<span>[EVENT]</span> Professor Sugriva trace detected<br>
+<span>[MAP]</span> World nodes synchronized<br>
+</div>
+</div>
+
+<!-- LOAD -->
+<div class="panel">
+<h3>GLOBAL LOAD</h3>
+<p>System processing load (simulated)</p>
 
 <div class="bar">
 <div class="fill"></div>
 </div>
-
 </div>
 
-<footer style="text-align:center;padding:40px;opacity:0.5;">
-MUoG — LIVE G-System Simulation
+</section>
+
+<footer>
+G-SYSTEM • LIVE ARCHITECTURE CORE • Powered by G-ROCK
 </footer>
 
 </body>
-</html>
+  </html>
