@@ -1,217 +1,124 @@
-body {
+body{
 margin:0;
 background:#070A10;
-color:#E6E6E6;
+color:white;
 font-family:Arial, sans-serif;
-overflow-x:hidden;
-
-animation:boot 0.7s ease-out;
+overflow:auto;
 }
 
-/* =========================
-   GLOBAL BOOT ANIMATION
-========================= */
+/* INTRO */
+.intro{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 1s ease 3.2s forwards;
+}
 
-@keyframes boot {
-from {
+/* TEKST INTRO */
+.intro h1{
+font-size:42px;
+letter-spacing:6px;
 opacity:0;
-transform:scale(1.01);
-filter:blur(6px);
-}
-to {
-opacity:1;
-transform:scale(1);
-filter:blur(0);
-}
+animation:fadeIn 1s ease forwards;
+transform:translateY(10px);
 }
 
-/* =========================
-   TOP BANNER
-========================= */
-
-.world-banner {
-text-align:center;
-padding:10px;
-font-size:12px;
-border-bottom:1px solid #1f2a3a;
-background:#0b0f18;
-letter-spacing:1px;
-
+.intro p{
 opacity:0;
-animation:fadeIn 0.6s ease forwards;
+animation:fadeIn 1s ease 0.8s forwards;
+font-size:14px;
+transform:translateY(10px);
 }
 
-/* =========================
-   HEADER
-========================= */
+/* MAIN (FIX NA SZARY EKRAN) */
+main{
+opacity:1; /* 🔥 KLUCZOWE FIX */
+animation:show 0.6s ease 3.8s forwards;
+padding:20px;
+}
 
-header {
+/* HEADER */
+header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px;
+padding:15px;
 border-bottom:1px solid #1f2a3a;
-
-opacity:0;
-animation:fadeIn 0.6s ease forwards;
-animation-delay:0.1s;
 }
 
-.logo {
-font-weight:bold;
-letter-spacing:2px;
-}
-
-/* =========================
-   NAV
-========================= */
-
-nav a {
-color:#fff;
+nav a{
+color:white;
 text-decoration:none;
-margin-right:14px;
+margin-right:15px;
 opacity:0.8;
 transition:0.2s;
 }
 
-nav a:hover {
+nav a:hover{
 color:#4aa3ff;
 opacity:1;
-transform:translateY(-1px);
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero {
+/* HERO */
+.hero{
 text-align:center;
-padding:70px 20px 40px;
-
-opacity:0;
-animation:fadeUp 0.7s ease forwards;
-animation-delay:0.2s;
+padding:60px 20px;
 }
 
-.title {
-font-size:52px;
-letter-spacing:6px;
+.hero h1{
+font-size:60px;
 margin:0;
 }
 
-.subtitle {
-opacity:0.75;
-margin-top:10px;
+.hero p{
+opacity:0.7;
 }
 
-/* =========================
-   PANELS
-========================= */
-
-.panel {
-max-width:900px;
-margin:40px auto;
-padding:25px;
-border-radius:16px;
-background:linear-gradient(180deg,#121a2a,#0b101a);
-border:1px solid #263246;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
-
-opacity:0;
-animation:fadeUp 0.7s ease forwards;
-animation-delay:0.25s;
-}
-
-/* =========================
-   GRID
-========================= */
-
-.grid {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-max-width:1000px;
-margin:30px auto;
-padding:0 20px;
-}
-
-.card {
+/* CARD */
+.card{
+max-width:800px;
+margin:20px auto;
+padding:20px;
 background:#111827;
-border:1px solid #263246;
 border-radius:12px;
-padding:22px;
-cursor:pointer;
-transition:0.25s;
-
-opacity:0;
-animation:fadeUp 0.7s ease forwards;
 }
 
-.card:hover {
-transform:translateY(-5px);
-border-color:#4aa3ff;
-box-shadow:0 10px 30px rgba(74,163,255,0.1);
-}
-
-/* stagger */
-.card:nth-child(1){ animation-delay:0.3s; }
-.card:nth-child(2){ animation-delay:0.4s; }
-.card:nth-child(3){ animation-delay:0.5s; }
-
-/* =========================
-   BUTTONS
-========================= */
-
-.lang button {
-background:none;
-border:1px solid #4aa3ff;
-color:#4aa3ff;
-padding:4px 8px;
-margin-left:5px;
-cursor:pointer;
-transition:0.2s;
-}
-
-.lang button:hover {
-background:#4aa3ff;
-color:#000;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
+/* FOOTER */
+footer{
 text-align:center;
-padding:40px;
+padding:30px;
 opacity:0.5;
 font-size:12px;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes fadeIn {
-from {opacity:0;}
-to {opacity:1;}
-}
-
-@keyframes fadeUp {
-from {
+/* ANIMATIONS */
+@keyframes fadeIn{
+from{
 opacity:0;
 transform:translateY(10px);
+filter:blur(6px);
 }
-to {
+to{
 opacity:1;
 transform:translateY(0);
+filter:blur(0);
 }
 }
 
-/* =========================
-   LINKS
-========================= */
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
+}
 
-a {
-transition:0.2s;
-  }
+@keyframes show{
+from{opacity:0;}
+to{opacity:1;}
+}
