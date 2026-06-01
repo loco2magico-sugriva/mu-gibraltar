@@ -24,53 +24,41 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:fadeOut 1s ease 3.5s forwards;
 }
 
-.intro h1{
-font-size:42px;
-letter-spacing:6px;
+.line{
 opacity:0;
-animation:fadeIn 1.2s ease forwards;
+font-size:20px;
+letter-spacing:3px;
+margin:6px 0;
+animation:show 1.2s ease forwards;
 }
 
-.intro p{
-opacity:0;
-animation:fadeIn 1.2s ease 0.8s forwards;
-font-size:14px;
+.line:nth-child(1){ animation-delay:0.3s; font-size:34px; }
+.line:nth-child(2){ animation-delay:1.4s; }
+.line:nth-child(3){ animation-delay:2.6s; font-size:14px; opacity:0.7; }
+
+.intro{
+animation:fadeOut 1s ease 4s forwards;
 }
 
 /* MAIN */
 main{
 opacity:0;
-animation:show 0.6s ease 4s forwards;
+animation:showMain 0.6s ease 4.5s forwards;
 padding:20px;
 }
 
-/* HEADER MENU */
 header{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:15px;
 border-bottom:1px solid #1f2a3a;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-right:15px;
-opacity:0.8;
-}
-
-nav a:hover{
-color:#4aa3ff;
-}
-
-/* HERO */
 .hero{
 text-align:center;
-padding:50px 20px;
+padding:60px 20px;
 }
 
 .hero h1{
@@ -78,11 +66,6 @@ font-size:60px;
 margin:0;
 }
 
-.hero p{
-opacity:0.7;
-}
-
-/* CARD */
 .card{
 max-width:800px;
 margin:20px auto;
@@ -91,25 +74,17 @@ background:#111827;
 border-radius:12px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:30px;
-opacity:0.5;
-font-size:12px;
-}
-
 /* ANIMATIONS */
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(10px);}
-to{opacity:1; transform:translateY(0);}
+@keyframes show{
+from{opacity:0; transform:translateY(10px); filter:blur(6px);}
+to{opacity:1; transform:translateY(0); filter:blur(0);}
 }
 
 @keyframes fadeOut{
-to{opacity:0; visibility:hidden;}
+to{opacity:0; visibility:hidden; pointer-events:none;}
 }
 
-@keyframes show{
+@keyframes showMain{
 to{opacity:1;}
 from{opacity:0;}
 }
@@ -118,18 +93,18 @@ from{opacity:0;}
 
 <body>
 
-<!-- INTRO -->
+<!-- INTRO SEQUENCE -->
 <div class="intro">
-<h1>G-ROCK PRESENTS</h1>
-<p>Powered by G-System</p>
+<div class="line">G-ROCK PRESENTS</div>
+<div class="line">Monkeys University of Gibraltar</div>
+<div class="line">Powered by G-System</div>
 </div>
 
 <!-- MAIN -->
 <main>
 
 <header>
-<div><b>Monkeys University of Gibraltar</b></div>
-
+<div><b>G-ROCK</b></div>
 <nav>
 <a href="index.html">Home</a>
 <a href="map.html">Map</a>
@@ -140,17 +115,13 @@ from{opacity:0;}
 
 <section class="hero">
 <h1>G-ROCK</h1>
-<p>Powered by G-System</p>
+<p>World System Active</p>
 </section>
 
 <div class="card">
 <h2>Professor Sugriva</h2>
 <p>First documented subject integrated into ESL / BSU system.</p>
 </div>
-
-<footer>
-G-ROCK • Monkeys University of Gibraltar
-</footer>
 
 </main>
 
