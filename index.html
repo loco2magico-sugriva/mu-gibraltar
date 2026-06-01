@@ -11,10 +11,10 @@ margin:0;
 background:#070A10;
 color:white;
 font-family:Arial, sans-serif;
-overflow:hidden;
+overflow:auto;
 }
 
-/* INTRO */
+/* ================= INTRO ================= */
 .intro{
 position:fixed;
 inset:0;
@@ -24,38 +24,63 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:9999;
+animation:fadeOut 1s ease 3.5s forwards;
 }
 
-.line{
+.intro .line{
 opacity:0;
-font-size:20px;
-letter-spacing:3px;
+animation:fadeIn 1s ease forwards;
 margin:6px 0;
-animation:show 1.2s ease forwards;
+text-align:center;
 }
 
-.line:nth-child(1){ animation-delay:0.3s; font-size:34px; }
-.line:nth-child(2){ animation-delay:1.4s; }
-.line:nth-child(3){ animation-delay:2.6s; font-size:14px; opacity:0.7; }
-
-.intro{
-animation:fadeOut 1s ease 4s forwards;
+.intro .line:nth-child(1){
+font-size:34px;
+letter-spacing:6px;
+animation-delay:0.3s;
 }
 
-/* MAIN */
+.intro .line:nth-child(2){
+font-size:18px;
+animation-delay:1.2s;
+}
+
+.intro .line:nth-child(3){
+font-size:14px;
+opacity:0.7;
+animation-delay:2.2s;
+}
+
+/* ================= MAIN ================= */
 main{
 opacity:0;
-animation:showMain 0.6s ease 4.5s forwards;
+animation:show 0.6s ease 3.8s forwards;
 padding:20px;
 }
 
+/* ================= HEADER ================= */
 header{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:15px;
 border-bottom:1px solid #1f2a3a;
 }
 
+nav a{
+color:white;
+text-decoration:none;
+margin-right:15px;
+opacity:0.8;
+transition:0.2s;
+}
+
+nav a:hover{
+color:#4aa3ff;
+opacity:1;
+}
+
+/* ================= HERO ================= */
 .hero{
 text-align:center;
 padding:60px 20px;
@@ -66,6 +91,11 @@ font-size:60px;
 margin:0;
 }
 
+.hero p{
+opacity:0.7;
+}
+
+/* ================= CARD ================= */
 .card{
 max-width:800px;
 margin:20px auto;
@@ -74,26 +104,57 @@ background:#111827;
 border-radius:12px;
 }
 
-/* ANIMATIONS */
-@keyframes show{
-from{opacity:0; transform:translateY(10px); filter:blur(6px);}
-to{opacity:1; transform:translateY(0); filter:blur(0);}
+/* ================= GRID ================= */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:900px;
+margin:30px auto;
+}
+
+.box{
+background:#111827;
+padding:20px;
+border-radius:12px;
+text-align:center;
+cursor:pointer;
+transition:0.2s;
+}
+
+.box:hover{
+transform:translateY(-4px);
+border-color:#4aa3ff;
+}
+
+/* ================= FOOTER ================= */
+footer{
+text-align:center;
+padding:30px;
+opacity:0.5;
+font-size:12px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes fadeOut{
 to{opacity:0; visibility:hidden; pointer-events:none;}
 }
 
-@keyframes showMain{
-to{opacity:1;}
+@keyframes show{
 from{opacity:0;}
+to{opacity:1;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO SEQUENCE -->
+<!-- INTRO -->
 <div class="intro">
 <div class="line">G-ROCK PRESENTS</div>
 <div class="line">Monkeys University of Gibraltar</div>
@@ -104,7 +165,8 @@ from{opacity:0;}
 <main>
 
 <header>
-<div><b>G-ROCK</b></div>
+<div><b>Monkeys University of Gibraltar</b></div>
+
 <nav>
 <a href="index.html">Home</a>
 <a href="map.html">Map</a>
@@ -115,13 +177,23 @@ from{opacity:0;}
 
 <section class="hero">
 <h1>G-ROCK</h1>
-<p>World System Active</p>
+<p>Powered by G-System</p>
 </section>
+
+<div class="grid">
+<div class="box">City</div>
+<div class="box">Faculties</div>
+<div class="box">System Core</div>
+</div>
 
 <div class="card">
 <h2>Professor Sugriva</h2>
 <p>First documented subject integrated into ESL / BSU system.</p>
 </div>
+
+<footer>
+G-ROCK • Monkeys University of Gibraltar
+</footer>
 
 </main>
 
