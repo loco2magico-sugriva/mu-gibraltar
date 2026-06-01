@@ -4,89 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Episode 1 — MUoG</title>
-
 <link rel="stylesheet" href="mu-core.css">
-
-<style>
-.hero{
-text-align:center;
-padding:90px 20px 30px;
-background:radial-gradient(circle at top, rgba(74,163,255,0.18), transparent 60%);
-}
-
-.badge{
-display:inline-block;
-padding:6px 12px;
-border:1px solid #4aa3ff;
-border-radius:20px;
-font-size:12px;
-margin-bottom:12px;
-opacity:0.8;
-letter-spacing:1px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
-
-.panel{
-background:linear-gradient(180deg,#121a2a,#0b101a);
-border:1px solid #263246;
-border-radius:16px;
-padding:22px;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
-margin-bottom:20px;
-}
-
-.video{
-width:100%;
-border-radius:12px;
-overflow:hidden;
-border:1px solid #263246;
-background:#0a0f18;
-}
-
-video{
-width:100%;
-display:block;
-}
-
-.meta{
-display:grid;
-gap:8px;
-font-size:14px;
-opacity:0.75;
-}
-
-.tag{
-opacity:0.6;
-}
-
-.button{
-display:inline-block;
-margin-top:15px;
-padding:10px 16px;
-border:1px solid #4aa3ff;
-color:#4aa3ff;
-border-radius:10px;
-text-decoration:none;
-transition:0.2s;
-}
-
-.button:hover{
-background:rgba(74,163,255,0.1);
-}
-</style>
-
 </head>
 
 <body>
 
+<div class="world-banner">
+MUoG • Monkeys University of Gibraltar • 
+<span>Gibraltar (G-Rock State)</span> • G-System Active
+</div>
+
 <header>
 <div><b>MUoG</b></div>
-
 <nav>
 <a href="index.html">Home</a>
 <a href="season1.html">Season 1</a>
@@ -95,57 +24,33 @@ background:rgba(74,163,255,0.1);
 </header>
 
 <section class="hero">
+<h1>Episode 1</h1>
+<p>Sugriwa Initialization Event</p>
+</section>
 
-<div class="badge">SEASON 1 • EPISODE 1</div>
+<section class="cards">
 
-<h1>Sugriwa Initialization</h1>
+<div class="card">
+<h3>Playback</h3>
 
-<p>First recorded anomaly inside Gibraltar system layer</p>
+<video controls width="100%">
+<source src="episode1.mp4" type="video/mp4">
+</video>
+
+<p style="opacity:0.6;">Add episode1.mp4 to enable playback</p>
+</div>
+
+<div class="card">
+<h3>System Log</h3>
+<p>Gibraltar Core Node</p>
+<p>Ceuta Sync Active</p>
+<p>G-System Runtime Event</p>
+</div>
 
 </section>
 
-<div class="container">
-
-<div class="panel">
-
-<h3>Playback</h3>
-
-<div class="video">
-<video controls>
-<source src="episode1.mp4" type="video/mp4">
-</video>
-</div>
-
-<p style="opacity:0.6;margin-top:10px;">
-If no video is loaded, add <b>episode1.mp4</b> to activate playback.
-</p>
-
-</div>
-
-<div class="panel">
-
-<h3>System Log</h3>
-
-<div class="meta">
-
-<div><span class="tag">Location:</span> Gibraltar Core Node</div>
-
-<div><span class="tag">Sync:</span> Ceuta Interlink Active</div>
-
-<div><span class="tag">Layer:</span> G-System Runtime</div>
-
-<div><span class="tag">Event:</span> Sugriwa anomaly detected</div>
-
-</div>
-
-</div>
-
-<a class="button" href="season1.html">← Back to Season</a>
-
-</div>
-
-<footer style="text-align:center;padding:40px;opacity:0.5;">
-MUoG — Episode Archive System
+<footer>
+MUoG — Episode Archive
 </footer>
 
 </body>
