@@ -46,6 +46,15 @@ nav a:hover{
 color:#4aa3ff;
 }
 
+.lang button{
+background:none;
+border:1px solid #4aa3ff;
+color:#4aa3ff;
+padding:4px 8px;
+margin-left:5px;
+cursor:pointer;
+}
+
 .hero{
 text-align:center;
 padding:90px 20px 40px;
@@ -69,7 +78,6 @@ padding:25px;
 border-radius:16px;
 background:linear-gradient(180deg,#121a2a,#0b101a);
 border:1px solid #263246;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 
 .grid{
@@ -95,14 +103,6 @@ transform:translateY(-4px);
 border-color:#4aa3ff;
 }
 
-.card h3{
-margin-top:0;
-}
-
-.card p{
-opacity:0.75;
-}
-
 footer{
 text-align:center;
 padding:40px;
@@ -114,36 +114,41 @@ font-size:12px;
 
 <body>
 
-<div class="world-banner">
-G-ROCK • Monkeys University of Gibraltar • Gibraltar (G-Rock State) • G-System Active
-</div>
+<div class="world-banner" id="banner"></div>
 
 <header>
 
 <div class="logo">G-ROCK</div>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="map.html">Map</a>
-<a href="season1.html">Episodes</a>
-<a href="g-system.html">G-System</a>
+<a href="index.html" id="navHome">Home</a>
+<a href="map.html" id="navMap">World Map</a>
+<a href="season1.html" id="navEp">Episodes</a>
+<a href="g-system.html" id="navSys">G-System</a>
 </nav>
+
+<div class="lang">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+<button onclick="setLang('pl')">PL</button>
+<button onclick="setLang('fr')">FR</button>
+</div>
 
 </header>
 
 <section class="hero">
 
-<div class="title">G-ROCK</div>
-<div class="subtitle">Monkeys University of Gibraltar</div>
-<div class="subtitle">Powered by G-System</div>
+<div class="title" id="title">G-ROCK</div>
+<div class="subtitle" id="subtitle1">Monkeys University of Gibraltar</div>
+<div class="subtitle" id="subtitle2">Powered by G-System</div>
 
 </section>
 
 <section class="panel">
 
-<h2>Welcome</h2>
+<h2 id="welcomeTitle">Welcome</h2>
 
-<p style="opacity:0.8; line-height:1.6;">
+<p id="welcomeText" style="opacity:0.8; line-height:1.6;">
 G-ROCK is a digital universe built around Gibraltar, the G-Rock State, the Monkeys University of Gibraltar and the G-System infrastructure layer.
 </p>
 
@@ -152,15 +157,127 @@ G-ROCK is a digital universe built around Gibraltar, the G-Rock State, the Monke
 <section class="grid">
 
 <div class="card" onclick="location.href='map.html'">
-<h3>World Map</h3>
-<p>Explore Gibraltar and key world nodes.</p>
+<h3 id="card1">World Map</h3>
+<p id="card1desc">Explore Gibraltar and key world nodes.</p>
 </div>
 
 <div class="card" onclick="location.href='season1.html'">
-<h3>Episodes</h3>
-<p>Access the story archive including Professor Sugriva.</p>
+<h3 id="card2">Episodes</h3>
+<p id="card2desc">Access the story archive including Professor Sugriva.</p>
 </div>
 
 <div class="card" onclick="location.href='g-system.html'">
-<h3>G-System</h3>
-<p>View
+<h3 id="card3">G-System</h3>
+<p id="card3desc">View system architecture and live simulation.</p>
+</div>
+
+</section>
+
+<footer>
+G-ROCK • Monkeys University of Gibraltar • Powered by G-System
+</footer>
+
+<script>
+const langData = {
+en:{
+banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
+home:"Home",
+map:"World Map",
+episodes:"Episodes",
+system:"G-System",
+title:"G-ROCK",
+subtitle1:"Monkeys University of Gibraltar",
+subtitle2:"Powered by G-System",
+welcomeTitle:"Welcome",
+welcomeText:"G-ROCK is a digital universe built around Gibraltar, the G-Rock State, the Monkeys University of Gibraltar and the G-System infrastructure layer.",
+card1:"World Map",
+card1desc:"Explore Gibraltar and key world nodes.",
+card2:"Episodes",
+card2desc:"Access the story archive including Professor Sugriva.",
+card3:"G-System",
+card3desc:"View system architecture and live simulation."
+},
+
+pl:{
+banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
+home:"Start",
+map:"Mapa Świata",
+episodes:"Odcinki",
+system:"G-System",
+title:"G-ROCK",
+subtitle1:"Monkeys University of Gibraltar",
+subtitle2:"Napędzane przez G-System",
+welcomeTitle:"Witamy",
+welcomeText:"G-ROCK to cyfrowy świat oparty o Gibraltar, G-Rock State, Monkeys University of Gibraltar oraz G-System.",
+card1:"Mapa Świata",
+card1desc:"Poznaj Gibraltar i kluczowe lokalizacje.",
+card2:"Odcinki",
+card2desc:"Archiwum historii z Professor Sugriva.",
+card3:"G-System",
+card3desc:"System operacyjny uniwersum."
+},
+
+es:{
+banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
+home:"Inicio",
+map:"Mapa",
+episodes:"Episodios",
+system:"G-System",
+title:"G-ROCK",
+subtitle1:"Monkeys University of Gibraltar",
+subtitle2:"Impulsado por G-System",
+welcomeTitle:"Bienvenido",
+welcomeText:"G-ROCK es un universo digital basado en Gibraltar, G-Rock State, la universidad y el sistema G-System.",
+card1:"Mapa Mundial",
+card1desc:"Explora Gibraltar y nodos clave.",
+card2:"Episodios",
+card2desc:"Archivo con Professor Sugriva.",
+card3:"G-System",
+card3desc:"Arquitectura del sistema."
+},
+
+fr:{
+banner:"G-ROCK • Gibraltar • G-Rock State • Powered by G-System",
+home:"Accueil",
+map:"Carte",
+episodes:"Épisodes",
+system:"G-System",
+title:"G-ROCK",
+subtitle1:"Monkeys University of Gibraltar",
+subtitle2:"Propulsé par G-System",
+welcomeTitle:"Bienvenue",
+welcomeText:"G-ROCK est un univers numérique basé sur Gibraltar, G-Rock State, l'université et le système G-System.",
+card1:"Carte du Monde",
+card1desc:"Explorez Gibraltar et les nœuds clés.",
+card2:"Épisodes",
+card2desc:"Archive avec Professor Sugriva.",
+card3:"G-System",
+card3desc:"Architecture du système."
+}
+};
+
+function setLang(lang){
+document.getElementById("banner").innerText = langData[lang].banner;
+document.getElementById("navHome").innerText = langData[lang].home;
+document.getElementById("navMap").innerText = langData[lang].map;
+document.getElementById("navEp").innerText = langData[lang].episodes;
+document.getElementById("navSys").innerText = langData[lang].system;
+
+document.getElementById("title").innerText = langData[lang].title;
+document.getElementById("subtitle1").innerText = langData[lang].subtitle1;
+document.getElementById("subtitle2").innerText = langData[lang].subtitle2;
+
+document.getElementById("welcomeTitle").innerText = langData[lang].welcomeTitle;
+document.getElementById("welcomeText").innerText = langData[lang].welcomeText;
+
+document.getElementById("card1").innerText = langData[lang].card1;
+document.getElementById("card1desc").innerText = langData[lang].card1desc;
+document.getElementById("card2").innerText = langData[lang].card2;
+document.getElementById("card2desc").innerText = langData[lang].card2desc;
+document.getElementById("card3").innerText = langData[lang].card3;
+document.getElementById("card3desc").innerText = langData[lang].card3desc;
+}
+</script>
+
+</body>
+  </html>
