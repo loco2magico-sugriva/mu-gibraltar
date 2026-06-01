@@ -5,6 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MUoG</title>
 <link rel="stylesheet" href="mu-core.css">
+
+<style>
+/* CINEMATIC BACKGROUND */
+body{
+background: radial-gradient(circle at top, #0b1220 0%, #070a10 60%);
+}
+
+/* HERO CINEMATIC */
+.hero{
+text-align:center;
+padding:120px 20px 60px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at center, rgba(74,163,255,0.18), transparent 60%);
+z-index:-1;
+}
+
+/* MAIN TITLE */
+.hero h1{
+font-size:72px;
+letter-spacing:8px;
+margin-bottom:10px;
+text-shadow:0 0 25px rgba(74,163,255,0.25);
+}
+
+/* FEATURE BOX */
+.feature{
+max-width:900px;
+margin:40px auto;
+padding:30px;
+border-radius:16px;
+background:linear-gradient(180deg,#121a2a,#0b101a);
+border:1px solid #263246;
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+
+.badge{
+display:inline-block;
+padding:6px 12px;
+border:1px solid #4aa3ff;
+border-radius:20px;
+font-size:12px;
+opacity:0.8;
+margin-bottom:15px;
+}
+
+.play{
+display:inline-block;
+margin-top:20px;
+padding:12px 18px;
+border:1px solid #4aa3ff;
+color:#4aa3ff;
+border-radius:10px;
+text-decoration:none;
+transition:0.2s;
+}
+
+.play:hover{
+background:rgba(74,163,255,0.1);
+}
+</style>
+
 </head>
 
 <body>
@@ -24,50 +91,30 @@ MUoG • Monkeys University of Gibraltar •
 </nav>
 </header>
 
-<!-- HERO TRAILER -->
 <section class="hero">
 
-<h1>Episode 1</h1>
-<p>Sugriwa Initialization Event</p>
-<p style="opacity:0.6;">Featured MUoG System Event</p>
+<h1>MUoG</h1>
 
-<div style="
-margin-top:30px;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-background:#0a0f18;
-border:1px solid #263246;
-border-radius:16px;
-padding:40px;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
-">
+<p>Monkeys University of Gibraltar</p>
+<p style="opacity:0.6;">Gibraltar (G-Rock State)</p>
 
-<p style="letter-spacing:3px;color:#4aa3ff;">
-▶ FEATURED EPISODE
+<div class="feature">
+
+<div class="badge">FEATURED EPISODE</div>
+
+<h2>Episode 1 — Sugriwa Initialization</h2>
+
+<p style="opacity:0.75;">
+First recorded anomaly inside the MUoG Gibraltar system layer.
+Synchronization event between Gibraltar and Ceuta nodes.
 </p>
 
-<p style="opacity:0.7;">
-The first recorded anomaly inside the MUoG Gibraltar system layer.
-</p>
-
-<a href="episode1.html" style="
-display:inline-block;
-margin-top:20px;
-padding:12px 18px;
-border:1px solid #4aa3ff;
-color:#4aa3ff;
-border-radius:10px;
-text-decoration:none;
-">
-ENTER EPISODE
-</a>
+<a class="play" href="episode1.html">▶ Enter Episode</a>
 
 </div>
 
 </section>
 
-<!-- CONTENT ROW -->
 <section class="cards">
 
 <div class="card" onclick="location.href='season1.html'">
