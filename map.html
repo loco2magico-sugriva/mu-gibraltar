@@ -1,140 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MU Map 3.0</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUoG Map</title>
+
 <link rel="stylesheet" href="mu-core.css">
+
 <style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#0B0E14;
-color:#E6E6E6;
+h1{
+text-align:center;
+margin-top:80px;
+letter-spacing:4px;
+}
+
+.map-container{
+max-width:900px;
+margin:60px auto;
+padding:20px;
 text-align:center;
 }
 
-header{
-padding:20px;
-border-bottom:1px solid #222;
-}
-
-h1{
-margin-top:35px;
-font-size:42px;
-}
-
-.map{
-max-width:600px;
-margin:60px auto;
-display:flex;
-flex-direction:column;
-gap:10px;
-position:relative;
-}
-
 .node{
-padding:18px;
-border:1px solid #2a3342;
-border-radius:12px;
-background:#121826;
+display:inline-block;
+width:220px;
+padding:22px;
+margin:20px;
+border-radius:16px;
+background:linear-gradient(180deg,#121a2a,#0b101a);
+border:1px solid #263246;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
 cursor:pointer;
 transition:0.25s;
-position:relative;
-z-index:2;
 }
 
 .node:hover{
-transform:scale(1.03);
-background:#1a2233;
-}
-
-.active{
-border:1px solid #4aa3ff;
-background:#16243a;
-box-shadow:0 0 18px rgba(74,163,255,0.25);
+transform:translateY(-6px);
+border-color:#4aa3ff;
 }
 
 .line{
-height:30px;
-width:2px;
-background:#2a3342;
-margin:0 auto;
-opacity:0.7;
-transition:0.3s;
+height:2px;
+width:60%;
+margin:30px auto;
+background:linear-gradient(90deg,#4aa3ff,transparent);
+opacity:0.6;
 }
 
-.line.active-line{
-background:#4aa3ff;
-box-shadow:0 0 10px rgba(74,163,255,0.4);
-}
-
-.info{
-margin-top:40px;
-color:#bdbdbd;
-min-height:40px;
+.tag{
+opacity:0.6;
+font-size:13px;
+margin-top:6px;
 }
 </style>
+
 </head>
 
 <body>
 
+<div class="world-banner">
+MUoG • Monkeys University of Gibraltar • 
+<span>Gibraltar (G-Rock State)</span> • G-System Active
+</div>
+
 <header>
-<b>MU SYSTEM MAP 3.0</b>
+<div><b>MUoG</b></div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="season1.html">Season 1</a>
+<a href="map.html">Map</a>
+</nav>
 </header>
 
-<h1>System Flow</h1>
+<h1>MUoG WORLD MAP</h1>
 
-<div class="map">
+<div class="map-container">
 
-<div class="node" onclick="selectNode(this,'Gibraltar Core System')">
-🏛 Gibraltar — Core System
+<div class="node" onclick="location.href='index.html'">
+<h3>Gibraltar</h3>
+<div class="tag">MUoG Core Campus</div>
 </div>
 
 <div class="line"></div>
 
-<div class="node" onclick="selectNode(this,'Ceuta Bridge Layer')">
-🌉 Ceuta — Intercontinental Bridge
+<div class="node" onclick="location.href='ceuta.html'">
+<h3>Ceuta</h3>
+<div class="tag">Intercontinental Node</div>
 </div>
 
 <div class="line"></div>
 
-<div class="node" onclick="selectNode(this,'Faculties Knowledge Layer')">
-📚 Faculties — Knowledge System
+<div class="node">
+<h3>G-System</h3>
+<div class="tag">Runtime Infrastructure Layer</div>
 </div>
 
 </div>
 
-<div class="info" id="info">
-Kliknij w węzeł, aby aktywować warstwę systemu MU
-</div>
-
-<script>
-function selectNode(el, text){
-
-// reset nodes
-document.querySelectorAll('.node').forEach(n=>{
-n.classList.remove('active');
-});
-
-// reset lines
-document.querySelectorAll('.line').forEach(l=>{
-l.classList.remove('active-line');
-});
-
-// activate node
-el.classList.add('active');
-
-// activate previous line if exists
-let prev = el.previousElementSibling;
-if(prev && prev.classList.contains('line')){
-prev.classList.add('active-line');
-}
-
-// update info
-document.getElementById('info').innerText = "ACTIVE: " + text;
-}
-</script>
+<footer style="text-align:center;padding:40px;opacity:0.5;">
+MUoG — World Map System
+</footer>
 
 </body>
 </html>
