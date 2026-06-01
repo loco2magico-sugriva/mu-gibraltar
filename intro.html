@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G-ROCK INTRO</title>
+
+<style>
+body{
+margin:0;
+background:#000;
+color:#E6E6E6;
+font-family:Arial,sans-serif;
+overflow:hidden;
+}
+
+/* CENTER WRAPPER */
+.wrapper{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+}
+
+/* LOGO */
+.logo{
+font-size:64px;
+letter-spacing:10px;
+font-weight:bold;
+opacity:0;
+animation:fadeIn 1.2s ease forwards;
+}
+
+/* SUBTEXT */
+.sub{
+margin-top:12px;
+font-size:14px;
+letter-spacing:4px;
+opacity:0;
+color:#4aa3ff;
+animation:fadeIn 1.2s ease forwards;
+animation-delay:0.8s;
+}
+
+/* GLITCH EFFECT */
+.glitch{
+position:relative;
+display:inline-block;
+}
+
+.glitch::before,
+.glitch::after{
+content:"G-ROCK";
+position:absolute;
+left:0;
+top:0;
+width:100%;
+overflow:hidden;
+color:#4aa3ff;
+opacity:0.6;
+}
+
+.glitch::before{
+animation:glitch1 1s infinite linear alternate-reverse;
+}
+
+.glitch::after{
+color:#ff2b6a;
+animation:glitch2 1s infinite linear alternate-reverse;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+from{ opacity:0; transform:translateY(10px); }
+to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes glitch1{
+0%{ transform:translate(0,0); }
+20%{ transform:translate(-2px,1px); }
+40%{ transform:translate(-1px,-1px); }
+60%{ transform:translate(2px,1px); }
+80%{ transform:translate(-1px,0px); }
+100%{ transform:translate(0,0); }
+}
+
+@keyframes glitch2{
+0%{ transform:translate(0,0); }
+20%{ transform:translate(2px,-1px); }
+40%{ transform:translate(1px,1px); }
+60%{ transform:translate(-2px,-1px); }
+80%{ transform:translate(1px,0px); }
+100%{ transform:translate(0,0); }
+}
+
+/* FADE OUT */
+.fadeout{
+animation:fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut{
+to{ opacity:0; }
+}
+
+/* BACKGROUND NOISE */
+.noise{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_random_noise.png");
+opacity:0.04;
+pointer-events:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<div class="wrapper" id="wrap">
+
+<div class="logo glitch">G-ROCK</div>
+
+<div class="sub">POWERED BY G-SYSTEM</div>
+
+</div>
+
+<script>
+// AUTO TRANSITION TO HOME
+setTimeout(()=>{
+document.getElementById("wrap").classList.add("fadeout");
+
+setTimeout(()=>{
+window.location.href = "index.html";
+}, 900);
+
+}, 3000);
+</script>
+
+</body>
+</html>
