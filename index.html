@@ -16,7 +16,7 @@ animation:boot 0.8s ease forwards;
 overflow-x:hidden;
 }
 
-/* BOOT ANIMATION */
+/* BOOT */
 @keyframes boot{
 from{
 opacity:0;
@@ -57,7 +57,6 @@ color:#4aa3ff;
 opacity:1;
 }
 
-/* LANG */
 .lang button{
 background:none;
 border:1px solid #4aa3ff;
@@ -65,6 +64,7 @@ color:#4aa3ff;
 padding:4px 8px;
 margin-left:5px;
 cursor:pointer;
+transition:0.2s;
 }
 
 .lang button:hover{
@@ -75,7 +75,7 @@ color:#000;
 /* HERO */
 .hero{
 text-align:center;
-padding:80px 20px 30px;
+padding:80px 20px 20px;
 }
 
 .hero h1{
@@ -84,8 +84,18 @@ letter-spacing:8px;
 margin:0;
 }
 
-.hero p{
+.subtitle{
 opacity:0.7;
+margin-top:10px;
+}
+
+/* UNIVERSITY */
+.university{
+text-align:center;
+margin-top:10px;
+letter-spacing:3px;
+opacity:0.75;
+font-size:14px;
 }
 
 /* CARD */
@@ -99,6 +109,17 @@ background:#111827;
 animation:fadeUp 0.8s ease forwards;
 opacity:0;
 animation-delay:0.3s;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* GRID */
@@ -118,8 +139,6 @@ border-radius:12px;
 padding:20px;
 cursor:pointer;
 transition:0.2s;
-opacity:0;
-animation:fadeUp 0.8s ease forwards;
 }
 
 .box:hover{
@@ -127,17 +146,6 @@ transform:translateY(-4px);
 border-color:#4aa3ff;
 }
 
-.box:nth-child(1){animation-delay:0.3s;}
-.box:nth-child(2){animation-delay:0.4s;}
-.box:nth-child(3){animation-delay:0.5s;}
-
-/* ANIMATION */
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(10px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-/* FOOTER */
 footer{
 text-align:center;
 padding:40px;
@@ -168,8 +176,10 @@ font-size:12px;
 </header>
 
 <section class="hero">
+<div class="subtitle">G-ROCK PRESENTS</div>
 <h1>G-ROCK</h1>
-<p>Powered by G-System</p>
+<div class="university">MONKEYS UNIVERSITY OF GIBRALTAR</div>
+<div class="subtitle">Powered by G-System</div>
 </section>
 
 <div class="card">
@@ -186,18 +196,29 @@ First documented subject integrated into academic system (ESL / BSU classificati
 </div>
 
 <footer>
-G-ROCK • Powered by G-System
+G-ROCK • Monkeys University of Gibraltar • Powered by G-System
 </footer>
 
 <script>
 function setLang(lang){
-const text = {
-en:"Powered by G-System",
-es:"Impulsado por G-System",
-pl:"Napędzane przez G-System",
-fr:"Propulsé par G-System"
+const data = {
+en:{
+subtitle:"Powered by G-System"
+},
+es:{
+subtitle:"Impulsado por G-System"
+},
+pl:{
+subtitle:"Napędzane przez G-System"
+},
+fr:{
+subtitle:"Propulsé par G-System"
+}
 };
-document.querySelector(".hero p").innerText = text[lang];
+
+document.querySelectorAll(".subtitle").forEach(el=>{
+el.innerText = data[lang].subtitle;
+});
 }
 </script>
 
