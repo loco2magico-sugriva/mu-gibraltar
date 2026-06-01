@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>G-Rock</title>
 
-<link rel="stylesheet" href="mu-core.css">
-
 <style>
 body{
 margin:0;
@@ -15,171 +13,151 @@ color:#E6E6E6;
 font-family:Arial, sans-serif;
 }
 
-/* BANNER */
 .world-banner{
-width:100%;
-background:rgba(10,12,18,0.95);
-border-bottom:1px solid #1f2a3a;
-text-align:center;
+background:#0b0f18;
 padding:10px;
+text-align:center;
 font-size:12px;
-letter-spacing:1px;
-opacity:0.9;
-position:sticky;
-top:0;
-z-index:200;
+border-bottom:1px solid #1f2a3a;
 }
 
-.world-banner span{
-color:#4aa3ff;
-}
-
-/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:18px 22px;
+padding:18px;
 border-bottom:1px solid #1f2a3a;
 }
 
 nav a{
-color:#E6E6E6;
+color:#fff;
 text-decoration:none;
-margin-left:12px;
-font-size:14px;
-opacity:0.8;
+margin-left:10px;
+opacity:0.7;
 }
 
-nav a:hover{
+.lang button{
+background:none;
+border:1px solid #4aa3ff;
 color:#4aa3ff;
-opacity:1;
-}
-
-/* LANGUAGE */
-.lang{
+padding:5px 8px;
+margin-left:5px;
+cursor:pointer;
 font-size:12px;
-opacity:0.8;
 }
 
-.lang a{
-color:#aaa;
-text-decoration:none;
-margin-left:6px;
-}
-
-.lang a:hover{
-color:#4aa3ff;
-}
-
-/* HERO */
 .hero{
 text-align:center;
-padding:110px 20px 60px;
-background:radial-gradient(circle at top, rgba(74,163,255,0.18), transparent 60%);
+padding:90px 20px;
 }
 
 .hero h1{
-font-size:72px;
-letter-spacing:10px;
-margin:0;
-}
-
-.subtitle{
-margin-top:10px;
-opacity:0.6;
-letter-spacing:3px;
-font-size:12px;
-}
-
-/* FEATURE */
-.feature{
-max-width:900px;
-margin:50px auto 0;
-padding:28px;
-border-radius:16px;
-background:linear-gradient(180deg,#121a2a,#0b101a);
-border:1px solid #263246;
-text-align:left;
-}
-
-.badge{
-display:inline-block;
-padding:6px 12px;
-border:1px solid #4aa3ff;
-border-radius:20px;
-font-size:11px;
-opacity:0.8;
-margin-bottom:12px;
-}
-
-.cta{
-display:inline-block;
-margin-top:18px;
-padding:11px 16px;
-border:1px solid #4aa3ff;
-color:#4aa3ff;
-border-radius:10px;
-text-decoration:none;
-}
-
-/* GRID */
-.grid{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-padding:50px 20px;
+font-size:60px;
+letter-spacing:8px;
 }
 
 .card{
-width:280px;
+max-width:800px;
+margin:20px auto;
 padding:20px;
-border-radius:14px;
-background:linear-gradient(180deg,#141a28,#0c111b);
 border:1px solid #263246;
-cursor:pointer;
-transition:0.2s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:#4aa3ff;
-}
-
-.card p{
-opacity:0.7;
-font-size:14px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-opacity:0.5;
-font-size:12px;
+border-radius:12px;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="world-banner">
-G-ROCK • Digital Universe Platform • 
-<span>MUO-G System Layer Active</span> • Gibraltar Core Node
+<div class="world-banner" data-i18n="banner">
+G-ROCK • Digital Universe Platform • MUO-G Active • Gibraltar Core Node
 </div>
 
 <header>
 <div><b>G-ROCK</b></div>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="season1.html">Series</a>
-<a href="map.html">World Map</a>
-<a href="g-system.html">System</a>
+<a href="#" data-i18n="home">Home</a>
+<a href="#" data-i18n="series">Series</a>
+<a href="#" data-i18n="map">Map</a>
+<a href="#" data-i18n="system">System</a>
 </nav>
 
 <div class="lang">
-EN |
-<a href="?lang=es">ES</
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+<button onclick="setLang('pl')">PL</button>
+<button onclick="setLang('fr')">FR</button>
+</div>
+</header>
+
+<section class="hero">
+<h1 data-i18n="title">G-ROCK</h1>
+<p data-i18n="subtitle">Digital Universe Platform</p>
+
+<div class="card">
+<h2 data-i18n="episode">Episode 1 — Sugriwa Initialization</h2>
+<p data-i18n="desc">
+A system anomaly originating from Gibraltar Core Node. First interaction between reality layers and G-System.
+</p>
+</div>
+</section>
+
+<script>
+// 🌍 TRANSLATIONS
+const translations = {
+en:{
+banner:"G-ROCK • Digital Universe Platform • MUO-G Active • Gibraltar Core Node",
+home:"Home",
+series:"Series",
+map:"Map",
+system:"System",
+title:"G-ROCK",
+subtitle:"Digital Universe Platform",
+episode:"Episode 1 — Sugriwa Initialization",
+desc:"A system anomaly originating from Gibraltar Core Node. First interaction between reality layers and G-System."
+},
+es:{
+banner:"G-ROCK • Plataforma Digital • MUO-G Activo • Núcleo Gibraltar",
+home:"Inicio",
+series:"Serie",
+map:"Mapa",
+system:"Sistema",
+title:"G-ROCK",
+subtitle:"Plataforma del Universo Digital",
+episode:"Episodio 1 — Inicialización Sugriwa",
+desc:"Una anomalía del sistema originada en el Núcleo de Gibraltar. Primera interacción entre capas de realidad y G-System."
+},
+pl:{
+banner:"G-ROCK • Platforma Cyfrowego Uniwersum • MUO-G Aktywny • Rdzeń Gibraltar",
+home:"Start",
+series:"Serial",
+map:"Mapa",
+system:"System",
+title:"G-ROCK",
+subtitle:"Platforma Cyfrowego Uniwersum",
+episode:"Odcinek 1 — Inicjalizacja Sugriwa",
+desc:"Anomalia systemowa pochodząca z rdzenia Gibraltar. Pierwsza interakcja warstw rzeczywistości z G-System."
+},
+fr:{
+banner:"G-ROCK • Plateforme Univers Numérique • MUO-G Actif • Noyau Gibraltar",
+home:"Accueil",
+series:"Série",
+map:"Carte",
+system:"Système",
+title:"G-ROCK",
+subtitle:"Plateforme de l'Univers Numérique",
+episode:"Épisode 1 — Initialisation Sugriwa",
+desc:"Une anomalie système provenant du noyau de Gibraltar. Première interaction entre les couches de réalité et le G-System."
+}
+};
+
+// 🌍 CHANGE LANGUAGE
+function setLang(lang){
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const key = el.getAttribute("data-i18n");
+el.innerText = translations[lang][key];
+});
+}
+</script>
+
+</body>
+</html>
