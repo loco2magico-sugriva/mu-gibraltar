@@ -8,7 +8,7 @@
 <style>
 body{
 margin:0;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 background:#070A10;
 color:#E6E6E6;
 }
@@ -19,22 +19,20 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px;
-border-bottom:1px solid #1f2a3a;
 background:#0b0f18;
+border-bottom:1px solid #1f2a3a;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin-right:14px;
-opacity:0.75;
-transition:0.2s;
+opacity:0.8;
 }
 
 nav a:hover{
 opacity:1;
 color:#4aa3ff;
-text-shadow:0 0 8px #4aa3ff;
 }
 
 /* HERO */
@@ -45,9 +43,8 @@ padding:60px 20px;
 
 .hero h1{
 font-size:44px;
-letter-spacing:3px;
-text-transform:uppercase;
 margin:0;
+letter-spacing:3px;
 }
 
 .hero p{
@@ -58,93 +55,40 @@ margin-top:10px;
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:16px;
-max-width:1000px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:900px;
 margin:40px auto;
 padding:0 20px;
 }
 
-/* CARD */
 .card{
 background:#111827;
-border:1px solid #1f2a3a;
+padding:20px;
 border-radius:12px;
-padding:22px;
-cursor:pointer;
-transition:0.25s;
 text-align:center;
-text-transform:uppercase;
+border:1px solid #1f2a3a;
+cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-6px);
 border-color:#4aa3ff;
-box-shadow:0 0 18px rgba(74,163,255,0.25);
+transform:translateY(-4px);
+transition:0.2s;
 }
 
-/* INTRO */
-.intro{
-position:fixed;
-inset:0;
-background:#000;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:fadeOut 0.8s ease 2s forwards;
-}
-
-.intro h1{
-font-size:48px;
-letter-spacing:6px;
-text-transform:uppercase;
-margin:0;
-animation:fadeIn 0.8s ease forwards;
-}
-
-.intro p{
-opacity:0;
-margin-top:10px;
-color:#aaa;
-text-transform:uppercase;
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+opacity:0.5;
 font-size:12px;
-animation:fadeIn 0.8s ease 0.5s forwards;
-}
-
-/* MAIN */
-main{
-opacity:0;
-animation:show 0.6s ease 2.1s forwards;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(10px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeOut{
-to{opacity:0;visibility:hidden;pointer-events:none;}
-}
-
-@keyframes show{
-from{opacity:0;}
-to{opacity:1;}
 }
 </style>
 
 </head>
 
 <body>
-
-<div class="intro">
-<h1>G-ROCK</h1>
-<p>MONKEYS UNIVERSITY OF GIBRALTAR</p>
-</div>
-
-<main>
 
 <header>
 <div><b>G-ROCK SYSTEM</b></div>
@@ -164,14 +108,16 @@ to{opacity:1;}
 
 <section class="grid">
 
-<div class="card" onclick="location.href='ceuta.html'">Ceuta</div>
-<div class="card" onclick="location.href='faculties.html'">Faculties</div>
-<div class="card" onclick="location.href='season1.html'">Season 1</div>
-<div class="card" onclick="location.href='episode1.html'">Episode 1</div>
+<div class="card" onclick="location.href='ceuta.html'">CEUTA</div>
+<div class="card" onclick="location.href='faculties.html'">FACULTIES</div>
+<div class="card" onclick="location.href='season1.html'">SEASON 1</div>
+<div class="card" onclick="location.href='episode1.html'">EPISODE 1</div>
 
 </section>
 
-</main>
+<footer>
+G-ROCK SYSTEM • CLEAN BUILD
+</footer>
 
 </body>
 </html>
