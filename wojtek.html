@@ -1,102 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MU - Wojtek Layer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUO-G • Wojtek Layer</title>
+
 <link rel="stylesheet" href="mu-core.css">
+
 <style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#0B0E14;
-color:#E6E6E6;
+.hero{
+text-align:center;
 padding:60px 20px;
-line-height:1.6;
 }
 
-.container{
+.hero h1{
+font-size:40px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.panel{
 max-width:900px;
-margin:auto;
-}
-
-h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-h2{
-margin-top:40px;
-color:#ffcc66;
-}
-
-.block{
-margin-top:20px;
-padding:18px;
-border:1px solid #2a3342;
+margin:40px auto;
+padding:25px;
+background:#0f1626;
+border:1px solid #1f2a3a;
 border-radius:12px;
-background:#121826;
 }
 
 .tag{
 display:inline-block;
 padding:4px 10px;
-border:1px solid #444;
-border-radius:6px;
+border:1px solid #4aa3ff;
+color:#4aa3ff;
 font-size:12px;
-opacity:0.8;
+border-radius:6px;
 margin-bottom:10px;
 }
+
+h2{
+color:#4aa3ff;
+text-transform:uppercase;
+margin-top:20px;
+}
+
+p{
+line-height:1.6;
+opacity:0.9;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+max-width:900px;
+margin:40px auto;
+}
+
+.card{
+background:#111827;
+border:1px solid #1f2a3a;
+padding:20px;
+border-radius:12px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.5;
+font-size:12px;
+}
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<!-- HEADER -->
+<header>
+<div><b>MUO-G SYSTEM</b></div>
 
+<nav>
+<a href="index.html">Home</a>
+<a href="gibraltar.html">Gibraltar</a>
+<a href="ceuta.html">Ceuta</a>
+<a href="faculties.html">Faculties</a>
+<a href="season1.html">Season 1</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
 <h1>WOJTEK LAYER</h1>
-<div class="tag">MU SYSTEM // NARRATIVE PROCESSOR</div>
+<p>COGNITIVE INTERPRETATION ENGINE OF MUO-G SYSTEM</p>
+</section>
 
-<h2>1. ROLE IN SYSTEM</h2>
-<div class="block">
+<!-- CORE DESCRIPTION -->
+<div class="panel">
+
+<div class="tag">SYSTEM MODULE / INTERPRETATION CORE</div>
+
+<h2>Definition</h2>
+<p>
 Wojtek Layer is not a character.  
-It is a narrative processing node inside MU that converts raw events into structured meaning.
-</div>
+It is a processing layer inside MUO-G responsible for interpreting events into structured meaning.
+</p>
 
-<h2>2. FUNCTION</h2>
-<div class="block">
-It acts as an interpretative engine between:
-- observed reality
-- system memory
-- generated history
+<h2>Function</h2>
+<p>
+It acts as a bridge between raw system data and narrative structure.
+When Gibraltar generates events and Ceuta transfers them, Wojtek Layer decides what they mean.
+</p>
 
-It decides how events are encoded into MU structure.
-</div>
-
-<h2>3. POSITION IN ARCHITECTURE</h2>
-<div class="block">
-Gibraltar → generates structure  
-Ceuta → transfers structure  
-Faculties → organizes structure  
-WOJTEK LAYER → interprets structure
-</div>
-
-<h2>4. SYSTEM BEHAVIOR</h2>
-<div class="block">
-When uncertainty appears in MU, Wojtek Layer resolves it by:
-- assigning narrative coherence
-- stabilizing system meaning
-- preventing logical fragmentation
-</div>
-
-<h2>5. STATUS</h2>
-<div class="block">
-ACTIVE NODE  
-Narrative integrity: STABLE  
-System influence: GLOBAL
-</div>
+<h2>System Role</h2>
+<p>
+- Resolves ambiguity in system data  
+- Stabilizes narrative coherence  
+- Prevents fragmentation of MUO-G logic  
+</p>
 
 </div>
+
+<!-- LOGIC GRID -->
+<div class="grid">
+
+<div class="card">
+<h3>INPUT</h3>
+<p>Raw system events from Gibraltar Node.</p>
+</div>
+
+<div class="card">
+<h3>PROCESS</h3>
+<p>Interpretation + narrative structuring.</p>
+</div>
+
+<div class="card">
+<h3>OUTPUT</h3>
+<p>Stable meaning for Faculties and Episodes.</p>
+</div>
+
+</div>
+
+<footer>
+MUO-G • Wojtek Layer • Cognitive Engine Active
+</footer>
 
 </body>
 </html>
