@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUO-G • G-ROCK HUB</title>
 
+<link rel="stylesheet" href="mu-core.css">
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#070A10;
+color:#E6E6E6;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+border-bottom:1px solid #1f2a3a;
+background:#0b0f18;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-right:14px;
+opacity:0.75;
+transition:0.2s;
+}
+
+nav a:hover{
+opacity:1;
+color:#4aa3ff;
+text-shadow:0 0 8px #4aa3ff;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:44px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin:0;
+}
+
+.hero p{
+opacity:0.7;
+margin-top:10px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+max-width:1000px;
+margin:40px auto;
+padding:0 20px;
+}
+
+/* CARD */
+.card{
+background:#111827;
+border:1px solid #1f2a3a;
+border-radius:12px;
+padding:22px;
+cursor:pointer;
+transition:0.25s;
+text-align:center;
+text-transform:uppercase;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#4aa3ff;
+box-shadow:0 0 18px rgba(74,163,255,0.25);
+}
+
+/* INTRO */
+.intro{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 0.8s ease 2.2s forwards;
+}
+
+.intro h1{
+font-size:50px;
+letter-spacing:8px;
+text-transform:uppercase;
+animation:fadeIn 0.8s ease forwards;
+opacity:0;
+}
+
+.intro p{
+opacity:0;
+margin-top:10px;
+color:#aaa;
+animation:fadeIn 0.8s ease 0.5s forwards;
+text-transform:uppercase;
+font-size:12px;
+}
+
+/* MAIN */
+main{
+opacity:0;
+animation:show 0.6s ease 2.3s forwards;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;pointer-events:none;}
+}
+
+@keyframes show{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro">
+<h1>G-ROCK</h1>
+<p>MONKEYS UNIVERSITY OF GIBRALTAR • MUO-G SYSTEM ACTIVE</p>
+</div>
+
+<main>
+
+<!-- HEADER -->
+<header>
+<div><b>MUO-G SYSTEM</b></div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="ceuta.html">Ceuta</a>
+<a href="faculties.html">Faculties</a>
+<a href="season1.html">Season 1</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1>MUO-G WORLD</h1>
+<p>Distributed Academic Simulation System</p>
+</section>
+
+<!-- GRID MENU -->
+<section class="grid">
+
+<div class="card" onclick="location.href='ceuta.html'">
+CEUTA
+</div>
+
+<div class="card" onclick="location.href='faculties.html'">
+FACULTIES
+</div>
+
+<div class="card" onclick="location.href='season1.html'">
+SEASON 1
+</div>
+
+<div class="card" onclick="location.href='episode1.html'">
+EPISODE 1
+</div>
+
+</section>
+
+</main>
+
+</body>
+</html>
