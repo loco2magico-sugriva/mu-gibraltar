@@ -3,56 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUoG</title>
+<title>MUO-G • Gibraltar Core</title>
 
 <link rel="stylesheet" href="mu-core.css">
+
+<style>
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:44px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.section{
+max-width:900px;
+margin:40px auto;
+padding:20px;
+background:#0f1626;
+border:1px solid #1f2a3a;
+border-radius:12px;
+}
+
+.section h2{
+color:#4aa3ff;
+text-transform:uppercase;
+margin-bottom:10px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+max-width:900px;
+margin:40px auto;
+}
+
+.card{
+background:#111827;
+border:1px solid #1f2a3a;
+padding:20px;
+border-radius:12px;
+cursor:pointer;
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#4aa3ff;
+box-shadow:0 0 18px rgba(74,163,255,0.3);
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.5;
+font-size:12px;
+}
+</style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<div><b>MUoG</b></div>
+<div><b>MUO-G SYSTEM</b></div>
 
 <nav>
 <a href="index.html">Home</a>
+<a href="gibraltar.html">Gibraltar</a>
 <a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
+<a href="season1.html">Episodes</a>
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-
-<h1>MUoG</h1>
-
-<p>Monkeys University of Gibraltar</p>
-
-<p>Gibraltar (G-Rock State)</p>
-
-<p style="opacity:0.6;">Powered by the G-System</p>
-
+<h1>GIBRALTAR CORE NODE</h1>
+<p>Primary computation and narrative generation layer of MU System</p>
 </section>
 
-<section class="cards">
-
-<div class="card" onclick="location.href='ceuta.html'">
-<h3>Campus de Ceuta</h3>
-<p>Intercontinental academic node</p>
+<!-- CORE SECTION -->
+<div class="section">
+<h2>System Role</h2>
+<p>Gibraltar is the central processing node where structure, logic and identity of MUO-G are generated.</p>
 </div>
 
-<div class="card" onclick="location.href='faculties.html'">
-<h3>Faculties</h3>
-<p>Academic structure of MUoG</p>
+<div class="section">
+<h2>Function</h2>
+<p>All narrative, academic and simulation data originates here before being distributed to Ceuta and Faculties.</p>
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+<div class="card">
+<h3>Core Engine</h3>
+<p>Processes system logic and global simulation rules.</p>
 </div>
 
 <div class="card">
-<h3>Episode 1</h3>
-<p>Sugriwa Initialization Event</p>
+<h3>Identity Layer</h3>
+<p>Defines structural identity of MUO-G universe.</p>
 </div>
 
-</section>
+<div class="card">
+<h3>Archive Control</h3>
+<p>Manages canonical memory and event history.</p>
+</div>
 
-<footer style="text-align:center;padding:40px;opacity:0.5;">
-MUoG — Monkeys University of Gibraltar
+</div>
+
+<footer>
+MUO-G • Gibraltar Core Node • G-System Active
 </footer>
 
 </body>
