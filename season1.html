@@ -3,36 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Season 1 — MUoG</title>
+<title>MUO-G • Season 1</title>
+
 <link rel="stylesheet" href="mu-core.css">
+
+<style>
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:42px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.section{
+max-width:900px;
+margin:40px auto;
+padding:20px;
+background:#0f1626;
+border:1px solid #1f2a3a;
+border-radius:12px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+max-width:900px;
+margin:40px auto;
+}
+
+.card{
+background:#111827;
+border:1px solid #1f2a3a;
+padding:20px;
+border-radius:12px;
+cursor:pointer;
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#4aa3ff;
+box-shadow:0 0 18px rgba(74,163,255,0.3);
+}
+
+.tag{
+display:inline-block;
+padding:4px 10px;
+border:1px solid #4aa3ff;
+color:#4aa3ff;
+border-radius:6px;
+font-size:12px;
+margin-bottom:10px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.5;
+font-size:12px;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="world-banner">
-MUoG • Monkeys University of Gibraltar • 
-<span>Gibraltar (G-Rock State)</span> • G-System Active
-</div>
-
+<!-- HEADER -->
 <header>
-<div><b>MUoG</b></div>
+<div><b>MUO-G SYSTEM</b></div>
+
 <nav>
 <a href="index.html">Home</a>
-<a href="season1.html">Season 1</a>
+<a href="gibraltar.html">Gibraltar</a>
+<a href="ceuta.html">Ceuta</a>
 <a href="faculties.html">Faculties</a>
+<a href="season1.html">Season 1</a>
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Season 1</h1>
-<p>MUoG Narrative Archive</p>
+<h1>SEASON 1</h1>
+<p>MUO-G Narrative Archive System</p>
 </section>
 
-<section class="cards">
+<!-- INFO -->
+<div class="section">
+<div class="tag">CANON ARCHIVE</div>
+<h2>Overview</h2>
+<p>Season 1 contains the first structured narrative events of the MUO-G system, including the Sugriva initialization sequence and early G-System activation logs.</p>
+</div>
+
+<!-- EPISODES -->
+<div class="grid">
 
 <div class="card" onclick="location.href='episode1.html'">
 <h3>Episode 1</h3>
-<p>Sugriwa Initialization</p>
+<p>Sugriva Initialization Event</p>
 </div>
 
 <div class="card">
@@ -40,10 +112,15 @@ MUoG • Monkeys University of Gibraltar •
 <p>Locked</p>
 </div>
 
-</section>
+<div class="card">
+<h3>Episode 3</h3>
+<p>Locked</p>
+</div>
+
+</div>
 
 <footer>
-MUoG — Season Archive
+MUO-G • Season 1 Archive • G-System Active
 </footer>
 
 </body>
